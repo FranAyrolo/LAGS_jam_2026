@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Maaack's Game Template"
+config/name="Juego LAGS Jam 2026"
 run/main_scene="res://scenes/opening/opening.tscn"
 config/features=PackedStringArray("4.6")
-config/icon="res://icon.png"
+config/icon="uid://b4pufwlqgje3b"
 
 [autoload]
 
