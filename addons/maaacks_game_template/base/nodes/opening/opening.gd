@@ -26,6 +26,7 @@ var next_image_index : int = 0
 
 func get_next_scene_path() -> String:
 	if next_scene_path.is_empty():
+		print(AppConfig.main_menu_scene_path)
 		return AppConfig.main_menu_scene_path
 	return next_scene_path
 
