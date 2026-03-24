@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cghkqyfp3gddx"]
+
+[ext_resource type="Script" uid="uid://cg6qmd6jnmkus" path="res://PRUEBAS/character_body_2d.gd" id="1_s7l7o"]
+[ext_resource type="Texture2D" uid="uid://bqms62x0rcu0a" path="res://assets/2D/Orko/PJ_02.png" id="2_s7l7o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s7l7o"]
+radius = 64.0
+height = 176.0
+
+[node name="Player" type="CharacterBody2D" unique_id=669359742]
+platform_on_leave = 2
+script = ExtResource("1_s7l7o")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1861643811]
+unique_name_in_owner = true
+texture = ExtResource("2_s7l7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1120897322]
+position = Vector2(0, 40)
+shape = SubResource("CapsuleShape2D_s7l7o")
