@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://gy04eiwy6swm" path="res://PRUEBAS/prueba_nivel.gd" id="1_qkusj"]
 [ext_resource type="Texture2D" uid="uid://coyxk7fr57n1s" path="res://assets/2D/Orko/Escenario.png" id="3_eu6qq"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_eu6qq"]
+viewport_path = NodePath("Cam1")
+
 [node name="PruebaNivel" type="Node2D" unique_id=373451608]
 script = ExtResource("1_qkusj")
 
@@ -15,22 +18,15 @@ texture = ExtResource("3_eu6qq")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Entorno" unique_id=1524625982]
 position = Vector2(-1344, 152)
 build_mode = 1
-polygon = PackedVector2Array(-2256, -2936, -2288, -4440, 160, -4488, 176, -4184, 1552, -4216, 1920, -3912, 1920, -1616, 1600, -1616, 1160, -1984, 1080, -1840, 1520, -1296, 2224, -1376, 2160, -3912, 3080, -3944, 3048, -3696, 3424, -3696, 4280, -4472, 5936, -4456, 5984, -1920, 5424, -1984, 5344, -1776, 6016, -1792, 6000, -96, 5344, -200, 5280, -16, 5984, 0, 5984, 1416, 5264, 1464, 5264, 1696, 5888, 1624, 5920, 3568, 4160, 3664, 4080, 3160, 3648, 3160, -728, 3256, -968, 3064, -1128, 3192, -1128, 4016, -2064, 4000, -3000, 3112, -3112, 1576, -1128, 1592, -1160, 2304, -824, 2304, -824, 1496, -1064, 1400, -1064, 984, -1440, 968, -1456, 1448, -2808, 1432, -2728, -280, -1408, -344, -1336, 96, -1128, 128, -1096, -376, -824, -360, -840, -504, -1504, -488, -2952, -472, -3000, -2680, -1680, -2696, -1128, -2104, -984, -2248, -936, -2712, 144, -2744, 680, -2248, 840, -2360, 320, -2888, 304, -3008, 176, -3024, 176, -2936)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=832380375]
-unique_name_in_owner = true
-position = Vector2(712, 592)
-zoom = Vector2(0.35, 0.35)
-limit_left = -5088
-limit_top = -4520
-limit_right = 5064
-limit_bottom = 4424
-limit_smoothed = true
-position_smoothing_enabled = true
-editor_draw_limits = true
-editor_draw_drag_margin = true
+polygon = PackedVector2Array(-2256, -2936, -2288, -4440, 16, -4432, 16, -4152, 1472, -4136, 1728, -3904, 1728, -1640, 1528, -1624, 1112, -2056, 912, -1848, 1464, -1312, 2192, -1312, 2160, -3912, 3008, -3936, 3024, -3672, 3376, -3688, 4280, -4472, 5936, -4456, 5856, -2016, 5152, -2008, 5176, -1808, 5864, -1808, 5848, -160, 5160, -160, 5176, 24, 5864, 40, 5864, 1432, 5152, 1424, 5168, 1616, 5888, 1624, 5856, 3576, 4024, 3592, 4008, 3064, 3560, 3144, -840, 3216, -1040, 3072, -1256, 3120, -1280, 3952, -2168, 3968, -3088, 3040, -3072, 1568, -1248, 1584, -1256, 2272, -864, 2264, -880, 1368, -1136, 1376, -1168, 952, -1552, 944, -1576, 1376, -2824, 1376, -2816, -296, -1568, -288, -1576, 64, -1136, 72, -1160, -336, -864, -352, -856, -496, -1560, -488, -3032, -488, -3032, -2656, -1728, -2648, -1208, -2128, -1016, -2296, -1000, -2720, 32, -2736, 584, -2200, 776, -2368, 320, -2888, 296, -3072, 72, -3072, 88, -2928)
 
 [node name="Player" parent="." unique_id=669359742 instance=ExtResource("1_n32tc")]
 unique_name_in_owner = true
 position = Vector2(712, 592)
 motion_mode = 1
+
+[node name="PantallaCamaras" type="Sprite2D" parent="." unique_id=235401770]
+visible = false
+position = Vector2(1904, 320)
+scale = Vector2(1.6, 0.9)
+texture = SubResource("ViewportTexture_eu6qq")

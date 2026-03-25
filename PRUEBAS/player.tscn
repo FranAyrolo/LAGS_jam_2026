@@ -18,3 +18,53 @@ texture = ExtResource("2_s7l7o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1120897322]
 position = Vector2(0, 40)
 shape = SubResource("CapsuleShape2D_s7l7o")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=541175628]
+unique_name_in_owner = true
+zoom = Vector2(0.35, 0.35)
+limit_left = -5088
+limit_top = -4520
+limit_right = 5064
+limit_bottom = 4424
+limit_smoothed = true
+position_smoothing_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=337572671]
+
+[node name="Control" type="Control" parent="Camera2D/CanvasLayer" unique_id=1064580592]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/Control" unique_id=1472553690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Camera2D/CanvasLayer/Control/HBoxContainer" unique_id=1513450995]
+layout_mode = 2
+size_flags_vertical = 3
+text = "TEXTOOOOOOOOOOOOOOOOOOO"
+
+[node name="Button4" type="Button" parent="Camera2D/CanvasLayer/Control/HBoxContainer" unique_id=2125884371]
+layout_mode = 2
+size_flags_vertical = 3
+text = "TEXTOOOOOOOOOOOOOOOOOOO"
+
+[node name="Button2" type="Button" parent="Camera2D/CanvasLayer/Control/HBoxContainer" unique_id=895190286]
+layout_mode = 2
+size_flags_vertical = 3
+text = "TEXTOOOOOOOOOOOOOOOOOOO"
+
+[node name="Button3" type="Button" parent="Camera2D/CanvasLayer/Control/HBoxContainer" unique_id=928038347]
+layout_mode = 2
+size_flags_vertical = 3
+text = "TEXTOOOOOOOOOOOOOOOOOOO"

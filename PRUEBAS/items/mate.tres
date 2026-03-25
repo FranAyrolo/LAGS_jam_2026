@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemUsable" format=3 uid="uid://dachwaluqwx03"]
+
+[ext_resource type="Script" uid="uid://ccv44572too1n" path="res://PRUEBAS/items/item_resource.gd" id="1_7ref6"]
+[ext_resource type="Texture2D" uid="uid://c61gpu813d50b" path="res://assets/2D/argentinian-assets-pack-v1.0/comida/empanada.png" id="1_3817d"]
+
+[resource]
+script = ExtResource("1_7ref6")
+nombre = "Empanada"
+imagen = ExtResource("1_3817d")
+metadata/_custom_type_script = "uid://ccv44572too1n"
