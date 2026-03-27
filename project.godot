@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Juego LAGS Jam 2026"
-run/main_scene="uid://k8uv76kc5mop"
+run/main_scene="uid://bk80fxrac0p3i"
 config/features=PackedStringArray("4.6")
 config/icon="uid://b4pufwlqgje3b"
 

@@ -8,9 +8,7 @@
 [ext_resource type="Resource" uid="uid://dachwaluqwx03" path="res://PRUEBAS/items/mate.tres" id="6_x7w3n"]
 [ext_resource type="PackedScene" uid="uid://whnttgcwiimk" path="res://PRUEBAS/carpincho_seguidor.tscn" id="7_x7w3n"]
 [ext_resource type="PackedScene" uid="uid://cwnujkuarng5m" path="res://PRUEBAS/deposito_de_objetos.tscn" id="8_7wllf"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_eu6qq"]
-viewport_path = NodePath("Cam1")
+[ext_resource type="AudioStream" uid="uid://rl28nbxhmhyt" path="res://assets/audio/Ambient Folclórico.mp3" id="9_4s5t7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3lht7"]
 vertices = PackedVector2Array(3787.8594, -25.90625, 3562.8438, 191.34375, 3446.1797, -42, 3257.3672, -1100.9375, 3265.4063, -1237.8672, -2319.1484, 3189.8438, -2451.7969, 3204.5781, -2391.2266, 2863.8594, -2141.8594, 2791.4688, 862.2578, -433.8203, -2166.1875, 1437.1484, -2453.3984, 1461.0703, -2429.5, 1006.7969, -1293.8828, 226.35156, 2649.6563, -942.3281, 2657.6016, -1164.9219, 2921.6484, -490, 2656.8281, -490, 2165.6016, 3142.8984, 2173.5469, 3325.9766, -2168.7813, 3318.0078, -1931.6875, -1801.8281, -2309.1797, -1817.5469, -2286.7266, -2094.5078, -1323.8125, -2149.7578, -1310.0469, -1180.1875, -810.8828, -1652.8672, -514.4375, -1348.4297, 75.859375, -733.8828, 921.96875, -758.28125, 929.96094, -3381.5781, 1493.8594, -3358.3984, 1461.8594, -1102.4609, 2141.6094, -657.47656, 2149.6016, -457.79688, 4501.6563, -1222.1172, 4462.3203, -41.773438, 2937.6484, -42, 2632.7734, -682.46094, 2167.0781, -925.6875, 789.72656, 2289.8203, 2181.8203, 2313.8203, 2173.8984, 2765.5469, -2200.1797, 3223.8281, 2318.4531, 2853.8672, 2341.2031, 3126.9297, 2151, -1070.3984, -2734.9297, 982.6797, -2773.4766, 620.3672, -2244.6016, 194.10938, -490.39063, -1572.8516, -603.5703, -1708.6719)
@@ -34,12 +32,6 @@ polygon = PackedVector2Array(-2256, -2936, -2288, -4440, 16, -4432, 16, -4152, 1
 unique_name_in_owner = true
 position = Vector2(-239, 456)
 motion_mode = 1
-
-[node name="PantallaCamaras" type="Sprite2D" parent="." unique_id=235401770]
-visible = false
-position = Vector2(1904, 320)
-scale = Vector2(1.6, 0.9)
-texture = SubResource("ViewportTexture_eu6qq")
 
 [node name="ItemObjeto" parent="." unique_id=1411487838 instance=ExtResource("4_u4hm5")]
 position = Vector2(752, 1200)
@@ -69,4 +61,8 @@ autostart = true
 
 [node name="DepositoDeObjetos" parent="." unique_id=576087988 instance=ExtResource("8_7wllf")]
 position = Vector2(-1720, 592)
-objetos_aceptables = Array[String](["Empanada"])
+objetos_aceptables = ["Empanada"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=876182226]
+stream = ExtResource("9_4s5t7")
+autoplay = true
