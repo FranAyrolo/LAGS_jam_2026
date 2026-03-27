@@ -99,3 +99,5 @@ func _on_cargar_termo(cant: float) -> void:
 
 func _on_item_seleccionado(_item: ItemResource, objeto_item: RigidBody2D) -> void:
 	pass
+
+##AAAAAA
