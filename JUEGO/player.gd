@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+@onready var reloj: TextureProgressBar = %Reloj
+
 @export var SPEED = 1000.0
 var item_en_mano: ObjetoItem
 var offset_objeto_mano := Vector2(100, 50)

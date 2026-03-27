@@ -27,47 +27,54 @@ texture = ExtResource("2_1wjxu")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Entorno" unique_id=1524625982]
 position = Vector2(-1344, 152)
 build_mode = 1
-polygon = PackedVector2Array(-2256, -2936, -2288, -4440, 16, -4432, 16, -4152, 1472, -4136, 1728, -3904, 1728, -1640, 1528, -1624, 1112, -2056, 912, -1848, 1464, -1312, 2192, -1312, 2160, -3912, 3008, -3936, 3024, -3672, 3376, -3688, 4280, -4472, 5936, -4456, 5856, -2016, 5152, -2008, 5176, -1808, 5864, -1808, 5848, -160, 5160, -160, 5176, 24, 5864, 40, 5864, 1432, 5152, 1424, 5168, 1616, 5888, 1624, 5856, 3576, 4024, 3592, 4008, 3064, 3560, 3144, -840, 3216, -1040, 3072, -1256, 3120, -1280, 3952, -2168, 3968, -3088, 3040, -3072, 1568, -1248, 1584, -1256, 2272, -864, 2264, -880, 1368, -1136, 1376, -1168, 952, -1552, 944, -1576, 1376, -2824, 1376, -2816, -296, -1568, -288, -1576, 64, -1136, 72, -1160, -336, -864, -352, -856, -496, -1560, -488, -3032, -488, -3032, -2656, -1728, -2648, -1208, -2128, -1016, -2296, -1000, -2720, 32, -2736, 584, -2200, 776, -2368, 320, -2888, 296, -3072, 72, -3072, 88, -2928)
+polygon = PackedVector2Array(-2256, -2936, -2288, -4440, 16, -4432, 16, -4152, 1472, -4136, 1728, -3904, 1728, -1640, 1528, -1624, 1112, -2056, 912, -1848, 1464, -1312, 2192, -1312, 2160, -3912, 3008, -3936, 3024, -3672, 3376, -3688, 4280, -4472, 5936, -4456, 5856, -2016, 5152, -2008, 5176, -1808, 5864, -1808, 5848, -160, 5160, -160, 5176, 24, 5864, 40, 5864, 1432, 5152, 1424, 5168, 1616, 5888, 1624, 5856, 3576, 4024, 3592, 4008, 3064, 3560, 3144, -840, 3216, -1040, 3072, -1256, 3120, -1280, 3952, -2168, 3968, -3088, 3040, -3072, 1568, -1248, 1584, -1256, 2272, -864, 2264, -880, 1368, -1136, 1376, -1168, 952, -1552, 944, -1576, 1376, -2824, 1376, -2816, -296, -1568, -288, -1576, 64, -1136, 72, -1160, -336, -864, -352, -856, -496, -1560, -488, -3032, -488, -3032, -2656, -1728, -2648, -1208, -2128, -1016, -2296, -1000, -2720, 32, -2736, 584, -2200, 776, -2368, 264, -2904, 280, -3088, 32, -3088, 32, -2928)
 
 [node name="Player" parent="." unique_id=669359742 instance=ExtResource("3_6jq6r")]
 unique_name_in_owner = true
-position = Vector2(-239, 456)
+position = Vector2(360, -608)
 motion_mode = 1
-
-[node name="ItemObjeto" parent="." unique_id=1411487838 instance=ExtResource("4_2uisl")]
-position = Vector2(752, 1200)
-item_data = ExtResource("5_iyq21")
-
-[node name="ItemObjeto2" parent="." unique_id=1128824985 instance=ExtResource("4_2uisl")]
-position = Vector2(272, 1240)
-item_data = ExtResource("6_x4ort")
-
-[node name="ItemObjeto3" parent="." unique_id=866595722 instance=ExtResource("4_2uisl")]
-position = Vector2(-272, 1240)
-item_data = ExtResource("6_x4ort")
-
-[node name="ItemObjeto4" parent="." unique_id=1657895425 instance=ExtResource("4_2uisl")]
-position = Vector2(-400, 1080)
-item_data = ExtResource("6_x4ort")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2117067103]
 navigation_polygon = SubResource("NavigationPolygon_3lht7")
 
-[node name="Carpincho" parent="." unique_id=1591465087 instance=ExtResource("7_xrgas")]
-position = Vector2(-814, 505)
-
-[node name="Timer" type="Timer" parent="." unique_id=226669288]
+[node name="TimerReloj" type="Timer" parent="." unique_id=226669288]
+unique_name_in_owner = true
 wait_time = 2.0
 autostart = true
-
-[node name="DepositoDeObjetos" parent="." unique_id=576087988 instance=ExtResource("8_xnulk")]
-position = Vector2(-1720, 592)
-objetos_aceptables = ["Empanada"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=876182226]
 stream = ExtResource("9_you7c")
 autoplay = true
 attenuation = 1.7305236e-05
 
-[node name="Pava" parent="." unique_id=1819632843 instance=ExtResource("10_gs0jh")]
+[node name="Objetos" type="Node2D" parent="." unique_id=1063991787]
+unique_name_in_owner = true
+
+[node name="ItemObjeto" parent="Objetos" unique_id=1411487838 instance=ExtResource("4_2uisl")]
+position = Vector2(752, 1200)
+item_data = ExtResource("5_iyq21")
+
+[node name="ItemObjeto2" parent="Objetos" unique_id=1128824985 instance=ExtResource("4_2uisl")]
+position = Vector2(272, 1240)
+item_data = ExtResource("6_x4ort")
+
+[node name="ItemObjeto3" parent="Objetos" unique_id=866595722 instance=ExtResource("4_2uisl")]
+position = Vector2(-272, 1240)
+item_data = ExtResource("6_x4ort")
+
+[node name="ItemObjeto4" parent="Objetos" unique_id=1657895425 instance=ExtResource("4_2uisl")]
+position = Vector2(-400, 1080)
+item_data = ExtResource("6_x4ort")
+
+[node name="DepositoDeObjetos" parent="Objetos" unique_id=576087988 instance=ExtResource("8_xnulk")]
+position = Vector2(-1720, 592)
+objetos_aceptables = ["Empanada"]
+
+[node name="Pava" parent="Objetos" unique_id=1819632843 instance=ExtResource("10_gs0jh")]
 position = Vector2(2264, 1392)
+
+[node name="Criptidos" type="Node2D" parent="." unique_id=176592312]
+unique_name_in_owner = true
+
+[node name="Carpincho" parent="Criptidos" unique_id=1591465087 instance=ExtResource("7_xrgas")]
+position = Vector2(-814, 505)

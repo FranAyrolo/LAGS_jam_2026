@@ -2,11 +2,11 @@ extends Node2D
 
 
 func _ready() -> void:
-	$Timer.timeout.connect(_on_timer_timeout)
+	%TimerReloj.timeout.connect(avanzar_tiempo_reloj)
 	Global.request_navmap_rid.connect(_on_navmap_rid_request)
 
 
-func _on_timer_timeout() -> void:
+func avanzar_tiempo_reloj() -> void:
 	pass
 
 func _on_navmap_rid_request(node: Node, type: Global.CryptidType) -> void:
