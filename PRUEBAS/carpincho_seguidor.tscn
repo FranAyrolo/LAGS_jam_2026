@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://whnttgcwiimk"]
+
+[ext_resource type="Texture2D" uid="uid://h4x0wyp56ivk" path="res://assets/Capybara-PNG.png" id="1_ao4lr"]
+[ext_resource type="Script" uid="uid://cqy154x6bhhuj" path="res://PRUEBAS/carpincho_seguidor.gd" id="1_n5sc6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n5sc6"]
+radius = 88.0
+height = 176.0
+
+[node name="Carpincho" type="RigidBody2D" unique_id=1637751614]
+gravity_scale = 0.0
+script = ExtResource("1_n5sc6")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1481683042]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_ao4lr")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1530993634]
+target_desired_distance = 200.0
+path_max_distance = 800.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701494622]
+shape = SubResource("CapsuleShape2D_n5sc6")
+
+[node name="TimerMate" type="Timer" parent="." unique_id=1559731788]
+unique_name_in_owner = true
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="TimerJugadorEncerrado" type="Timer" parent="." unique_id=1622904137]
+unique_name_in_owner = true

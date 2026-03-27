@@ -3,9 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://cghkqyfp3gddx" path="res://PRUEBAS/player.tscn" id="1_n32tc"]
 [ext_resource type="Script" uid="uid://gy04eiwy6swm" path="res://PRUEBAS/prueba_nivel.gd" id="1_qkusj"]
 [ext_resource type="Texture2D" uid="uid://coyxk7fr57n1s" path="res://assets/2D/Orko/Escenario.png" id="3_eu6qq"]
+[ext_resource type="PackedScene" uid="uid://dey2upx52ry01" path="res://PRUEBAS/items/item_objeto.tscn" id="4_u4hm5"]
+[ext_resource type="Resource" uid="uid://dftd5b305wvxb" path="res://PRUEBAS/items/empanada.tres" id="5_3lht7"]
+[ext_resource type="Resource" uid="uid://dachwaluqwx03" path="res://PRUEBAS/items/mate.tres" id="6_x7w3n"]
+[ext_resource type="PackedScene" uid="uid://whnttgcwiimk" path="res://PRUEBAS/carpincho_seguidor.tscn" id="7_x7w3n"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_eu6qq"]
 viewport_path = NodePath("Cam1")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3lht7"]
+vertices = PackedVector2Array(3787.8594, -25.90625, 3562.8438, 191.34375, 3446.1797, -42, 3257.3672, -1100.9375, 3265.4063, -1237.8672, -2319.1484, 3189.8438, -2451.7969, 3204.5781, -2391.2266, 2863.8594, -2141.8594, 2791.4688, 862.2578, -433.8203, -2166.1875, 1437.1484, -2453.3984, 1461.0703, -2429.5, 1006.7969, -1293.8828, 226.35156, 2649.6563, -942.3281, 2657.6016, -1164.9219, 2921.6484, -490, 2656.8281, -490, 2165.6016, 3142.8984, 2173.5469, 3325.9766, -2168.7813, 3318.0078, -1931.6875, -1801.8281, -2309.1797, -1817.5469, -2286.7266, -2094.5078, -1323.8125, -2149.7578, -1310.0469, -1180.1875, -810.8828, -1652.8672, -514.4375, -1348.4297, 75.859375, -733.8828, 921.96875, -758.28125, 929.96094, -3381.5781, 1493.8594, -3358.3984, 1461.8594, -1102.4609, 2141.6094, -657.47656, 2149.6016, -457.79688, 4501.6563, -1222.1172, 4462.3203, -41.773438, 2937.6484, -42, 2632.7734, -682.46094, 2167.0781, -925.6875, 789.72656, 2289.8203, 2181.8203, 2313.8203, 2173.8984, 2765.5469, -2200.1797, 3223.8281, 2318.4531, 2853.8672, 2341.2031, 3126.9297, 2151, -1070.3984, -2734.9297, 982.6797, -2773.4766, 620.3672, -2244.6016, 194.10938, -490.39063, -1572.8516, -603.5703, -1708.6719)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12, 13), PackedInt32Array(14, 15, 3, 16, 17), PackedInt32Array(18, 19, 20), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(25, 21, 24, 26, 27, 28), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(32, 33, 34, 9, 29), PackedInt32Array(4, 35, 36, 0), PackedInt32Array(3, 2, 37, 16), PackedInt32Array(14, 17, 38), PackedInt32Array(39, 14, 38, 33), PackedInt32Array(40, 41, 42, 18, 20, 43, 8), PackedInt32Array(44, 45, 18, 42), PackedInt32Array(43, 5, 8), PackedInt32Array(40, 8, 10, 9), PackedInt32Array(32, 46, 39, 33), PackedInt32Array(28, 29, 9, 13), PackedInt32Array(12, 47, 48, 49, 13), PackedInt32Array(28, 13, 25), PackedInt32Array(50, 27, 26, 51)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-2464, 3216, -2320, 3200, -2208, 3232, -2176, 3328, 2184, 3336, 2176, 3152, 2352, 3136, 2328, 2848, 2184, 2760, 2192, 2304, 800, 2280, 872, -424, 2160, -448, 2152, -648, 2624, -672, 2648, -480, 2912, -480, 2928, -32, 3440, -32, 3560, 208, 3792, -16, 4472, -32, 4512, -1232, 3256, -1248, 3248, -1112, 2648, -1176, 2640, -952, 2176, -936, 2160, -1080, 1472, -1112, 1504, -3368, 920, -3392, 912, -768, 80, -744, -504, -1352, -480, -1576, -600, -1720, -808, -1664, -1320, -2160, -2296, -2104, -2320, -1808, -1936, -1792, -1320, -1176, -1304, 216, -2248, 184, -2784, 616, -2744, 992, -2440, 1016, -2464, 1472, -2176, 1448, -2152, 2784, -2400, 2856)])
 
 [node name="PruebaNivel" type="Node2D" unique_id=373451608]
 script = ExtResource("1_qkusj")
@@ -22,7 +31,7 @@ polygon = PackedVector2Array(-2256, -2936, -2288, -4440, 16, -4432, 16, -4152, 1
 
 [node name="Player" parent="." unique_id=669359742 instance=ExtResource("1_n32tc")]
 unique_name_in_owner = true
-position = Vector2(712, 592)
+position = Vector2(-239, 456)
 motion_mode = 1
 
 [node name="PantallaCamaras" type="Sprite2D" parent="." unique_id=235401770]
@@ -30,3 +39,22 @@ visible = false
 position = Vector2(1904, 320)
 scale = Vector2(1.6, 0.9)
 texture = SubResource("ViewportTexture_eu6qq")
+
+[node name="ItemObjeto" parent="." unique_id=1411487838 instance=ExtResource("4_u4hm5")]
+position = Vector2(752, 1200)
+item_data = ExtResource("5_3lht7")
+
+[node name="ItemObjeto2" parent="." unique_id=1128824985 instance=ExtResource("4_u4hm5")]
+position = Vector2(272, 1240)
+item_data = ExtResource("6_x7w3n")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2117067103]
+navigation_polygon = SubResource("NavigationPolygon_3lht7")
+
+[node name="Carpincho" parent="." unique_id=1591465087 instance=ExtResource("7_x7w3n")]
+position = Vector2(-814, 505)
+movement_speed = 500.0
+
+[node name="Timer" type="Timer" parent="." unique_id=226669288]
+wait_time = 2.0
+autostart = true

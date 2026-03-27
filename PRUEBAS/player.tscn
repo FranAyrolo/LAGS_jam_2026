@@ -1,19 +1,55 @@
 [gd_scene format=3 uid="uid://cghkqyfp3gddx"]
 
 [ext_resource type="Script" uid="uid://cg6qmd6jnmkus" path="res://PRUEBAS/character_body_2d.gd" id="1_s7l7o"]
+[ext_resource type="Texture2D" uid="uid://bca2yncxbby0" path="res://assets/2D/Orko/PJ_01.png" id="2_fuerx"]
 [ext_resource type="Texture2D" uid="uid://bqms62x0rcu0a" path="res://assets/2D/Orko/PJ_02.png" id="2_s7l7o"]
+[ext_resource type="Theme" uid="uid://klqgh6jw46be" path="res://resources/themes/steal_this_theme.tres" id="3_mwwyb"]
+[ext_resource type="PackedScene" uid="uid://coemgowauan67" path="res://PRUEBAS/inventario.tscn" id="4_3t51j"]
+[ext_resource type="Texture2D" uid="uid://d300k3x4xffab" path="res://assets/2D/Orko/PJ_03.png" id="4_dbjbh"]
+[ext_resource type="Texture2D" uid="uid://bxfmatj8001fu" path="res://assets/2D/Orko/PJ_04.png" id="5_2ey7g"]
+[ext_resource type="Texture2D" uid="uid://o7mfap6bv5st" path="res://assets/2D/Orko/PJ_05.png" id="6_33vmg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmhfc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fuerx")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s7l7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dbjbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2ey7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_33vmg")
+}],
+"loop": true,
+"name": &"Movimiento",
+"speed": 8.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s7l7o"]
 radius = 64.0
 height = 176.0
 
-[node name="Player" type="CharacterBody2D" unique_id=669359742]
+[node name="Player" type="CharacterBody2D" unique_id=669359742 groups=["grupo_jugador"]]
+collision_layer = 65
 platform_on_leave = 2
 script = ExtResource("1_s7l7o")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=1861643811]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1740873799]
 unique_name_in_owner = true
-texture = ExtResource("2_s7l7o")
+sprite_frames = SubResource("SpriteFrames_hmhfc")
+animation = &"Movimiento"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1120897322]
 position = Vector2(0, 40)
@@ -21,7 +57,7 @@ shape = SubResource("CapsuleShape2D_s7l7o")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=541175628]
 unique_name_in_owner = true
-zoom = Vector2(0.35, 0.35)
+zoom = Vector2(0.2, 0.2)
 limit_left = -5088
 limit_top = -4520
 limit_right = 5064
@@ -40,6 +76,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_mwwyb")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/Control" unique_id=1472553690]
 layout_mode = 1
@@ -49,22 +86,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Camera2D/CanvasLayer/Control/HBoxContainer" unique_id=1513450995]
+[node name="Inventario" parent="Camera2D/CanvasLayer/Control/HBoxContainer" unique_id=896889723 instance=ExtResource("4_3t51j")]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 3
-text = "TEXTOOOOOOOOOOOOOOOOOOO"
-
-[node name="Button4" type="Button" parent="Camera2D/CanvasLayer/Control/HBoxContainer" unique_id=2125884371]
-layout_mode = 2
-size_flags_vertical = 3
-text = "TEXTOOOOOOOOOOOOOOOOOOO"
-
-[node name="Button2" type="Button" parent="Camera2D/CanvasLayer/Control/HBoxContainer" unique_id=895190286]
-layout_mode = 2
-size_flags_vertical = 3
-text = "TEXTOOOOOOOOOOOOOOOOOOO"
-
-[node name="Button3" type="Button" parent="Camera2D/CanvasLayer/Control/HBoxContainer" unique_id=928038347]
-layout_mode = 2
-size_flags_vertical = 3
-text = "TEXTOOOOOOOOOOOOOOOOOOO"
+size_flags_horizontal = 4
+size_flags_vertical = 4
