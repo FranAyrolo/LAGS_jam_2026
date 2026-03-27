@@ -1,4 +1,5 @@
-extends RigidBody2D
+extends BaseCryptid
+class_name Capibarus
 
 @export var movement_speed: float = 750
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
