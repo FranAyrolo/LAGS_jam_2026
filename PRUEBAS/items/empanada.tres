@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ItemUsable" format=3 uid="uid://dftd5b305wvxb"]
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dftd5b305wvxb"]
 
-[ext_resource type="Texture2D" uid="uid://dcly2v3toi4i" path="res://assets/2D/argentinian-assets-pack-v1.0/bebidas/mate-01.png" id="1_1c0om"]
+[ext_resource type="Texture2D" uid="uid://c61gpu813d50b" path="res://assets/2D/argentinian-assets-pack-v1.0/comida/empanada.png" id="1_umbid"]
 [ext_resource type="Script" uid="uid://ccv44572too1n" path="res://PRUEBAS/items/item_resource.gd" id="2_wukss"]
 
 [resource]
 script = ExtResource("2_wukss")
-nombre = "MATE"
-imagen = ExtResource("1_1c0om")
+nombre = "Empanada"
+imagen = ExtResource("1_umbid")
 metadata/_custom_type_script = "uid://ccv44572too1n"

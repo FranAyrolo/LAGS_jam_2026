@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cwnujkuarng5m"]
+
+[ext_resource type="Script" uid="uid://dibww46fy5emx" path="res://PRUEBAS/deposito_de_objetos.gd" id="1_r2kqv"]
+[ext_resource type="Texture2D" uid="uid://dbf257n40764p" path="res://assets/bandeja_plateup.png" id="2_1qona"]
+[ext_resource type="LabelSettings" uid="uid://bk4ufu0k5wwvo" path="res://PRUEBAS/label_item_objeto.tres" id="3_jnfx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qona"]
+size = Vector2(168, 152)
+
+[node name="DepositoDeObjetos" type="Node2D" unique_id=576087988]
+script = ExtResource("1_r2kqv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=261715863]
+scale = Vector2(1.3947369, 1.4491526)
+texture = ExtResource("2_1qona")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2064151647]
+collision_layer = 65
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1511118436]
+shape = SubResource("RectangleShape2D_1qona")
+
+[node name="Label" type="Label" parent="." unique_id=1812905980]
+offset_left = -106.0
+offset_top = -168.0
+offset_right = 120.0
+offset_bottom = -136.0
+label_settings = ExtResource("3_jnfx8")

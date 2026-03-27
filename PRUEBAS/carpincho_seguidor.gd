@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @export var movement_speed: float = 500.
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
-#@export var navigation_map: NavigationRegion2D
+var navigation_map_rid: RID
 
 var seguir_jugador: bool = false
 var esperando_jugador_salga: bool = false
@@ -13,7 +13,7 @@ func _ready() -> void:
 	navigation_agent.navigation_finished.connect(_on_navigation_finished)
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Do not query when the map has never synchronized and is empty.
 	if NavigationServer2D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
 		return
@@ -33,8 +33,10 @@ func _process(_delta: float) -> void:
 		set_movement_target(Global.get_player_global_position())
 	
 	#calcular si el jugador vuelve a estar en el navmesh para seguirlo
+	Global.request_navmap_rid.emit(self, Global.CryptidType.CARPINCHO)
 	var posicion_jugador: Vector2 = Global.get_player_global_position()
 	var punto_mas_cercano: Vector2 = NavigationServer2D.map_get_closest_point(NavigationServer2D.get_maps()[0], posicion_jugador)
+	#var punto_mas_cercano: Vector2 = NavigationServer2D.map_get_closest_point(navigation_map_rid, posicion_jugador)
 	if esperando_jugador_salga && punto_mas_cercano.distance_to(posicion_jugador) < 5:
 		esperando_jugador_salga = false
 		print("Carpincho te va a buscar")
@@ -50,7 +52,6 @@ func _on_navigation_finished() -> void:
 	else:
 		esperando_jugador_salga = true
 		print("Carpincho se dio contra la puerta")
-		
 
 
 func _on_timer_mate_timeout() -> void:

@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://dftd5b305wvxb" path="res://PRUEBAS/items/empanada.tres" id="5_3lht7"]
 [ext_resource type="Resource" uid="uid://dachwaluqwx03" path="res://PRUEBAS/items/mate.tres" id="6_x7w3n"]
 [ext_resource type="PackedScene" uid="uid://whnttgcwiimk" path="res://PRUEBAS/carpincho_seguidor.tscn" id="7_x7w3n"]
+[ext_resource type="PackedScene" uid="uid://cwnujkuarng5m" path="res://PRUEBAS/deposito_de_objetos.tscn" id="8_7wllf"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_eu6qq"]
 viewport_path = NodePath("Cam1")
@@ -48,13 +49,24 @@ item_data = ExtResource("5_3lht7")
 position = Vector2(272, 1240)
 item_data = ExtResource("6_x7w3n")
 
+[node name="ItemObjeto3" parent="." unique_id=866595722 instance=ExtResource("4_u4hm5")]
+position = Vector2(-272, 1240)
+item_data = ExtResource("6_x7w3n")
+
+[node name="ItemObjeto4" parent="." unique_id=1657895425 instance=ExtResource("4_u4hm5")]
+position = Vector2(-400, 1080)
+item_data = ExtResource("6_x7w3n")
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2117067103]
 navigation_polygon = SubResource("NavigationPolygon_3lht7")
 
 [node name="Carpincho" parent="." unique_id=1591465087 instance=ExtResource("7_x7w3n")]
 position = Vector2(-814, 505)
-movement_speed = 500.0
 
 [node name="Timer" type="Timer" parent="." unique_id=226669288]
 wait_time = 2.0
 autostart = true
+
+[node name="DepositoDeObjetos" parent="." unique_id=576087988 instance=ExtResource("8_7wllf")]
+position = Vector2(-1720, 592)
+objetos_aceptables = Array[String](["Empanada"])

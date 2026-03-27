@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cghkqyfp3gddx"]
 
-[ext_resource type="Script" uid="uid://cg6qmd6jnmkus" path="res://PRUEBAS/character_body_2d.gd" id="1_s7l7o"]
+[ext_resource type="Script" uid="uid://cg6qmd6jnmkus" path="res://PRUEBAS/player.gd" id="1_s7l7o"]
 [ext_resource type="Texture2D" uid="uid://bca2yncxbby0" path="res://assets/2D/Orko/PJ_01.png" id="2_fuerx"]
 [ext_resource type="Texture2D" uid="uid://bqms62x0rcu0a" path="res://assets/2D/Orko/PJ_02.png" id="2_s7l7o"]
 [ext_resource type="Theme" uid="uid://klqgh6jw46be" path="res://resources/themes/steal_this_theme.tres" id="3_mwwyb"]
@@ -40,6 +40,9 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s7l7o"]
 radius = 64.0
 height = 176.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fuerx"]
+radius = 80.0
 
 [node name="Player" type="CharacterBody2D" unique_id=669359742 groups=["grupo_jugador"]]
 collision_layer = 65
@@ -88,6 +91,16 @@ grow_vertical = 2
 
 [node name="Inventario" parent="Camera2D/CanvasLayer/Control/HBoxContainer" unique_id=896889723 instance=ExtResource("4_3t51j")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="DetectorDeItems" type="Area2D" parent="." unique_id=1977334729]
+unique_name_in_owner = true
+position = Vector2(120, 16)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorDeItems" unique_id=838573548]
+shape = SubResource("CircleShape2D_fuerx")

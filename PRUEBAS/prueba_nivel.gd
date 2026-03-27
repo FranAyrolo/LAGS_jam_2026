@@ -1,19 +1,19 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Timer.timeout.connect(_on_timer_timeout)
-	#%Camera2D.reparent(%Player)
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	Global.request_navmap_rid.connect(_on_navmap_rid_request)
+	$DepositoDeObjetos.agregar_objeto_aceptable("MAte")
 
 
 func _on_timer_timeout() -> void:
 	#$Carpincho.set_movement_target(%Player.global_position)
-	#print("timer timeout!!")
 	pass
+
+func _on_navmap_rid_request(node: Node, type: Global.CryptidType) -> void:
+	match type:
+		Global.CryptidType.CARPINCHO:
+			node.navigation_map_rid = $NavigationRegion2D.get_rid()
+		Global.CryptidType.DEFAULT:
+			push_error("Cryptido de tipo default!!")
