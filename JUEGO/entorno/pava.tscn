@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://caku6fdkifl51"]
+
+[ext_resource type="Script" uid="uid://vgfnfrd7wian" path="res://JUEGO/entorno/pava.gd" id="1_gfmpo"]
+[ext_resource type="Texture2D" uid="uid://b1rv818y780sq" path="res://assets/pava.png" id="2_kdx3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmo6n"]
+size = Vector2(248, 260.5)
+
+[node name="Pava" type="StaticBody2D" unique_id=1819632843]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_gfmpo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1146855071]
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("2_kdx3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=798977580]
+shape = SubResource("RectangleShape2D_tmo6n")

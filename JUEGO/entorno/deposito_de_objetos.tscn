@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cwnujkuarng5m"]
 
-[ext_resource type="Script" uid="uid://dibww46fy5emx" path="res://PRUEBAS/deposito_de_objetos.gd" id="1_r2kqv"]
+[ext_resource type="Script" uid="uid://dibww46fy5emx" path="res://JUEGO/entorno/deposito_de_objetos.gd" id="1_r2kqv"]
 [ext_resource type="Texture2D" uid="uid://dbf257n40764p" path="res://assets/bandeja_plateup.png" id="2_1qona"]
-[ext_resource type="LabelSettings" uid="uid://bk4ufu0k5wwvo" path="res://PRUEBAS/label_item_objeto.tres" id="3_jnfx8"]
+[ext_resource type="LabelSettings" uid="uid://bk4ufu0k5wwvo" path="res://JUEGO/label_item_objeto.tres" id="3_jnfx8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qona"]
 size = Vector2(168, 152)

@@ -1,7 +1,7 @@
 extends RigidBody2D
 class_name ObjetoItem
 
-@export var item_data: ItemResource = preload("res://PRUEBAS/items/default.tres")
+@export var item_data: ItemResource = preload("uid://ckwg84eo3kmi2")
 
 func _ready() -> void:
 	$Sprite2D.texture = item_data.imagen
@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	%EtiquetaNombre.visible = %DetectorProximidad.has_overlapping_bodies()
-	#if Input.is_action_just_pressed("INPUT_INTERACT") and %DetectorProximidad.has_overlapping_bodies():
+	#if Input.is_action_just_pressed("INPUT_ITEM") and %DetectorProximidad.has_overlapping_bodies():
 		#Global.item_seleccionado.emit(item_data, self)
 
 

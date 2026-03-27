@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://whnttgcwiimk"]
 
 [ext_resource type="Texture2D" uid="uid://h4x0wyp56ivk" path="res://assets/Capybara-PNG.png" id="1_ao4lr"]
-[ext_resource type="Script" uid="uid://cqy154x6bhhuj" path="res://PRUEBAS/carpincho_seguidor.gd" id="1_n5sc6"]
+[ext_resource type="Script" uid="uid://cqy154x6bhhuj" path="res://JUEGO/bichos/carpincho_seguidor.gd" id="1_n5sc6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n5sc6"]
 radius = 88.0

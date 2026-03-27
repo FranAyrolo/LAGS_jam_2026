@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://cghkqyfp3gddx"]
+
+[ext_resource type="Script" uid="uid://cg6qmd6jnmkus" path="res://JUEGO/player.gd" id="1_s7l7o"]
+[ext_resource type="Texture2D" uid="uid://bca2yncxbby0" path="res://assets/2D/Orko/PJ_01.png" id="2_fuerx"]
+[ext_resource type="Texture2D" uid="uid://bqms62x0rcu0a" path="res://assets/2D/Orko/PJ_02.png" id="2_s7l7o"]
+[ext_resource type="Texture2D" uid="uid://d300k3x4xffab" path="res://assets/2D/Orko/PJ_03.png" id="4_dbjbh"]
+[ext_resource type="Texture2D" uid="uid://bxfmatj8001fu" path="res://assets/2D/Orko/PJ_04.png" id="5_2ey7g"]
+[ext_resource type="Texture2D" uid="uid://o7mfap6bv5st" path="res://assets/2D/Orko/PJ_05.png" id="6_33vmg"]
+[ext_resource type="Texture2D" uid="uid://c1q83q3ghvhy8" path="res://assets/2D/argentinian-assets-pack-v1.0/bebidas/mate-02.png" id="7_8vnvl"]
+[ext_resource type="Texture2D" uid="uid://dqnmcrployfso" path="res://assets/termo.jpg" id="7_dbjbh"]
+[ext_resource type="Texture2D" uid="uid://bhfv01eox42vw" path="res://assets/toon_water_tex.png" id="8_dbjbh"]
+[ext_resource type="Texture2D" uid="uid://0anmms6p2a3" path="res://assets/clock.png" id="10_2ey7g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmhfc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fuerx")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s7l7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dbjbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2ey7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_33vmg")
+}],
+"loop": true,
+"name": &"Movimiento",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s7l7o"]
+radius = 64.0
+height = 176.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fuerx"]
+radius = 80.0
+
+[node name="Player" type="CharacterBody2D" unique_id=669359742 groups=["grupo_jugador"]]
+collision_layer = 65
+platform_on_leave = 2
+script = ExtResource("1_s7l7o")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1740873799]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_hmhfc")
+animation = &"Movimiento"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1120897322]
+position = Vector2(0, 40)
+shape = SubResource("CapsuleShape2D_s7l7o")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=541175628]
+unique_name_in_owner = true
+zoom = Vector2(0.2, 0.2)
+limit_left = -5088
+limit_top = -4520
+limit_right = 5064
+limit_bottom = 4424
+limit_smoothed = true
+position_smoothing_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=337572671]
+
+[node name="TermoYMate" type="Node2D" parent="Camera2D/CanvasLayer" unique_id=1805822755]
+
+[node name="Termo" type="Sprite2D" parent="Camera2D/CanvasLayer/TermoYMate" unique_id=823356916]
+unique_name_in_owner = true
+position = Vector2(160.00002, 352)
+scale = Vector2(1.5158731, 2.0157895)
+texture = ExtResource("7_dbjbh")
+
+[node name="BarraTermo" type="TextureProgressBar" parent="Camera2D/CanvasLayer/TermoYMate/Termo" unique_id=693951102]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.123
+anchor_top = 0.23500001
+anchor_right = 0.54200006
+anchor_bottom = 0.89000005
+offset_left = -62.99539
+offset_top = -142.3797
+offset_right = -63.014526
+offset_bottom = -142.52728
+step = 0.5
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("8_dbjbh")
+
+[node name="Reloj" type="TextureProgressBar" parent="Camera2D/CanvasLayer" unique_id=524162158]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.08911112
+anchor_right = 0.9
+anchor_bottom = 0.35533336
+offset_top = -0.15999985
+offset_bottom = 0.1599884
+value = 69.0
+fill_mode = 5
+nine_patch_stretch = true
+texture_under = ExtResource("10_2ey7g")
+texture_progress = ExtResource("10_2ey7g")
+tint_under = Color(1, 1, 1, 0.15686275)
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Camera2D/CanvasLayer" unique_id=439628717]
+anchors_preset = -1
+anchor_left = 0.70000005
+anchor_top = 0.53300005
+anchor_right = 0.90000004
+anchor_bottom = 0.8880001
+offset_left = -6.1035156e-05
+offset_top = 0.23995972
+offset_bottom = 0.6399536
+
+[node name="Mate" type="Button" parent="Camera2D/CanvasLayer/Panel" unique_id=1824478613]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+icon = ExtResource("7_8vnvl")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BarraMate" type="TextureProgressBar" parent="Camera2D/CanvasLayer/Panel/Mate" unique_id=725090179]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15044683
+anchor_top = 0.43359378
+anchor_right = 0.6542968
+anchor_bottom = 0.9135189
+offset_left = -7.5
+offset_top = -7.0
+offset_right = -7.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 20.0
+step = 0.5
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("8_dbjbh")
+metadata/_edit_use_anchors_ = true
+
+[node name="Detectores" type="Node2D" parent="." unique_id=2009243587]
+unique_name_in_owner = true
+position = Vector2(128, 40)
+
+[node name="DetectorDeItems" type="Area2D" parent="Detectores" unique_id=1977334729]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detectores/DetectorDeItems" unique_id=838573548]
+shape = SubResource("CircleShape2D_fuerx")
+
+[node name="DetectorDeInteractuables" type="Area2D" parent="Detectores" unique_id=687759099]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detectores/DetectorDeInteractuables" unique_id=514879213]
+shape = SubResource("CircleShape2D_fuerx")

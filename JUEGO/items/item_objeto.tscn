@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dey2upx52ry01"]
 
-[ext_resource type="Script" uid="uid://cfegxtfmhlev1" path="res://PRUEBAS/items/item_objeto.gd" id="1_v1bjb"]
+[ext_resource type="Script" uid="uid://cfegxtfmhlev1" path="res://JUEGO/items/item_objeto.gd" id="1_v1bjb"]
 [ext_resource type="Texture2D" uid="uid://y1ghxidp4er4" path="res://assets/2D/argentinian-assets-pack-v1.0/bebidas/esto-no-es-coca-papi.png" id="2_klcyg"]
 [ext_resource type="Theme" uid="uid://klqgh6jw46be" path="res://resources/themes/steal_this_theme.tres" id="3_3w1mt"]
-[ext_resource type="LabelSettings" uid="uid://bk4ufu0k5wwvo" path="res://PRUEBAS/label_item_objeto.tres" id="4_3w1mt"]
+[ext_resource type="LabelSettings" uid="uid://bk4ufu0k5wwvo" path="res://JUEGO/label_item_objeto.tres" id="4_3w1mt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_klcyg"]
 radius = 248.0

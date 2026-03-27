@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://coemgowauan67"]
 
-[ext_resource type="Script" uid="uid://cpatx37jouaqf" path="res://PRUEBAS/inventario.gd" id="1_51uya"]
+[ext_resource type="Script" uid="uid://cpatx37jouaqf" path="res://JUEGO/items/inventario.gd" id="1_51uya"]
 [ext_resource type="Texture2D" uid="uid://b4pufwlqgje3b" path="res://event2.png" id="2_i40h4"]
-[ext_resource type="LabelSettings" uid="uid://bjl8xeqro1w6j" path="res://PRUEBAS/label_item_inventario.tres" id="3_i40h4"]
+[ext_resource type="LabelSettings" uid="uid://bjl8xeqro1w6j" path="res://JUEGO/label_item_inventario.tres" id="3_i40h4"]
 
 [node name="Inventario" type="Control" unique_id=896889723]
 layout_mode = 3

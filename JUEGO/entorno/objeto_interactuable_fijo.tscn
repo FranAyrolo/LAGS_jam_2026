@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bo6w2cmubylp3"]
+
+[ext_resource type="Texture2D" uid="uid://b4pufwlqgje3b" path="res://event2.png" id="1_2m24m"]
+[ext_resource type="Script" uid="uid://2jjm67g7fbvk" path="res://JUEGO/entorno/objeto_interactuable_fijo.gd" id="1_xpbxg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpbxg"]
+size = Vector2(93, 85)
+
+[node name="ObjetoInteractuableFijo" type="StaticBody2D" unique_id=1966580961]
+script = ExtResource("1_xpbxg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1532290861]
+scale = Vector2(7.0192304, 3.7282608)
+texture = ExtResource("1_2m24m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1950613258]
+shape = SubResource("RectangleShape2D_xpbxg")

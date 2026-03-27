@@ -1,18 +1,21 @@
 extends CharacterBody2D
+class_name Player
 
-@export var SPEED = 100000.0
+@export var SPEED = 1000.0
 var item_en_mano: ObjetoItem
 var offset_objeto_mano := Vector2(100, 50)
-var posicion_detector_de_items: Vector2
+var offset_detectores: Vector2
+var mate_listo: bool = false
 
 func _ready() -> void:
 	Global.item_seleccionado.connect(_on_item_seleccionado)
-	posicion_detector_de_items = %DetectorDeItems.position
+	Global.cargar_termo.connect(_on_cargar_termo)
+	offset_detectores = %Detectores.position
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction := Vector2(Input.get_axis("INPUT_LEFT", "INPUT_RIGHT"), Input.get_axis("INPUT_UP", "INPUT_DOWN"))
-	velocity = direction * SPEED * delta
+	velocity = direction * SPEED
 	if velocity.distance_to(Vector2.ZERO) <= 0.001:
 		$Sprite.play("Idle")
 	else:
@@ -27,6 +30,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _process(_delta: float) -> void:
+	#gestion de sprites e items
 	if item_en_mano:
 		if %Sprite.flip_h:
 			item_en_mano.global_position = global_position + offset_objeto_mano * Vector2(-1, 1)
@@ -34,12 +38,22 @@ func _process(_delta: float) -> void:
 			item_en_mano.global_position = global_position + offset_objeto_mano
 	
 	if %Sprite.flip_h:
-		%DetectorDeItems.position = posicion_detector_de_items * Vector2(-1, 1)
+		%Detectores.position = offset_detectores * Vector2(-1, 1)
 	else:
-		%DetectorDeItems.position = posicion_detector_de_items
+		%Detectores.position = offset_detectores
 	
-	if Input.is_action_just_pressed("INPUT_INTERACT"):
+	if Input.is_action_just_pressed("INPUT_ITEM"):
 		soltar_juntar_item()
+	if Input.is_action_pressed("INPUT_INTERACT") && %DetectorDeInteractuables.has_overlapping_bodies():
+		for interactuable in %DetectorDeInteractuables.get_overlapping_bodies():
+			interactuable.interactuar()
+		
+	
+	#Carga del mate
+	if %Mate.button_pressed && !mate_listo && %BarraTermo.value > 0.:
+		%BarraMate.value += %BarraMate.step
+		%BarraTermo.value -= %BarraMate.step
+	mate_listo = %BarraMate.value >= %BarraMate.max_value
 
 
 func soltar_juntar_item() -> void:
@@ -63,6 +77,24 @@ func levantar_item(objeto_item: RigidBody2D) -> void:
 	objeto_item.reparent(self, false)
 	item_en_mano = objeto_item
 	item_en_mano.ser_juntado()
+
+
+func piden_mate() -> bool:
+	if mate_listo:
+		%Mate.visible = false
+		%BarraMate.value = 0.
+		mate_listo = false
+		return true
+	else:
+		return false
+
+func recibir_mate() -> void:
+	%Mate.visible = true
+	%BarraMate.value = 0.
+
+
+func _on_cargar_termo(cant: float) -> void:
+	%BarraTermo.value += cant
 
 
 func _on_item_seleccionado(_item: ItemResource, objeto_item: RigidBody2D) -> void:
