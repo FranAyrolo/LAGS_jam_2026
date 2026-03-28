@@ -5,14 +5,12 @@ enum CryptidType {DEFAULT, CARPINCHO, POMBERO, SOMBRERON, CURUPIRA,
 					SILBON, CHUPACABRAS, CADEJO, LLORONA, LUZ_MALA, MANDINGA}
 enum EstadoAlerta {VERDE, AMARILLO, NARANJA, ROJO, NEGRO}
 
-@export var nombre = "DEFAULT"
 @export var nombre: CryptidType = CryptidType.DEFAULT
 @export var estado_alerta_inicial: EstadoAlerta = EstadoAlerta.VERDE
 @export var estado_alerta_actual: EstadoAlerta = EstadoAlerta.VERDE
 @export var movement_speed: float = 750
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
-
 
 #fue, la hago cabeza porque hacerlo bonito esta complicado
 func aumentar_alerta() -> void:
