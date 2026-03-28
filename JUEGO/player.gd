@@ -100,14 +100,11 @@ func _on_cargar_termo(cant: float) -> void:
 	%BarraTermo.value += cant
 
 
-<<<<<<< HEAD
 func _on_item_seleccionado(_item: ItemResource, objeto_item: RigidBody2D) -> void:
 	pass
 
-##AAAAAA
-=======
+
 func _on_timer_reloj_timeout() -> void:
 	%Reloj.value += %Reloj.step
 	if %Reloj.value >= %Reloj.max_value:
 		Global.reloj_jugador_termino.emit()
->>>>>>> main
