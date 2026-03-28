@@ -8,7 +8,6 @@ class_name DepositoDeObjetos
 var objeto_depositado: ObjetoItem = null
 
 
-
 func _ready() -> void:
 	if imagen:
 		$Sprite2D.texture = imagen

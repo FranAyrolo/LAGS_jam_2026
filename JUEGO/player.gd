@@ -10,8 +10,9 @@ var offset_detectores: Vector2
 var mate_listo: bool = false
 
 func _ready() -> void:
-	Global.item_seleccionado.connect(_on_item_seleccionado)
+	#Global.item_seleccionado.connect(_on_item_seleccionado)
 	Global.cargar_termo.connect(_on_cargar_termo)
+	%TimerReloj.timeout.connect(_on_timer_reloj_timeout)
 	offset_detectores = %Detectores.position
 
 
@@ -49,7 +50,6 @@ func _process(_delta: float) -> void:
 	if Input.is_action_pressed("INPUT_INTERACT") && %DetectorDeInteractuables.has_overlapping_bodies():
 		for interactuable in %DetectorDeInteractuables.get_overlapping_bodies():
 			interactuable.interactuar()
-		
 	
 	#Carga del mate
 	if %Mate.button_pressed && !mate_listo && %BarraTermo.value > 0.:
@@ -90,6 +90,7 @@ func piden_mate() -> bool:
 	else:
 		return false
 
+
 func recibir_mate() -> void:
 	%Mate.visible = true
 	%BarraMate.value = 0.
@@ -99,5 +100,7 @@ func _on_cargar_termo(cant: float) -> void:
 	%BarraTermo.value += cant
 
 
-func _on_item_seleccionado(_item: ItemResource, objeto_item: RigidBody2D) -> void:
-	pass
+func _on_timer_reloj_timeout() -> void:
+	%Reloj.value += %Reloj.step
+	if %Reloj.value >= %Reloj.max_value:
+		Global.reloj_jugador_termino.emit()
