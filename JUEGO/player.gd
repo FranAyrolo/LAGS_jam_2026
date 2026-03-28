@@ -17,19 +17,27 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+<<<<<<< HEAD
 	var direction := Vector2(Input.get_axis("INPUT_LEFT", "INPUT_RIGHT"), Input.get_axis("INPUT_UP", "INPUT_DOWN"))
 	velocity = direction.normalized() * SPEED
+=======
+	var direction := Vector2(Input.get_axis("INPUT_LEFT", "INPUT_RIGHT"), Input.get_axis("INPUT_UP", "INPUT_DOWN")).normalized()
+	velocity = direction * SPEED
+>>>>>>> main
 	if velocity.distance_to(Vector2.ZERO) <= 0.001:
 		$Sprite.play("Idle")
 	else:
 		$Sprite.play("Movimiento")
+<<<<<<< HEAD
 	#velocity.move_toward(Vector2.ZERO, SPEED)
+=======
+		move_and_slide()
+	velocity.move_toward(Vector2.ZERO, SPEED)
+>>>>>>> main
 	
 	#Alinear el sprite y el objeto en la mano
 	if direction.x != 0:
 		%Sprite.flip_h = direction.x < 0
-	
-	move_and_slide()
 
 
 func _process(_delta: float) -> void:
@@ -100,14 +108,11 @@ func _on_cargar_termo(cant: float) -> void:
 	%BarraTermo.value += cant
 
 
-<<<<<<< HEAD
 func _on_item_seleccionado(_item: ItemResource, objeto_item: RigidBody2D) -> void:
 	pass
 
-##AAAAAA
-=======
+
 func _on_timer_reloj_timeout() -> void:
 	%Reloj.value += %Reloj.step
 	if %Reloj.value >= %Reloj.max_value:
 		Global.reloj_jugador_termino.emit()
->>>>>>> main
