@@ -31,6 +31,7 @@ func _physics_process(_delta: float) -> void:
 		%Sprite.flip_h = direction.x < 0
 
 
+
 func _process(_delta: float) -> void:
 	#gestion de sprites e items
 	if item_en_mano:

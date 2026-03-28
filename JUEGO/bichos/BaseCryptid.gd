@@ -12,7 +12,6 @@ enum EstadoAlerta {VERDE, AMARILLO, NARANJA, ROJO, NEGRO}
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
-
 #fue, la hago cabeza porque hacerlo bonito esta complicado
 func aumentar_alerta() -> void:
 	if estado_alerta_actual != EstadoAlerta.NEGRO:
