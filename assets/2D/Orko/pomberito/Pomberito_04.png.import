@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqms62x0rcu0a"
-path="res://.godot/imported/PJ_02.png-907220a46dce03bcdae4021ef7fb110d.ctex"
+uid="uid://ogexl3mvolw3"
+path="res://.godot/imported/Pomberito_04.png-e673feb4a4cd7082f72da57874155bba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2D/Orko/PJ_02.png"
-dest_files=["res://.godot/imported/PJ_02.png-907220a46dce03bcdae4021ef7fb110d.ctex"]
+source_file="res://assets/2D/Orko/pomberito/Pomberito_04.png"
+dest_files=["res://.godot/imported/Pomberito_04.png-e673feb4a4cd7082f72da57874155bba.ctex"]
 
 [params]
 

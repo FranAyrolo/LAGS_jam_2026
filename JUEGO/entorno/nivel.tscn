@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b3qnlhlhu0hw8" path="res://assets/2D/Orko/Escenario_pared.png" id="2_hlhfb"]
 [ext_resource type="PackedScene" uid="uid://cghkqyfp3gddx" path="res://JUEGO/player.tscn" id="3_6jq6r"]
 [ext_resource type="PackedScene" uid="uid://dey2upx52ry01" path="res://JUEGO/items/item_objeto.tscn" id="4_2uisl"]
-[ext_resource type="Texture2D" uid="uid://dfs1uhfobvu5s" path="res://assets/2D/Orko/Silbon/Silbon_01.png" id="4_qwutd"]
+[ext_resource type="Texture2D" uid="uid://dfs1uhfobvu5s" path="res://assets/2D/Orko/silbon/Silbon_01.png" id="4_qwutd"]
 [ext_resource type="Resource" uid="uid://dftd5b305wvxb" path="res://JUEGO/items/empanada.tres" id="5_iyq21"]
 [ext_resource type="Resource" uid="uid://dachwaluqwx03" path="res://JUEGO/items/mate.tres" id="6_x4ort"]
 [ext_resource type="PackedScene" uid="uid://whnttgcwiimk" path="res://JUEGO/bichos/carpincho_seguidor.tscn" id="7_xrgas"]

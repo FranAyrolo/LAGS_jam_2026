@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gmh05uclcq1e"
-path="res://.godot/imported/Curupira_01.png-2cedca9c25e6887423d8777003de4e7f.ctex"
+uid="uid://2baeha2blg85"
+path="res://.godot/imported/PJ_Naranja_02.png-3804c48717f5cc1bdcf3f1ff72bce210.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2D/Orko/Curupira_01.png"
-dest_files=["res://.godot/imported/Curupira_01.png-2cedca9c25e6887423d8777003de4e7f.ctex"]
+source_file="res://assets/2D/Orko/PJ/PJ_Naranja_02.png"
+dest_files=["res://.godot/imported/PJ_Naranja_02.png-3804c48717f5cc1bdcf3f1ff72bce210.ctex"]
 
 [params]
 

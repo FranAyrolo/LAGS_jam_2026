@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfs1uhfobvu5s"
-path="res://.godot/imported/Silbon_01.png-ac12e358b00ebba69f71c70beafac5a1.ctex"
+uid="uid://ctk5yjivgrvde"
+path="res://.godot/imported/PJ_Rojo_04.png-12bf3042cda3edcb298bfa760b7fce1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2D/Orko/Silbon/Silbon_01.png"
-dest_files=["res://.godot/imported/Silbon_01.png-ac12e358b00ebba69f71c70beafac5a1.ctex"]
+source_file="res://assets/2D/Orko/PJ/PJ_Rojo_04.png"
+dest_files=["res://.godot/imported/PJ_Rojo_04.png-12bf3042cda3edcb298bfa760b7fce1b.ctex"]
 
 [params]
 

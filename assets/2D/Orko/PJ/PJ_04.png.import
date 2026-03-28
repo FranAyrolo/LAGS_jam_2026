@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o7mfap6bv5st"
-path="res://.godot/imported/PJ_05.png-804cb7b40bf2370c8c157a2741eda926.ctex"
+uid="uid://bxfmatj8001fu"
+path="res://.godot/imported/PJ_04.png-a31e2050fe1caa2ce3404124463eaf4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2D/Orko/PJ_05.png"
-dest_files=["res://.godot/imported/PJ_05.png-804cb7b40bf2370c8c157a2741eda926.ctex"]
+source_file="res://assets/2D/Orko/PJ/PJ_04.png"
+dest_files=["res://.godot/imported/PJ_04.png-a31e2050fe1caa2ce3404124463eaf4e.ctex"]
 
 [params]
 
