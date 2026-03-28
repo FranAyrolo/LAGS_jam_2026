@@ -1,8 +1,6 @@
 extends BaseCryptid
 class_name Capibarus
 
-@export var movement_speed: float = 750
-@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
 var navigation_map_rid: RID
 var tiene_mate: bool = false
@@ -48,7 +46,7 @@ func _process(_delta: float) -> void:
 			set_movement_target(pos_jugador)
 	
 	#calcular si el jugador volvio a entrar estar en el navmesh para seguirlo
-	Global.request_navmap_rid.emit(self, Global.CryptidType.CARPINCHO)
+	Global.request_navmap_rid.emit(self, BaseCryptid.CryptidType.CARPINCHO)
 	var punto_mas_cercano: Vector2 = NavigationServer2D.map_get_closest_point(NavigationServer2D.get_maps()[0], pos_jugador)
 	#var punto_mas_cercano: Vector2 = NavigationServer2D.map_get_closest_point(navigation_map_rid, posicion_jugador)
 	if !jugador_en_navmesh && punto_mas_cercano.distance_to(pos_jugador) < 5:
@@ -71,7 +69,7 @@ func _on_navigation_finished() -> void:
 				seguir_jugador = false
 				$TimerMate.start()
 				print("carpincho ta tomando mate :3")
-		
+	
 	else:
 		jugador_en_navmesh = false
 		print("Carpincho se dio contra la puerta")
@@ -86,6 +84,6 @@ func _on_timer_mate_timeout() -> void:
 func set_movement_target(movement_target: Vector2):
 	navigation_agent.set_target_position(movement_target)
 
-
+#esto tambien no tocar
 func _on_velocity_computed(safe_velocity: Vector2):
 	linear_velocity = safe_velocity
