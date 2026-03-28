@@ -77,7 +77,6 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=337572671]
-visible = false
 
 [node name="TermoYMate" type="Node2D" parent="Camera2D/CanvasLayer" unique_id=1805822755]
 

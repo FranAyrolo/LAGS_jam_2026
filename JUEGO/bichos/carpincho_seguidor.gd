@@ -37,7 +37,10 @@ func _physics_process(_delta):
 func _process(_delta: float) -> void:
 	#Mientras el jugador este dentro de su navmesh, va actualizando a donde ir
 	pos_jugador = Global.get_player().global_position
-	pos_adelantada_jugador = pos_jugador + Global.get_player().velocity * molestitud
+	if seguir_jugador && !mate_lleno:
+		pos_adelantada_jugador = pos_jugador + Global.get_player().velocity * 0.5
+	else:
+		pos_adelantada_jugador = pos_jugador + Global.get_player().velocity * molestitud
 	if seguir_jugador && jugador_en_navmesh:
 		#Vas hacia el punto mas lejano, tratando de entorpecer al jugador
 		if global_position.distance_to(pos_jugador) < global_position.distance_to(pos_adelantada_jugador):
