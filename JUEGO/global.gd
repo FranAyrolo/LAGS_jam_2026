@@ -15,6 +15,12 @@ func get_player() -> Player:
 	return grupo[0] as Player
 
 
+func dar_objeto_a_nivel(obj: ObjetoItem) -> void:
+	var arr = get_tree().get_nodes_in_group("nivel")
+	assert(arr.size() == 1)
+	obj.reparent(arr[0])
+
+
 #func get_player_global_position() -> Vector2:
 	#var grupo: Array[Node] = get_tree().get_nodes_in_group("grupo_jugador")
 	#assert(grupo.size() > 0)

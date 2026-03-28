@@ -7,23 +7,25 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qona"]
 size = Vector2(168, 152)
 
-[node name="DepositoDeObjetos" type="Node2D" unique_id=576087988]
+[node name="DepositoDeObjetos" type="Area2D" unique_id=700588652]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_r2kqv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=261715863]
 scale = Vector2(1.3947369, 1.4491526)
 texture = ExtResource("2_1qona")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2064151647]
-collision_layer = 65
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1511118436]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1511118436]
 shape = SubResource("RectangleShape2D_1qona")
 
 [node name="Label" type="Label" parent="." unique_id=1812905980]
 offset_left = -106.0
 offset_top = -168.0
 offset_right = 120.0
-offset_bottom = -136.0
+offset_bottom = -99.0
 label_settings = ExtResource("3_jnfx8")
+
+[node name="Timer" type="Timer" parent="." unique_id=1815822645]
+wait_time = 0.2
+one_shot = true

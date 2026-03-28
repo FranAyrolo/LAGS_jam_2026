@@ -58,26 +58,45 @@ func _process(_delta: float) -> void:
 
 
 func soltar_juntar_item() -> void:
-	var bodies: Array[Node2D] = %DetectorDeItems.get_overlapping_bodies()
-	soltar_item()
-	if bodies.size() > 0:
-		bodies.filter(func(b): return b is ObjetoItem)
-		levantar_item(bodies.pick_random())
+	if item_en_mano:
+		if %DetectorDeInteractuables.has_overlapping_areas():
+			var arr = %DetectorDeInteractuables.get_overlapping_areas()
+			assert(arr.size() == 1, "hay interactuables puestos uno encima del otro. Si esta bien sacar este assert :)")
+			var depo: DepositoDeObjetos = arr[0]
+			var aceptado = depo.recibir_objeto(item_en_mano)
+			if aceptado:
+				item_en_mano = null
+		else:
+			soltar_item()
+	else:
+		if %DetectorDeInteractuables.has_overlapping_areas():
+			var arr = %DetectorDeInteractuables.get_overlapping_areas()
+			assert(arr.size() == 1, "hay interactuables puestos uno encima del otro. Si esta bien sacar este assert :)")
+			var depo: DepositoDeObjetos = arr[0]
+			item_en_mano = depo.soltar_objeto()
+			if item_en_mano:
+				item_en_mano.reparent(self)
+				item_en_mano.ser_juntado()
+		else:
+			levantar_item()
 
 
 func soltar_item() -> void:
-	if item_en_mano != null:
-		item_en_mano.reparent(get_parent())
-		item_en_mano.global_position = %DetectorDeItems.global_position
-		item_en_mano.ser_puesto_en_el_piso()
-		item_en_mano = null
+	item_en_mano.reparent(get_parent())
+	item_en_mano.global_position = %DetectorDeItems.global_position
+	item_en_mano.ser_puesto_en_el_piso()
+	item_en_mano = null
 
 
-func levantar_item(objeto_item: RigidBody2D) -> void:
-	objeto_item.global_position = global_position
-	objeto_item.reparent(self, false)
-	item_en_mano = objeto_item
-	item_en_mano.ser_juntado()
+func levantar_item() -> void:
+	var bodies: Array[Node2D] = %DetectorDeItems.get_overlapping_bodies()
+	bodies.filter(func(b): return b is ObjetoItem)
+	if bodies.size() > 0:
+		var objeto = bodies.pick_random()
+		objeto.global_position = global_position
+		objeto.reparent(self, false)
+		item_en_mano = objeto
+		item_en_mano.ser_juntado()
 
 
 func piden_mate() -> bool:

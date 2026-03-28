@@ -8,8 +8,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_klcyg"]
 radius = 248.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5v0p"]
-size = Vector2(256, 256)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4nbub"]
+radius = 80.0
+height = 272.0
 
 [node name="ItemObjeto" type="RigidBody2D" unique_id=866595722]
 collision_layer = 2
@@ -53,4 +54,4 @@ collision_mask = 64
 shape = SubResource("CircleShape2D_klcyg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=596339933]
-shape = SubResource("RectangleShape2D_e5v0p")
+shape = SubResource("CapsuleShape2D_4nbub")
