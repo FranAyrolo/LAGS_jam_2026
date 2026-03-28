@@ -82,12 +82,14 @@ editor_draw_drag_margin = true
 
 [node name="Termo" type="Sprite2D" parent="Camera2D/CanvasLayer/TermoYMate" unique_id=823356916]
 unique_name_in_owner = true
+visible = false
 position = Vector2(160.00002, 352)
 scale = Vector2(1.5158731, 2.0157895)
 texture = ExtResource("7_dbjbh")
 
 [node name="BarraTermo" type="TextureProgressBar" parent="Camera2D/CanvasLayer/TermoYMate/Termo" unique_id=693951102]
 unique_name_in_owner = true
+visible = false
 anchors_preset = -1
 anchor_left = 0.123
 anchor_top = 0.23500001
@@ -105,6 +107,7 @@ texture_progress = ExtResource("8_dbjbh")
 
 [node name="Reloj" type="TextureProgressBar" parent="Camera2D/CanvasLayer" unique_id=524162158]
 unique_name_in_owner = true
+visible = false
 anchors_preset = -1
 anchor_left = 0.75
 anchor_top = 0.08911112
@@ -121,6 +124,7 @@ tint_under = Color(1, 1, 1, 0.15686275)
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="Camera2D/CanvasLayer" unique_id=439628717]
+visible = false
 anchors_preset = -1
 anchor_left = 0.70000005
 anchor_top = 0.53300005
@@ -132,6 +136,7 @@ offset_bottom = 0.6399536
 
 [node name="Mate" type="Button" parent="Camera2D/CanvasLayer/Panel" unique_id=1824478613]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -146,6 +151,7 @@ expand_icon = true
 
 [node name="BarraMate" type="TextureProgressBar" parent="Camera2D/CanvasLayer/Panel/Mate" unique_id=725090179]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.15044683
