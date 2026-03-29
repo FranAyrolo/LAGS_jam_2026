@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://xr017t6h0b27" path="res://assets/2D/Orko/Puertas/Puerta_Costado_01.png" id="5_g3b3p"]
 [ext_resource type="Resource" uid="uid://dftd5b305wvxb" path="res://JUEGO/items/cigarrillos.tres" id="5_iyq21"]
 [ext_resource type="Texture2D" uid="uid://clqnhadgwau50" path="res://assets/2D/Orko/Puertas/Puerta_Costado_02.png" id="6_m7xqr"]
-[ext_resource type="Resource" uid="uid://dachwaluqwx03" path="res://JUEGO/items/mate.tres" id="6_x4ort"]
 [ext_resource type="PackedScene" uid="uid://whnttgcwiimk" path="res://JUEGO/bichos/carpincho_seguidor.tscn" id="7_xrgas"]
 [ext_resource type="Texture2D" uid="uid://bfdmg1fbdj52y" path="res://assets/2D/Orko/Puertas/Puerta_Costado_03.png" id="7_y3dsa"]
 [ext_resource type="Texture2D" uid="uid://gmh05uclcq1e" path="res://assets/2D/Orko/curupira/Curupira_01.png" id="8_n50qt"]
@@ -169,7 +168,7 @@ polygon = PackedVector2Array(512, 176, 520, -80, -528, -80, -528, 352, -312, 352
 
 [node name="Player" parent="." unique_id=669359742 instance=ExtResource("3_6jq6r")]
 unique_name_in_owner = true
-z_index = 1
+z_index = 2
 position = Vector2(-248, 1992)
 motion_mode = 1
 
@@ -208,7 +207,7 @@ item_data = ExtResource("9_y0tya")
 [node name="ItemObjeto4" parent="Objetos" unique_id=1657895425 instance=ExtResource("4_2uisl")]
 position = Vector2(1432, 1472)
 
-[node name="Regadera" parent="Objetos" unique_id=1657895425 instance=ExtResource("4_2uisl")]
+[node name="Regadera" parent="Objetos" unique_id=2033734681 instance=ExtResource("4_2uisl")]
 position = Vector2(-2504, -2672)
 item_data = ExtResource("15_y3dsa")
 
@@ -285,15 +284,16 @@ position = Vector2(560, 48)
 build_mode = 1
 polygon = PackedVector2Array(-4032, 1072, -3928, 1088, -3848, 1120, -3784, 1168, -3696, 1240, -3648, 1296, -3624, 1376, -3704, 1464, -3760, 1512, -3864, 1576, -4016, 1584, -4184, 1584, -4320, 1552, -4440, 1496, -4528, 1424, -4528, 1328, -4472, 1232, -4344, 1120, -4160, 1072)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=565674393]
-
-[node name="MiniJuegoMate" parent="CanvasLayer" unique_id=867639483 instance=ExtResource("2_43114")]
-visible = false
 [node name="Curupira" parent="Criptidos" unique_id=21967619 instance=ExtResource("27_m7xqr")]
 unique_name_in_owner = true
 position = Vector2(-3264, -1312)
 nombre = 4
 criptido_activo = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=565674393]
+
+[node name="MiniJuegoMate" parent="CanvasLayer" unique_id=867639483 instance=ExtResource("2_43114")]
+visible = false
 
 [connection signal="objeto_aceptado" from="Objetos/DepositoPomberito" to="Criptidos/Pomberito" method="_on_deposito_pomberito_objeto_aceptado"]
 [connection signal="timeout" from="Criptidos/CriptidoTimer" to="Criptidos" method="_on_criptido_timer_timeout"]
