@@ -2,13 +2,43 @@ extends Node2D
 
 
 func _ready() -> void:
-	#%TimerReloj.timeout.connect(avanzar_tiempo_reloj)
+	%MenuIngame.visible = false
 	Global.request_navmap_rid.connect(_on_navmap_rid_request)
+	%Continuar.pressed.connect(_mostrar_menu)
+	%Opciones.pressed.connect(_on_opciones_pressed)
+	%Creditos.pressed.connect(_on_creditos_pressed)
+	%Salir.pressed.connect(get_tree().quit)
+	%Volver.pressed.connect(_on_volver_pressed)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	%Volver.visible = %CreditosIngame.visible || %OpcionesIngame.visible
 	if Input.is_action_just_pressed("INPUT_ESC"):
-		get_tree().quit()
+		_mostrar_menu()
+
+
+func _mostrar_menu() -> void:
+	%MenuIngame.visible = not %MenuIngame.visible
+	if %MenuIngame.visible:
+		%CreditosIngame.visible = false
+		%OpcionesIngame.visible = false
+	%Player.habilitar_input = not %MenuIngame.visible
+
+
+func _on_opciones_pressed() -> void:
+	%MenuIngame.visible = false
+	%OpcionesIngame.visible = true
+
+
+func _on_creditos_pressed() -> void:
+	%MenuIngame.visible = false
+	%CreditosIngame.visible = true
+
+
+func _on_volver_pressed() -> void:
+	%CreditosIngame.visible = false
+	%OpcionesIngame.visible = false
+	%MenuIngame.visible = true
 
 
 func avanzar_tiempo_reloj() -> void:

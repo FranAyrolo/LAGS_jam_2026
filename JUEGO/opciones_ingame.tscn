@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://d326ww52qsjyh"]
+
+[ext_resource type="Script" uid="uid://bwugqn2cjr41e" path="res://addons/maaacks_game_template/base/nodes/menus/options_menu/audio/audio_options_menu.gd" id="1_nu71s"]
+[ext_resource type="PackedScene" uid="uid://cl416gdb1fgwr" path="res://addons/maaacks_game_template/base/nodes/menus/options_menu/option_control/slider_option_control.tscn" id="2_plfm4"]
+[ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_game_template/base/nodes/utilities/capture_focus.gd" id="3_t55tm"]
+[ext_resource type="PackedScene" uid="uid://bsxh6v7j0257h" path="res://addons/maaacks_game_template/base/nodes/menus/options_menu/option_control/toggle_option_control.tscn" id="4_phpdd"]
+
+[node name="opciones_ingame" type="Control" unique_id=1151123548]
+custom_minimum_size = Vector2(305, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nu71s")
+audio_control_scene = ExtResource("2_plfm4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1265848630]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.53333336
+anchor_right = 0.7
+anchor_bottom = 0.76666665
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
+alignment = 1
+script = ExtResource("3_t55tm")
+search_depth = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioControlContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=2086522930]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MuteControl" parent="VBoxContainer" unique_id=372694560 instance=ExtResource("4_phpdd")]
+unique_name_in_owner = true
+layout_mode = 2
+option_name = "Mute"
+option_section = 2
+key = "Mute"
+section = "AudioSettings"
+
+[node name="Panel" type="Panel" parent="." unique_id=1637585616]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.08888889
+anchor_right = 0.85
+anchor_bottom = 0.53333336
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=139278219]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Usa [wave amp=50.0 freq=3.0 connected=1]WASD o flechitas[/wave] para moverte
+Toca [pulse freq=.75 color=#ffffff40 ease=-1.0]E[/pulse] para tomar y dejar objetos
+Usa [shake rate=20.0 level=5 connected=1][Barra Espaciadora][/shake]para interactuar con objetos fijos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="setting_changed" from="VBoxContainer/MuteControl" to="." method="_on_mute_control_setting_changed"]
