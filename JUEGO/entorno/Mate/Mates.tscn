@@ -207,6 +207,7 @@ offset_right = 120.0
 offset_bottom = 112.0
 mouse_filter = 1
 
+[connection signal="mate_listo" from="Cargar Agua/Mate" to="." method="_on_mate_mate_listo"]
 [connection signal="toggled" from="Cargar Agua/Pava/CheckButton" to="Cargar Agua/Pava" method="_on_check_button_toggled"]
 [connection signal="timeout" from="Cargar Agua/Pava/Calentar" to="Cargar Agua/Pava" method="_on_timer_timeout"]
 [connection signal="timeout" from="Cargar Agua/Pava/Cargar" to="Cargar Agua/Pava" method="_on_cargar_timeout"]

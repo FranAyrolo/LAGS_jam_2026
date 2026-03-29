@@ -17,7 +17,6 @@ func _process(delta: float) -> void:
 	var pava_rect = $Pico.get_global_rect()
 	var canilla_rect = $"../Bacha/ZonaValida".get_global_rect()
 	sobre_canilla = pava_rect.intersects(canilla_rect)
-	print(rotation)
 		
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:

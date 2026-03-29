@@ -5,7 +5,7 @@ var cargando_yerba = false
 var cantidad_yerba = 0
 var cantidad_agua = 0
 var mate_rect = get_global_rect()
-
+var mate_completado = false 
 signal mate_listo
 
 func _process(delta: float) -> void:
@@ -16,15 +16,16 @@ func _process(delta: float) -> void:
 
 func _on_cargar_timeout() -> void:
 	if cargando_agua == true:
-		if $"../Pava".agua_lista and cantidad_agua < 100 and cantidad_yerba >= 100 :
+		if $"../Pava".agua_lista and $"../Pava".agua_lista and $"../Pava".arrastrando  and cantidad_agua < 100 and cantidad_yerba >= 100 :
 			cantidad_agua += 5
 			$ProgressAgua.value = cantidad_agua
 			$"../Pava".cantidad_agua -=2
 			
-	if cargando_yerba == true and cantidad_yerba < 100 :
+	if cargando_yerba and cantidad_yerba < 100 and $"../Yerba".arrastrando:
 		cantidad_yerba+= 5
 		$ProgressMate.value = cantidad_yerba
 
 	if  cantidad_agua >= 100 and cantidad_yerba >= 100:
-		emit_signal("mate_listo")
-		set_process(false)
+		if not mate_completado:
+			mate_completado = true
+			emit_signal("mate_listo")
