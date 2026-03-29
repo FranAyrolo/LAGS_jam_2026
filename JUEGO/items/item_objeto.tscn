@@ -19,7 +19,7 @@ gravity_scale = 0.0
 script = ExtResource("1_v1bjb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=872941028]
-scale = Vector2(10, 10)
+scale = Vector2(2, 2)
 texture = ExtResource("2_klcyg")
 
 [node name="EtiquetaNombre" type="Label" parent="." unique_id=1264301683]

@@ -6,20 +6,62 @@
 [ext_resource type="PackedScene" uid="uid://cghkqyfp3gddx" path="res://JUEGO/player.tscn" id="3_6jq6r"]
 [ext_resource type="PackedScene" uid="uid://dey2upx52ry01" path="res://JUEGO/items/item_objeto.tscn" id="4_2uisl"]
 [ext_resource type="Texture2D" uid="uid://dfs1uhfobvu5s" path="res://assets/2D/Orko/silbon/Silbon_01.png" id="4_qwutd"]
-[ext_resource type="Resource" uid="uid://dftd5b305wvxb" path="res://JUEGO/items/empanada.tres" id="5_iyq21"]
+[ext_resource type="Resource" uid="uid://dftd5b305wvxb" path="res://JUEGO/items/cigarrillos.tres" id="5_iyq21"]
 [ext_resource type="Resource" uid="uid://dachwaluqwx03" path="res://JUEGO/items/mate.tres" id="6_x4ort"]
 [ext_resource type="PackedScene" uid="uid://whnttgcwiimk" path="res://JUEGO/bichos/carpincho_seguidor.tscn" id="7_xrgas"]
 [ext_resource type="PackedScene" uid="uid://cwnujkuarng5m" path="res://JUEGO/entorno/deposito_de_objetos.tscn" id="8_xnulk"]
+[ext_resource type="Resource" uid="uid://cvskodumwhc7r" path="res://JUEGO/items/caña.tres" id="9_y0tya"]
 [ext_resource type="AudioStream" uid="uid://rl28nbxhmhyt" path="res://assets/audio/Ambient Folclórico.mp3" id="9_you7c"]
 [ext_resource type="PackedScene" uid="uid://caku6fdkifl51" path="res://JUEGO/entorno/pava.tscn" id="10_gs0jh"]
 [ext_resource type="Script" uid="uid://o6hjdwxj0xbl" path="res://scripts/criptidos.gd" id="11_jmi4e"]
 [ext_resource type="Texture2D" uid="uid://dkfogpefev63i" path="res://assets/2D/Orko/pomberito/Pomberito_02.png" id="13_7kew1"]
+[ext_resource type="Texture2D" uid="uid://dl4trs34hkywk" path="res://assets/2D/Orko/pomberito/Pomberito_03.png" id="13_px5cs"]
 [ext_resource type="Script" uid="uid://brepspiovr67m" path="res://JUEGO/bichos/Pomberito/Pomberito.gd" id="13_twvys"]
+[ext_resource type="Texture2D" uid="uid://b3n12hlbhsgdj" path="res://assets/2D/Orko/pomberito/Pomberito_05.png" id="14_7f5ui"]
+[ext_resource type="Texture2D" uid="uid://ogexl3mvolw3" path="res://assets/2D/Orko/pomberito/Pomberito_04.png" id="16_jrq6w"]
+[ext_resource type="Texture2D" uid="uid://bbopv6uh2ceft" path="res://assets/2D/Orko/pomberito/Puchos.png" id="17_7f5ui"]
+[ext_resource type="Texture2D" uid="uid://eqr1154iwmpp" path="res://assets/2D/argentinian-assets-pack-v1.0/bebidas/Mate.png" id="19_y0tya"]
+[ext_resource type="Texture2D" uid="uid://cjiqfkc2if36a" path="res://assets/2D/Orko/pomberito/Caña.png" id="20_y0tya"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3lht7"]
 vertices = PackedVector2Array(4459.711, -1157.0625, 4501.6484, -1204.9766, 4486.117, 13.8828125, 3806, 5.8828125, -2478, 634, -2478, 291.79688, -2387.5469, 306.8828, 3467.1719, -1318, 3459.1406, -1390.2813, 3742.9688, -1397.75, 3750.8125, -1319.3906, -2318, 2874, -2318, 2818.6016, -2182, 2826.6094, 3402, -2, 3807.8281, -1269.8828, 4366.6094, -1175.6797, 3758.1875, 22, 3449.7969, 30, 3402, 30, 853.9531, 1041.3516, 1093.0234, 1057.2891, 1054.9922, 1437.5469, 886.1094, 1429.5234, 2634, -998, 2634, -1189.8516, 3202, -1181.8594, 866.03125, -758.1094, 858.03125, -3389.8906, 1606, -3382.1016, 1606, -3094, 1597.9531, -2697.4766, 2198, -592.8906, 2198, -418.1172, 862.0625, -434.1172, 2039.1016, 2777.461, 2047.1094, 2841.5234, 2048.9297, 3256.2031, 2038.7266, 3390.0313, -2190, 3405.961, -2190, 3294, 1910.2422, 2769.4063, 2498, -950.53906, 2498, -998, 2634, -593.46094, 3402, -1278.7734, 3402, -1318, 3806, 22, -2326, 3294, -2326, 3246, 877.8906, 2178.1563, 1894.2578, 2162.1484, -2430, 3246, -2430, 2874, -2182, 1566, -2478, 1566, -2478, 1062, -2614, 1062, -2614, 1014, -2734, 1014, -2734, 690, -2614, 690, -2614, 634, -2230, 218, -2230, 178, -2174, 178, -1834, 226, -2174, 82, -1890, 82, -1890, 178, -1834, 178, 1878.5078, -3038, 1893.4766, -2753.4219, 1750, -2745.461, 1760.4609, -3038, -1992.1406, -1710.4688, -2232.5469, -1454.0313, -2403.3516, -1609.9766, -2342.1016, -1717.1797, -2326.3594, -2150, -1324.0469, -2150, -1350.0313, -1052.1016, -812.3672, -1654.3125, 1606.0625, -1270.1406, 2190, -1262.1328, 2190, -1007.35156, 2190, 2849.4531, 2190, 3254.1406, 2929.8125, -2, 2921.8203, -417.46875, 3750.1875, 430, 3457.7969, 430, 1750, -2705.4922, 2490, -601.4531, 2490, -641.52344, 3799.539, -1311.2734, 2634, -433.45313, 4358.75, -1277.8594, 2332.1406, -649.21875, 2333.6563, -608.85156, 3202, -1262.7578, -701.53125, -1645.7813, -601.64844, -1707.2266, -450.14063, -1548.1484, -458.14844, -1332.1406, -1341.9375, 226, 1744.4531, -3094, 2337.5313, -941.6328, 2317.5703, -988.78906, 99.78125, -749.9531, -2322.9063, 218)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13), PackedInt32Array(14, 15, 16, 0, 3, 17, 18, 19), PackedInt32Array(20, 21, 22, 23), PackedInt32Array(24, 25, 26), PackedInt32Array(27, 28, 29, 30, 31), PackedInt32Array(32, 33, 34), PackedInt32Array(35, 36, 37, 38, 39, 40, 41), PackedInt32Array(42, 43, 24, 44), PackedInt32Array(45, 46, 7), PackedInt32Array(3, 47, 17), PackedInt32Array(41, 40, 48, 49, 11, 13, 50, 51), PackedInt32Array(49, 52, 53, 11), PackedInt32Array(54, 55, 56, 34, 20), PackedInt32Array(56, 57, 58), PackedInt32Array(58, 59, 60, 61), PackedInt32Array(61, 62, 4), PackedInt32Array(63, 64, 65, 66), PackedInt32Array(65, 67, 68, 69), PackedInt32Array(69, 70, 66), PackedInt32Array(71, 72, 73, 74), PackedInt32Array(75, 76, 77, 78), PackedInt32Array(75, 78, 79, 80), PackedInt32Array(81, 75, 80, 82), PackedInt32Array(83, 84, 85, 34, 27), PackedInt32Array(86, 87, 37, 36), PackedInt32Array(14, 88, 89, 15), PackedInt32Array(17, 90, 91, 18), PackedInt32Array(73, 92, 31, 30), PackedInt32Array(44, 93, 94, 42), PackedInt32Array(7, 10, 95, 15, 89, 96, 44, 45), PackedInt32Array(15, 97, 16), PackedInt32Array(98, 99, 32), PackedInt32Array(26, 100, 45), PackedInt32Array(81, 101, 102, 103, 104, 105), PackedInt32Array(30, 106, 74, 73), PackedInt32Array(27, 31, 83), PackedInt32Array(23, 50, 13, 54, 20), PackedInt32Array(26, 45, 44), PackedInt32Array(24, 26, 44), PackedInt32Array(107, 42, 94, 98), PackedInt32Array(34, 56, 58, 61, 4, 105), PackedInt32Array(108, 107, 98, 32, 34, 85), PackedInt32Array(109, 27, 34, 105), PackedInt32Array(6, 110, 63, 66, 4), PackedInt32Array(81, 82, 101), PackedInt32Array(105, 104, 109), PackedInt32Array(66, 105, 4), PackedInt32Array(66, 65, 69)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-2440, 3256, -2336, 3256, -2336, 3304, -2200, 3304, -2200, 3416, 2048, 3400, 2058.2085, 3266.0703, 2200, 3264, 2200, 2840, 2056, 2832, 2048, 2768, 1920, 2760, 1904, 2152, 888, 2168, 896, 1440, 1064, 1448, 1104, 1048, 864, 1032, 872, -424, 2208, -408, 2208, -584, 2344, -600, 2342.5405, -638.7054, 2480, -632, 2480, -592, 2624, -584, 2624, -424, 2912, -408, 2920, 8, 3392, 8, 3392, 40, 3440, 40, 3448, 440, 3760, 440, 3768, 32, 3816, 32, 3816, 16, 4496, 24, 4512, -1232, 4456, -1168, 4376, -1184, 4368, -1288, 3816, -1280, 3808, -1320, 3760, -1328, 3752, -1408, 3448, -1400, 3456, -1328, 3392, -1328, 3392, -1288, 3192, -1272, 3192, -1192, 2624, -1200, 2624, -1008, 2488, -1008, 2488, -960, 2344, -952, 2324.589, -997.8779, 2200, -1016, 2200, -1272, 1616, -1280, 1608, -2688, 1760, -2696, 1760, -2736, 1904, -2744, 1888, -3048, 1768, -3048, 1752, -3104, 1616, -3104, 1616, -3392, 848, -3400, 856, -768, 104, -760, -448, -1336, -440, -1552, -600, -1720, -704, -1656, -808, -1664, -1320, -2160, -2336, -2160, -2352, -1720, -2416, -1608, -2232, -1440, -1992, -1696, -1360, -1048, -1352, 216, -1824, 216, -1824, 168, -1880, 168, -1880, 72, -2184, 72, -2184, 168, -2240, 168, -2240, 208, -2328, 208, -2392, 296, -2488, 280, -2488, 624, -2624, 624, -2624, 680, -2744, 680, -2744, 1024, -2624, 1024, -2624, 1072, -2488, 1072, -2488, 1576, -2192, 1576, -2192, 2816, -2328, 2808, -2328, 2864, -2440, 2864)])
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_twvys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_px5cs")
+}],
+"loop": true,
+"name": &"Azucar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_7f5ui")
+}],
+"loop": true,
+"name": &"Fumar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_7kew1")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_jrq6w")
+}],
+"loop": true,
+"name": &"Mate",
+"speed": 5.0
+}]
 
 [node name="Nivel" type="Node2D" unique_id=373451608 groups=["nivel"]]
 script = ExtResource("1_k1acd")
@@ -87,28 +129,29 @@ position = Vector2(2432, 280)
 unique_name_in_owner = true
 position = Vector2(-232, 1432)
 
-[node name="ItemObjeto" parent="Objetos" unique_id=1411487838 instance=ExtResource("4_2uisl")]
-position = Vector2(288, 2984)
+[node name="Cigarrillos" parent="Objetos" unique_id=1411487838 instance=ExtResource("4_2uisl")]
+position = Vector2(-776, -280)
 item_data = ExtResource("5_iyq21")
 
-[node name="ItemObjeto2" parent="Objetos" unique_id=1128824985 instance=ExtResource("4_2uisl")]
-position = Vector2(-192, 3024)
-item_data = ExtResource("6_x4ort")
+[node name="Azucar" parent="Objetos" unique_id=866595722 instance=ExtResource("4_2uisl")]
+position = Vector2(2561, -552)
+item_data = ExtResource("9_y0tya")
 
-[node name="ItemObjeto3" parent="Objetos" unique_id=866595722 instance=ExtResource("4_2uisl")]
-position = Vector2(-736, 3024)
+[node name="Mate" parent="Objetos" unique_id=2125049237 instance=ExtResource("4_2uisl")]
+position = Vector2(2552, -104)
 item_data = ExtResource("6_x4ort")
 
 [node name="ItemObjeto4" parent="Objetos" unique_id=1657895425 instance=ExtResource("4_2uisl")]
-position = Vector2(-864, 2864)
-item_data = ExtResource("6_x4ort")
+position = Vector2(1432, 1472)
 
-[node name="DepositoDeObjetos" parent="Objetos" unique_id=576087988 instance=ExtResource("8_xnulk")]
-position = Vector2(-664, 2272)
-objetos_aceptables = ["Empanada"]
+[node name="DepositoPomberito" parent="Objetos" unique_id=576087988 instance=ExtResource("8_xnulk")]
+z_index = -1
+position = Vector2(-3416, 1936)
+objetos_aceptables = ["Cigarrillos", "Mate", "Azucar"]
+criptido = NodePath("../../Criptidos/Pomberito")
 
 [node name="DepositoDeObjetos2" parent="Objetos" unique_id=165199995 instance=ExtResource("8_xnulk")]
-position = Vector2(192, 2264)
+position = Vector2(960, 1248)
 objetos_aceptables = ["Empanada"]
 retener_objeto = true
 
@@ -120,20 +163,44 @@ script = ExtResource("11_jmi4e")
 autostart = true
 
 [node name="Pomberito" type="RigidBody2D" parent="Criptidos" unique_id=1659033964]
+z_index = -1
+gravity_scale = 0.0
 script = ExtResource("13_twvys")
 nombre = 2
 criptido_activo = true
 
-[node name="SilbonBorde2" type="CollisionPolygon2D" parent="Criptidos/Pomberito" unique_id=404736153]
+[node name="PomberitoBorde" type="CollisionPolygon2D" parent="Criptidos/Pomberito" unique_id=404736153]
 position = Vector2(440, 1552)
 build_mode = 1
 polygon = PackedVector2Array(-4032, 1072, -3928, 1088, -3848, 1120, -3784, 1168, -3696, 1240, -3648, 1296, -3624, 1376, -3704, 1464, -3760, 1512, -3864, 1576, -4016, 1584, -4184, 1584, -4320, 1552, -4440, 1496, -4528, 1424, -4528, 1328, -4472, 1232, -4344, 1120, -4160, 1072)
 
-[node name="Pomberito02" type="Sprite2D" parent="Criptidos/Pomberito" unique_id=879924938]
-position = Vector2(-3640, 2712)
-texture = ExtResource("13_7kew1")
+[node name="PomberitoSprite" type="AnimatedSprite2D" parent="Criptidos/Pomberito" unique_id=1237284258]
+position = Vector2(-3656, 2712)
+sprite_frames = SubResource("SpriteFrames_twvys")
+animation = &"Fumar"
+autoplay = "Idle"
+frame_progress = 0.18642345
+
+[node name="Puchos" type="Sprite2D" parent="Criptidos/Pomberito" unique_id=71889745]
+visible = false
+position = Vector2(-3531.5, 2615)
+scale = Vector2(2, 2)
+texture = ExtResource("17_7f5ui")
+
+[node name="Mate" type="Sprite2D" parent="Criptidos/Pomberito" unique_id=1049378694]
+visible = false
+position = Vector2(-3528, 2600)
+scale = Vector2(2, 2)
+texture = ExtResource("19_y0tya")
+
+[node name="Azucar" type="Sprite2D" parent="Criptidos/Pomberito" unique_id=902009199]
+visible = false
+position = Vector2(-3528, 2616)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_y0tya")
 
 [node name="Carpincho" parent="Criptidos" unique_id=1591465087 instance=ExtResource("7_xrgas")]
+process_mode = 4
 position = Vector2(-814, 505)
 nombre = 1
 criptido_activo = true
@@ -150,4 +217,5 @@ position = Vector2(560, 48)
 build_mode = 1
 polygon = PackedVector2Array(-4032, 1072, -3928, 1088, -3848, 1120, -3784, 1168, -3696, 1240, -3648, 1296, -3624, 1376, -3704, 1464, -3760, 1512, -3864, 1576, -4016, 1584, -4184, 1584, -4320, 1552, -4440, 1496, -4528, 1424, -4528, 1328, -4472, 1232, -4344, 1120, -4160, 1072)
 
+[connection signal="objeto_aceptado" from="Objetos/DepositoPomberito" to="Criptidos/Pomberito" method="_on_deposito_pomberito_objeto_aceptado"]
 [connection signal="timeout" from="Criptidos/CriptidoTimer" to="Criptidos" method="_on_criptido_timer_timeout"]

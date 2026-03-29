@@ -19,38 +19,38 @@ const MIN_SCORE = 0
 @onready var Criptidos = %Criptidos
 
 #fue, la hago cabeza porque hacerlo bonito esta complicado
-func aumentar_alerta() -> void:
-	if estado_alerta_actual != EstadoAlerta.NEGRO:
-		match estado_alerta_actual:
-			EstadoAlerta.VERDE:
-				estado_alerta_actual = EstadoAlerta.AMARILLO
-			EstadoAlerta.AMARILLO:
-				estado_alerta_actual = EstadoAlerta.NARANJA
-			EstadoAlerta.NARANJA:
-				estado_alerta_actual = EstadoAlerta.ROJO
-			EstadoAlerta.ROJO:
-				estado_alerta_actual = EstadoAlerta.NEGRO
-				Global.cryptido_en_negro.emit(self)
-			_:
-				push_error("MMMMMM, en que estado estamo?")
-	print(estado_alerta_actual)
+#func aumentar_alerta() -> void:
+	#if estado_alerta_actual != EstadoAlerta.NEGRO:
+		#match estado_alerta_actual:
+			#EstadoAlerta.VERDE:
+				#estado_alerta_actual = EstadoAlerta.AMARILLO
+			#EstadoAlerta.AMARILLO:
+				#estado_alerta_actual = EstadoAlerta.NARANJA
+			#EstadoAlerta.NARANJA:
+				#estado_alerta_actual = EstadoAlerta.ROJO
+			#EstadoAlerta.ROJO:
+				#estado_alerta_actual = EstadoAlerta.NEGRO
+				#Global.cryptido_en_negro.emit(self)
+			#_:
+				#push_error("MMMMMM, en que estado estamo?")
+	#estado_cambiado(estado_alerta_actual)
 
 #fue, la hago cabeza porque hacerlo bonito esta complicado
-func reducir_alerta() -> void:
-	if estado_alerta_actual != EstadoAlerta.VERDE:
-		match estado_alerta_actual:
-			EstadoAlerta.VERDE:
-				pass
-			EstadoAlerta.AMARILLO:
-				estado_alerta_actual = EstadoAlerta.VERDE
-			EstadoAlerta.NARANJA:
-				estado_alerta_actual = EstadoAlerta.AMARILLO
-			EstadoAlerta.ROJO:
-				estado_alerta_actual = EstadoAlerta.NARANJA
-			#EstadoAlerta.NEGRO:
+#func reducir_alerta() -> void:
+	#if estado_alerta_actual != EstadoAlerta.VERDE:
+		#match estado_alerta_actual:
+			#EstadoAlerta.VERDE:
+				#pass
+			#EstadoAlerta.AMARILLO:
+				#estado_alerta_actual = EstadoAlerta.VERDE
+			#EstadoAlerta.NARANJA:
+				#estado_alerta_actual = EstadoAlerta.AMARILLO
+			#EstadoAlerta.ROJO:
 				#estado_alerta_actual = EstadoAlerta.NARANJA
-			_:
-				push_error("MMMMMM, en que estado estamo?")
+			##EstadoAlerta.NEGRO:
+				##estado_alerta_actual = EstadoAlerta.NARANJA
+			#_:
+				#push_error("MMMMMM, en que estado estamo?")
 
 func reiniciar_alerta() -> void:
 	estado_alerta_actual = estado_alerta_inicial
@@ -66,5 +66,24 @@ func activar_criptido() -> void:
 	Criptidos.registrar_criptido(self)
 	
 func revisar_puntaje() -> void:
-	if estado_score_track == 25 or estado_score_track == 50 or estado_score_track == 75 or estado_score_track == 100:
-		aumentar_alerta()
+	var nuevo_estado = calcular_estado()
+	if nuevo_estado != estado_alerta_actual:
+		estado_alerta_actual = nuevo_estado
+		estado_cambiado(estado_alerta_actual)
+		print("Cambio el estado a ",estado_alerta_actual)
+
+func calcular_estado() -> EstadoAlerta:
+	if estado_score_track < 25:   
+		return EstadoAlerta.VERDE
+	elif estado_score_track < 50: 
+		return EstadoAlerta.AMARILLO
+	elif estado_score_track < 75: 
+		return EstadoAlerta.NARANJA
+	elif estado_score_track < 100: 
+		return EstadoAlerta.ROJO
+	else:                          
+		return EstadoAlerta.NEGRO
+
+
+func estado_cambiado(nuevo_estado: EstadoAlerta) -> void:
+	pass

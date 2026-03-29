@@ -5,17 +5,18 @@ class_name DepositoDeObjetos
 @export var imagen: Texture2D = null
 @export var objetos_aceptables: Array = []
 @export var retener_objeto: bool = false
+@export var criptido: NodePath
 
 var objeto_depositado: ObjetoItem = null
 var flag_rebote_objeto: bool = true
 
+signal objeto_aceptado(tipo: String)
 
 func _ready() -> void:
 	$Timer.timeout.connect(_levantar_flag_rebote)
 	if imagen:
 		$Sprite2D.texture = imagen
 	objetos_aceptables = objetos_aceptables.map(func(e: String): return e.to_lower()) as Array[String]
-
 
 func recibir_objeto(objeto: ObjetoItem) -> bool:
 	bajar_flag_rebote()
@@ -25,6 +26,7 @@ func recibir_objeto(objeto: ObjetoItem) -> bool:
 		objeto_depositado = objeto
 		$Label.text = objeto_depositado.item_data.nombre + " depositado"
 		objeto_depositado.ser_juntado()
+		emit_signal("objeto_aceptado", objeto.item_data.nombre.to_lower())
 		return true
 	elif !es_aceptable(objeto) && objeto_depositado == null:
 		$Label.text = "Objeto incorrecto"

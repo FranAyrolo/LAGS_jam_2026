@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dftd5b305wvxb"]
 
-[ext_resource type="Texture2D" uid="uid://c61gpu813d50b" path="res://assets/2D/argentinian-assets-pack-v1.0/comida/empanada.png" id="1_umbid"]
+[ext_resource type="Texture2D" uid="uid://bbopv6uh2ceft" path="res://assets/2D/Orko/pomberito/Puchos.png" id="1_ka3yp"]
 [ext_resource type="Script" uid="uid://ccv44572too1n" path="res://JUEGO/items/item_resource.gd" id="2_wukss"]
 
 [resource]
 script = ExtResource("2_wukss")
-nombre = "Empanada"
-imagen = ExtResource("1_umbid")
+nombre = "Cigarrillos"
+imagen = ExtResource("1_ka3yp")
 metadata/_custom_type_script = "uid://ccv44572too1n"

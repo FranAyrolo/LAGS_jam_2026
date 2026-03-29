@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dachwaluqwx03"]
 
 [ext_resource type="Script" uid="uid://ccv44572too1n" path="res://JUEGO/items/item_resource.gd" id="1_7ref6"]
-[ext_resource type="Texture2D" uid="uid://c1q83q3ghvhy8" path="res://assets/2D/argentinian-assets-pack-v1.0/bebidas/mate-02.png" id="1_3817d"]
+[ext_resource type="Texture2D" uid="uid://eqr1154iwmpp" path="res://assets/2D/argentinian-assets-pack-v1.0/bebidas/Mate.png" id="1_gru7e"]
 
 [resource]
 script = ExtResource("1_7ref6")
 nombre = "Mate"
-imagen = ExtResource("1_3817d")
+imagen = ExtResource("1_gru7e")
 metadata/_custom_type_script = "uid://ccv44572too1n"
