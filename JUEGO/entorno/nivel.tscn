@@ -7,22 +7,31 @@
 [ext_resource type="Texture2D" uid="uid://b3qnlhlhu0hw8" path="res://assets/2D/Orko/Escenario_pared.png" id="2_hlhfb"]
 [ext_resource type="PackedScene" uid="uid://cghkqyfp3gddx" path="res://JUEGO/player.tscn" id="3_6jq6r"]
 [ext_resource type="PackedScene" uid="uid://dey2upx52ry01" path="res://JUEGO/items/item_objeto.tscn" id="4_2uisl"]
+[ext_resource type="PackedScene" uid="uid://c6qemdgrb00ur" path="res://JUEGO/entorno/puerta.tscn" id="4_43114"]
 [ext_resource type="Texture2D" uid="uid://dfs1uhfobvu5s" path="res://assets/2D/Orko/silbon/Silbon_01.png" id="4_qwutd"]
+[ext_resource type="Texture2D" uid="uid://xr017t6h0b27" path="res://assets/2D/Orko/Puertas/Puerta_Costado_01.png" id="5_g3b3p"]
 [ext_resource type="Resource" uid="uid://dftd5b305wvxb" path="res://JUEGO/items/cigarrillos.tres" id="5_iyq21"]
+[ext_resource type="Texture2D" uid="uid://clqnhadgwau50" path="res://assets/2D/Orko/Puertas/Puerta_Costado_02.png" id="6_m7xqr"]
+[ext_resource type="Resource" uid="uid://dachwaluqwx03" path="res://JUEGO/items/mate.tres" id="6_x4ort"]
 [ext_resource type="PackedScene" uid="uid://whnttgcwiimk" path="res://JUEGO/bichos/carpincho_seguidor.tscn" id="7_xrgas"]
+[ext_resource type="Texture2D" uid="uid://bfdmg1fbdj52y" path="res://assets/2D/Orko/Puertas/Puerta_Costado_03.png" id="7_y3dsa"]
+[ext_resource type="Texture2D" uid="uid://gmh05uclcq1e" path="res://assets/2D/Orko/curupira/Curupira_01.png" id="8_n50qt"]
+[ext_resource type="Script" uid="uid://bp0fg5wv4eth8" path="res://JUEGO/entorno/control_central.gd" id="8_tu127"]
 [ext_resource type="PackedScene" uid="uid://cwnujkuarng5m" path="res://JUEGO/entorno/deposito_de_objetos.tscn" id="8_xnulk"]
+[ext_resource type="AudioStream" uid="uid://d0oulstl6n5ef" path="res://assets/audio/Canciones/Foolcloro_Calm.ogg" id="9_g3b3p"]
 [ext_resource type="Resource" uid="uid://cvskodumwhc7r" path="res://JUEGO/items/caña.tres" id="9_y0tya"]
-[ext_resource type="AudioStream" uid="uid://rl28nbxhmhyt" path="res://assets/audio/Ambient Folclórico.mp3" id="9_you7c"]
 [ext_resource type="PackedScene" uid="uid://caku6fdkifl51" path="res://JUEGO/entorno/pava.tscn" id="10_gs0jh"]
 [ext_resource type="Script" uid="uid://o6hjdwxj0xbl" path="res://scripts/criptidos.gd" id="11_jmi4e"]
 [ext_resource type="Texture2D" uid="uid://dkfogpefev63i" path="res://assets/2D/Orko/pomberito/Pomberito_02.png" id="13_7kew1"]
 [ext_resource type="Texture2D" uid="uid://dl4trs34hkywk" path="res://assets/2D/Orko/pomberito/Pomberito_03.png" id="13_px5cs"]
 [ext_resource type="Script" uid="uid://brepspiovr67m" path="res://JUEGO/bichos/Pomberito/Pomberito.gd" id="13_twvys"]
 [ext_resource type="Texture2D" uid="uid://b3n12hlbhsgdj" path="res://assets/2D/Orko/pomberito/Pomberito_05.png" id="14_7f5ui"]
+[ext_resource type="Resource" uid="uid://blph65m8lb82d" path="res://JUEGO/items/regadera.tres" id="15_y3dsa"]
 [ext_resource type="Texture2D" uid="uid://ogexl3mvolw3" path="res://assets/2D/Orko/pomberito/Pomberito_04.png" id="16_jrq6w"]
 [ext_resource type="Texture2D" uid="uid://bbopv6uh2ceft" path="res://assets/2D/Orko/pomberito/Puchos.png" id="17_7f5ui"]
 [ext_resource type="Texture2D" uid="uid://eqr1154iwmpp" path="res://assets/2D/argentinian-assets-pack-v1.0/bebidas/Mate.png" id="19_y0tya"]
 [ext_resource type="Texture2D" uid="uid://cjiqfkc2if36a" path="res://assets/2D/Orko/pomberito/Caña.png" id="20_y0tya"]
+[ext_resource type="PackedScene" uid="uid://cnpmpe5lj0wdy" path="res://JUEGO/bichos/Curupira/curupira.tscn" id="27_m7xqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43114"]
 size = Vector2(248.5, 294)
@@ -114,6 +123,50 @@ build_mode = 1
 polygon = PackedVector2Array(-1616, 1856, -1616, 1352, -1584, 1384, -1512, 1384, -1480, 1328, -1312, 1328, -1288, 1368, -528, 1368, -529.84753, 1621.1105, -808, 1616, -800, 2496, -1616, 2496, -1616, 2360, -1760, 2352, -1800, 2320, -1936, 2320, -1968, 2352, -2080, 2368, -2080, 2984, -2048, 3016, -2016, 3120, -1968, 3128, -1928.9438, 3107.3506, -1896, 2984, -1080, 2984, -1080, 3584, -944, 3600, -912, 3648, -792, 3648, -760, 3608, -608, 3592, -616, 2984, 392, 2984, 456, 2944, 456, 2584, 440, 2496, 392, 2488, -72, 2488, -72, 1384, 392, 1384, 456, 1360, 456, 1008, 440, 912, -72, 912, -72, 520, -368, 520, -368, 328, -496, 312, -512, 280, -648, 272, -696, 304, -792, 328, -792, 512, -2080, 512, -2080, 1840, -1976, 1864, -1936, 1920, -1800, 1920, -1760, 1864)
 metadata/_edit_lock_ = true
 
+[node name="Puertas" type="Node2D" parent="Entorno" unique_id=228005786]
+
+[node name="Puerta" parent="Entorno/Puertas" unique_id=387849130 instance=ExtResource("4_43114")]
+position = Vector2(3600, -1544)
+
+[node name="Puerta2" parent="Entorno/Puertas" unique_id=1339052496 instance=ExtResource("4_43114")]
+position = Vector2(3608, 312)
+
+[node name="Puerta3" parent="Entorno/Puertas" unique_id=402966107 instance=ExtResource("4_43114")]
+position = Vector2(3608, 1896)
+
+[node name="Puerta4" parent="Entorno/Puertas" unique_id=1189518154 instance=ExtResource("4_43114")]
+position = Vector2(-2032, -56)
+
+[node name="Puerta5" parent="Entorno/Puertas" unique_id=1160790472 instance=ExtResource("4_43114")]
+position = Vector2(-496, -1808)
+sprite_cerrado = ExtResource("5_g3b3p")
+sprite_semi_abierto = ExtResource("6_m7xqr")
+sprite_abierto = ExtResource("7_y3dsa")
+
+[node name="Puerta6" parent="Entorno/Puertas" unique_id=1204147641 instance=ExtResource("4_43114")]
+position = Vector2(-2280, -1728)
+sprite_cerrado = ExtResource("5_g3b3p")
+sprite_semi_abierto = ExtResource("6_m7xqr")
+sprite_abierto = ExtResource("7_y3dsa")
+
+[node name="ControlCentral" type="Node2D" parent="Entorno" unique_id=1253706232 node_paths=PackedStringArray("curupira")]
+position = Vector2(-592, 1000)
+script = ExtResource("8_tu127")
+curupira = NodePath("../../Criptidos/Curupira")
+
+[node name="SpriteCurupira" type="Sprite2D" parent="Entorno/ControlCentral" unique_id=449847218]
+unique_name_in_owner = true
+position = Vector2(8, -176)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_n50qt")
+region_enabled = true
+region_rect = Rect2(211, 193, 500, 368)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Entorno/ControlCentral" unique_id=912336019]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Entorno/ControlCentral/StaticBody2D" unique_id=1304813653]
+polygon = PackedVector2Array(512, 176, 520, -80, -528, -80, -528, 352, -312, 352, -312, 248, -272, 248, -272, 72, 152, 72, 152, 240, 336, 240, 336, 176)
+
 [node name="Player" parent="." unique_id=669359742 instance=ExtResource("3_6jq6r")]
 unique_name_in_owner = true
 z_index = 1
@@ -132,7 +185,7 @@ autostart = true
 
 [node name="MusicaNivel" type="AudioStreamPlayer" parent="." unique_id=448084237]
 unique_name_in_owner = true
-stream = ExtResource("9_you7c")
+stream = ExtResource("9_g3b3p")
 autoplay = true
 bus = &"Music"
 
@@ -154,6 +207,10 @@ item_data = ExtResource("9_y0tya")
 
 [node name="ItemObjeto4" parent="Objetos" unique_id=1657895425 instance=ExtResource("4_2uisl")]
 position = Vector2(1432, 1472)
+
+[node name="Regadera" parent="Objetos" unique_id=1657895425 instance=ExtResource("4_2uisl")]
+position = Vector2(-2504, -2672)
+item_data = ExtResource("15_y3dsa")
 
 [node name="DepositoPomberito" parent="Objetos" unique_id=576087988 instance=ExtResource("8_xnulk")]
 z_index = -1
@@ -232,6 +289,11 @@ polygon = PackedVector2Array(-4032, 1072, -3928, 1088, -3848, 1120, -3784, 1168,
 
 [node name="MiniJuegoMate" parent="CanvasLayer" unique_id=867639483 instance=ExtResource("2_43114")]
 visible = false
+[node name="Curupira" parent="Criptidos" unique_id=21967619 instance=ExtResource("27_m7xqr")]
+unique_name_in_owner = true
+position = Vector2(-3264, -1312)
+nombre = 4
+criptido_activo = false
 
 [connection signal="objeto_aceptado" from="Objetos/DepositoPomberito" to="Criptidos/Pomberito" method="_on_deposito_pomberito_objeto_aceptado"]
 [connection signal="timeout" from="Criptidos/CriptidoTimer" to="Criptidos" method="_on_criptido_timer_timeout"]

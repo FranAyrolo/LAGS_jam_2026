@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://blph65m8lb82d"]
+
+[ext_resource type="Texture2D" uid="uid://h0bm1tlcae5s" path="res://assets/2D/Orko/curupira/Regadera.png" id="1_ajtwt"]
+[ext_resource type="Script" uid="uid://ccv44572too1n" path="res://JUEGO/items/item_resource.gd" id="2_e4gkn"]
+
+[resource]
+script = ExtResource("2_e4gkn")
+nombre = "Regadera"
+imagen = ExtResource("1_ajtwt")
+metadata/_custom_type_script = "uid://ccv44572too1n"

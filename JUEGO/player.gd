@@ -100,6 +100,12 @@ func levantar_item() -> void:
 		item_en_mano.ser_juntado()
 
 
+func esta_sosteniendo_item(objeto: String) -> bool:
+	if item_en_mano:
+		return item_en_mano.item_data.nombre.to_lower() == objeto.to_lower()
+	return false
+
+
 func piden_mate() -> bool:
 	if mate_listo:
 		%Mate.visible = false
@@ -117,10 +123,6 @@ func recibir_mate() -> void:
 
 func _on_cargar_termo(cant: float) -> void:
 	%BarraTermo.value += cant
-
-
-func _on_item_seleccionado(_item: ItemResource, objeto_item: RigidBody2D) -> void:
-	pass
 
 
 func _on_timer_reloj_timeout() -> void:
