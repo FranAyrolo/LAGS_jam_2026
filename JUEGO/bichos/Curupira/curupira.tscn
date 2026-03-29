@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cnpmpe5lj0wdy"]
+
+[ext_resource type="Script" uid="uid://b0xbwkdjoa2l1" path="res://JUEGO/bichos/Curupira/curupira.gd" id="1_d7wnw"]
+[ext_resource type="Texture2D" uid="uid://gmh05uclcq1e" path="res://assets/2D/Orko/curupira/Curupira_01.png" id="2_5adnh"]
+[ext_resource type="Texture2D" uid="uid://bamqjfvpviten" path="res://assets/2D/Orko/curupira/Flores/Flores_Cayena roja_01.png" id="3_d7wnw"]
+[ext_resource type="Script" uid="uid://cx6ld03dp0qfd" path="res://JUEGO/bichos/Curupira/control_macetas.gd" id="3_pprej"]
+[ext_resource type="Texture2D" uid="uid://dc5jvbfbqouev" path="res://assets/2D/Orko/curupira/Flores/Flores_Commelina erecta _01.png" id="4_pprej"]
+[ext_resource type="Script" uid="uid://breau6gbdutey" path="res://JUEGO/bichos/Curupira/maceta_curupira.gd" id="4_xwa4h"]
+[ext_resource type="Texture2D" uid="uid://c64q7san1t7uj" path="res://assets/2D/Orko/curupira/Flores/Flores_Izote_01.png" id="5_xwa4h"]
+[ext_resource type="Texture2D" uid="uid://00k2kkw114qm" path="res://assets/2D/Orko/curupira/Flores/Flores_rafflesia_01.png" id="6_o4vni"]
+[ext_resource type="Texture2D" uid="uid://bxktxjf1uov46" path="res://assets/2D/Orko/curupira/Flores/Flores_Cayena roja_02.png" id="6_xwa4h"]
+[ext_resource type="Texture2D" uid="uid://d0vjp3mv1tdw2" path="res://assets/2D/Orko/curupira/Flores/Flores_Cayena roja_03.png" id="7_o4vni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu127"]
+size = Vector2(248, 520)
+
+[node name="Curupira" type="RigidBody2D" unique_id=21967619]
+script = ExtResource("1_d7wnw")
+metadata/_custom_type_script = "uid://krmer4i7y3ww"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2071817642]
+position = Vector2(-240, -800)
+texture = ExtResource("2_5adnh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1603408219]
+polygon = PackedVector2Array(88, -800, 200, -672, 224, -616, 216, -568, 200, -528, 168, -488, 120, -448, 56, -416, 0, -392, -64, -376, -128, -368, -192, -360, -256, -360, -320, -368, -384, -376, -448, -392, -512, -408, -576, -440, -640, -480, -688, -544, -696, -608, -672, -672, -632, -720, -568, -808)
+
+[node name="Macetas" type="Node2D" parent="." unique_id=1628178246]
+script = ExtResource("3_pprej")
+
+[node name="Maceta" type="StaticBody2D" parent="Macetas" unique_id=1904424636]
+position = Vector2(-904, -174)
+script = ExtResource("4_xwa4h")
+tex_viva = ExtResource("3_d7wnw")
+tex_medio_viva = ExtResource("6_xwa4h")
+tex_reseca = ExtResource("7_o4vni")
+
+[node name="Sprite2D" type="Sprite2D" parent="Macetas/Maceta" unique_id=536708010]
+texture = ExtResource("3_d7wnw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Macetas/Maceta" unique_id=737401216]
+position = Vector2(-4, 26)
+shape = SubResource("RectangleShape2D_tu127")
+
+[node name="Timer" type="Timer" parent="Macetas/Maceta" unique_id=1403873068]
+
+[node name="Maceta2" type="StaticBody2D" parent="Macetas" unique_id=1154666485]
+position = Vector2(-904, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="Macetas/Maceta2" unique_id=611660373]
+texture = ExtResource("4_pprej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Macetas/Maceta2" unique_id=1146277552]
+position = Vector2(-4, 26)
+shape = SubResource("RectangleShape2D_tu127")
+
+[node name="Maceta3" type="StaticBody2D" parent="Macetas" unique_id=28733425]
+position = Vector2(-312, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="Macetas/Maceta3" unique_id=1205724977]
+texture = ExtResource("5_xwa4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Macetas/Maceta3" unique_id=908197827]
+position = Vector2(-4, 26)
+shape = SubResource("RectangleShape2D_tu127")
+
+[node name="Maceta4" type="StaticBody2D" parent="Macetas" unique_id=1303775114]
+position = Vector2(280, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="Macetas/Maceta4" unique_id=1034513605]
+texture = ExtResource("6_o4vni")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Macetas/Maceta4" unique_id=626048999]
+position = Vector2(-4, 26)
+shape = SubResource("RectangleShape2D_tu127")

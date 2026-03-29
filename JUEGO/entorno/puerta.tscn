@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c6qemdgrb00ur"]
+
+[ext_resource type="Script" uid="uid://ddp8xqqs1vdfd" path="res://JUEGO/entorno/puerta.gd" id="1_8n43w"]
+[ext_resource type="Texture2D" uid="uid://xr017t6h0b27" path="res://assets/2D/Orko/Puertas/Puerta_Costado_01.png" id="2_8n43w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vr2d"]
+radius = 720.04443
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ku3hd"]
+radius = 384.0833
+
+[node name="Puerta" type="Node2D" unique_id=387849130]
+script = ExtResource("1_8n43w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=177516609]
+unique_name_in_owner = true
+texture = ExtResource("2_8n43w")
+
+[node name="ColisionSemiAbierta" type="Area2D" parent="." unique_id=868548847]
+unique_name_in_owner = true
+visible = false
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColisionSemiAbierta" unique_id=819243369]
+shape = SubResource("CircleShape2D_2vr2d")
+
+[node name="ColisionAbierta" type="Area2D" parent="." unique_id=1431959238]
+unique_name_in_owner = true
+visible = false
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColisionAbierta" unique_id=2095679341]
+shape = SubResource("CircleShape2D_ku3hd")
