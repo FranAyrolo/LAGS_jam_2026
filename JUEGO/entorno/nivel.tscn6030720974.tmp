@@ -112,31 +112,14 @@ position = Vector2(192, 2264)
 objetos_aceptables = ["Empanada"]
 retener_objeto = true
 
-[node name="Criptidos" type="Node2D" parent="." unique_id=1974827052]
+[node name="Criptidos" type="Node2D" parent="." unique_id=176592312]
 unique_name_in_owner = true
+process_mode = 4
 script = ExtResource("11_jmi4e")
 
 [node name="CriptidoTimer" type="Timer" parent="Criptidos" unique_id=2006895221]
+one_shot = true
 autostart = true
-
-[node name="Pomberito" type="RigidBody2D" parent="Criptidos" unique_id=1659033964]
-script = ExtResource("13_twvys")
-nombre = 2
-criptido_activo = true
-
-[node name="SilbonBorde2" type="CollisionPolygon2D" parent="Criptidos/Pomberito" unique_id=404736153]
-position = Vector2(440, 1552)
-build_mode = 1
-polygon = PackedVector2Array(-4032, 1072, -3928, 1088, -3848, 1120, -3784, 1168, -3696, 1240, -3648, 1296, -3624, 1376, -3704, 1464, -3760, 1512, -3864, 1576, -4016, 1584, -4184, 1584, -4320, 1552, -4440, 1496, -4528, 1424, -4528, 1328, -4472, 1232, -4344, 1120, -4160, 1072)
-
-[node name="Pomberito02" type="Sprite2D" parent="Criptidos/Pomberito" unique_id=879924938]
-position = Vector2(-3640, 2712)
-texture = ExtResource("13_7kew1")
-
-[node name="Carpincho" parent="Criptidos" unique_id=1591465087 instance=ExtResource("7_xrgas")]
-position = Vector2(-814, 505)
-nombre = 1
-criptido_activo = true
 
 [node name="Silbon" type="StaticBody2D" parent="Criptidos" unique_id=427285581]
 
@@ -149,5 +132,20 @@ texture = ExtResource("4_qwutd")
 position = Vector2(560, 48)
 build_mode = 1
 polygon = PackedVector2Array(-4032, 1072, -3928, 1088, -3848, 1120, -3784, 1168, -3696, 1240, -3648, 1296, -3624, 1376, -3704, 1464, -3760, 1512, -3864, 1576, -4016, 1584, -4184, 1584, -4320, 1552, -4440, 1496, -4528, 1424, -4528, 1328, -4472, 1232, -4344, 1120, -4160, 1072)
+
+[node name="Carpincho" parent="Criptidos" unique_id=1591465087 instance=ExtResource("7_xrgas")]
+position = Vector2(-814, 505)
+
+[node name="Pomberito" type="RigidBody2D" parent="Criptidos" unique_id=1659033964]
+script = ExtResource("13_twvys")
+
+[node name="SilbonBorde2" type="CollisionPolygon2D" parent="Criptidos/Pomberito" unique_id=404736153]
+position = Vector2(440, 1552)
+build_mode = 1
+polygon = PackedVector2Array(-4032, 1072, -3928, 1088, -3848, 1120, -3784, 1168, -3696, 1240, -3648, 1296, -3624, 1376, -3704, 1464, -3760, 1512, -3864, 1576, -4016, 1584, -4184, 1584, -4320, 1552, -4440, 1496, -4528, 1424, -4528, 1328, -4472, 1232, -4344, 1120, -4160, 1072)
+
+[node name="Pomberito02" type="Sprite2D" parent="Criptidos/Pomberito" unique_id=879924938]
+position = Vector2(-3640, 2712)
+texture = ExtResource("13_7kew1")
 
 [connection signal="timeout" from="Criptidos/CriptidoTimer" to="Criptidos" method="_on_criptido_timer_timeout"]

@@ -16,6 +16,8 @@ func _ready() -> void:
 	%TimerMate.timeout.connect(_on_timer_mate_timeout)
 	navigation_agent.velocity_computed.connect(_on_velocity_computed)
 	navigation_agent.navigation_finished.connect(_on_navigation_finished)
+	activar_criptido()
+
 
 
 func _physics_process(_delta):

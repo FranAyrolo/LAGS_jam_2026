@@ -9,8 +9,14 @@ enum EstadoAlerta {VERDE, AMARILLO, NARANJA, ROJO, NEGRO}
 @export var estado_alerta_inicial: EstadoAlerta = EstadoAlerta.VERDE
 @export var estado_alerta_actual: EstadoAlerta = EstadoAlerta.VERDE
 @export var movement_speed: float = 750
+@export var estado_score_track: int = 0
+@export var criptido_activo: bool = false
 
-@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var navigation_agent: NavigationAgent2D = get_node_or_null("NavigationAgent2D")
+
+const MAX_SCORE = 100
+const MIN_SCORE = 0
+@onready var Criptidos = %Criptidos
 
 #fue, la hago cabeza porque hacerlo bonito esta complicado
 func aumentar_alerta() -> void:
@@ -27,7 +33,7 @@ func aumentar_alerta() -> void:
 				Global.cryptido_en_negro.emit(self)
 			_:
 				push_error("MMMMMM, en que estado estamo?")
-
+	print(estado_alerta_actual)
 
 #fue, la hago cabeza porque hacerlo bonito esta complicado
 func reducir_alerta() -> void:
@@ -46,7 +52,19 @@ func reducir_alerta() -> void:
 			_:
 				push_error("MMMMMM, en que estado estamo?")
 
-
 func reiniciar_alerta() -> void:
 	estado_alerta_actual = estado_alerta_inicial
 	Global.cryptido_alerta_reiniciada.emit(self)
+	
+func incrementar_contador(amount: int) -> void:
+	estado_score_track = clamp(estado_score_track + amount, MIN_SCORE, MAX_SCORE)
+
+func reducir_contador(amount: int) -> void:
+	estado_score_track = clamp(estado_score_track - amount, MIN_SCORE, MAX_SCORE)
+
+func activar_criptido() -> void:
+	Criptidos.registrar_criptido(self)
+	
+func revisar_puntaje() -> void:
+	if estado_score_track == 25 or estado_score_track == 50 or estado_score_track == 75 or estado_score_track == 100:
+		aumentar_alerta()
