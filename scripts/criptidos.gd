@@ -2,10 +2,10 @@ extends Node2D
 
 var criptidos: Array = []  # register all cryptids here
 const PESOS = {
-	BaseCryptid.CryptidType.POMBERO: 30,
+	BaseCryptid.CryptidType.POMBERO: 20,
 	BaseCryptid.CryptidType.CARPINCHO: 10,
 	BaseCryptid.CryptidType.SILBON: 20,
-	BaseCryptid.CryptidType.SOMBRERON: 15,
+	BaseCryptid.CryptidType.SOMBRERON: 30,
 	BaseCryptid.CryptidType.CURUPIRA: 15,
 	BaseCryptid.CryptidType.CHUPACABRAS: 25,
 	BaseCryptid.CryptidType.CADEJO: 20,

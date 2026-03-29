@@ -8,6 +8,8 @@ var item_en_mano: ObjetoItem
 var offset_objeto_mano := Vector2(100, 50)
 var offset_detectores: Vector2
 var mate_listo: bool = false
+enum EstadoPelo {VERDE, AMARILLO, NARANJA, ROJO, NEGRO}
+@export var estado_actual: EstadoPelo = EstadoPelo.VERDE
 
 func _ready() -> void:
 	#Global.item_seleccionado.connect(_on_item_seleccionado)
@@ -19,18 +21,12 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	var direction := Vector2(Input.get_axis("INPUT_LEFT", "INPUT_RIGHT"), Input.get_axis("INPUT_UP", "INPUT_DOWN")).normalized()
 	velocity = direction * SPEED
-	if velocity.distance_to(Vector2.ZERO) <= 0.001:
-		$Sprite.play("Idle")
-	else:
-		$Sprite.play("Movimiento")
-		move_and_slide()
-	velocity.move_toward(Vector2.ZERO, SPEED)
-	
+	_actualizar_animacion(velocity)
+	_crecer_pelo()
+	move_and_slide()
 	#Alinear el sprite y el objeto en la mano
 	if direction.x != 0:
 		%Sprite.flip_h = direction.x < 0
-
-
 
 func _process(_delta: float) -> void:
 	#gestion de sprites e items
@@ -57,7 +53,6 @@ func _process(_delta: float) -> void:
 		%BarraTermo.value -= %BarraMate.step
 	mate_listo = %BarraMate.value >= %BarraMate.max_value
 
-
 func soltar_juntar_item() -> void:
 	if item_en_mano:
 		if %DetectorDeInteractuables.has_overlapping_areas():
@@ -81,13 +76,11 @@ func soltar_juntar_item() -> void:
 		else:
 			levantar_item()
 
-
 func soltar_item() -> void:
 	item_en_mano.reparent(get_parent())
 	item_en_mano.global_position = %DetectorDeItems.global_position
 	item_en_mano.ser_puesto_en_el_piso()
 	item_en_mano = null
-
 
 func levantar_item() -> void:
 	var bodies: Array[Node2D] = %DetectorDeItems.get_overlapping_bodies()
@@ -99,12 +92,10 @@ func levantar_item() -> void:
 		item_en_mano = objeto
 		item_en_mano.ser_juntado()
 
-
 func esta_sosteniendo_item(objeto: String) -> bool:
 	if item_en_mano:
 		return item_en_mano.item_data.nombre.to_lower() == objeto.to_lower()
 	return false
-
 
 func piden_mate() -> bool:
 	if mate_listo:
@@ -115,17 +106,43 @@ func piden_mate() -> bool:
 	else:
 		return false
 
-
 func recibir_mate() -> void:
 	%Mate.visible = true
 	%BarraMate.value = 0.
 
-
 func _on_cargar_termo(cant: float) -> void:
 	%BarraTermo.value += cant
-
 
 func _on_timer_reloj_timeout() -> void:
 	%Reloj.value += %Reloj.step
 	if %Reloj.value >= %Reloj.max_value:
 		Global.reloj_jugador_termino.emit()
+
+func _actualizar_animacion(velocity) -> void:
+	var anim = "Verde"
+	match estado_actual:
+		EstadoPelo.VERDE: anim = "Verde"
+		EstadoPelo.AMARILLO: anim = "Amarillo"
+		EstadoPelo.NARANJA:  anim = "Naranja"
+		EstadoPelo.ROJO:     anim = "Rojo"
+	
+	if velocity.distance_to(Vector2.ZERO) <= 0.001:
+		anim = "Idle" + anim
+	if velocity.length() > 0.001:
+		anim = "Move" + anim
+	$Sprite.play(anim)
+
+func _crecer_pelo() -> void:
+	var target_y = 0
+	match estado_actual:
+		EstadoPelo.VERDE:    target_y = -700
+		EstadoPelo.AMARILLO: target_y = -100
+		EstadoPelo.NARANJA:  target_y = 100
+		EstadoPelo.ROJO:     target_y = 300
+		EstadoPelo.NEGRO:     target_y = 600
+	
+	$Camera2D/CanvasLayer/Pelo.position.y = lerpf(
+		$Camera2D/CanvasLayer/Pelo.position.y,
+		target_y,
+		0.05
+	)
