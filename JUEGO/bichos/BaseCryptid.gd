@@ -1,6 +1,8 @@
 extends RigidBody2D
 class_name BaseCryptid
 
+signal cambio_de_estado(nuevo_estado: EstadoAlerta)
+
 enum CryptidType {DEFAULT, CARPINCHO, POMBERO, SOMBRERON, CURUPIRA, 
 					SILBON, CHUPACABRAS, CADEJO, LLORONA, LUZ_MALA, MANDINGA}
 enum EstadoAlerta {VERDE, AMARILLO, NARANJA, ROJO, NEGRO}
@@ -69,6 +71,7 @@ func revisar_puntaje() -> void:
 	var nuevo_estado = calcular_estado()
 	if nuevo_estado != estado_alerta_actual:
 		estado_alerta_actual = nuevo_estado
+		cambio_de_estado.emit(estado_alerta_actual)
 		estado_cambiado(estado_alerta_actual)
 		print("Cambio el estado a ",estado_alerta_actual)
 
