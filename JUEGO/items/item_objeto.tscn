@@ -9,8 +9,8 @@
 radius = 248.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4nbub"]
-radius = 80.0
-height = 272.0
+radius = 104.0
+height = 368.0
 
 [node name="ItemObjeto" type="RigidBody2D" unique_id=866595722]
 z_index = 1

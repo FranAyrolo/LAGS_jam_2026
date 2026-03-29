@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://k8uv76kc5mop"]
 
 [ext_resource type="Script" uid="uid://gy04eiwy6swm" path="res://JUEGO/entorno/nivel.gd" id="1_k1acd"]
+[ext_resource type="Script" uid="uid://bm6lrs4yf5akm" path="res://JUEGO/entorno/preparar_mate.gd" id="2_1or0t"]
 [ext_resource type="Texture2D" uid="uid://coyxk7fr57n1s" path="res://assets/2D/Orko/Escenario.png" id="2_1wjxu"]
+[ext_resource type="PackedScene" uid="uid://d0uac2pv5m8rv" path="res://JUEGO/entorno/Mate/Mates.tscn" id="2_43114"]
 [ext_resource type="Texture2D" uid="uid://b3qnlhlhu0hw8" path="res://assets/2D/Orko/Escenario_pared.png" id="2_hlhfb"]
 [ext_resource type="PackedScene" uid="uid://cghkqyfp3gddx" path="res://JUEGO/player.tscn" id="3_6jq6r"]
 [ext_resource type="PackedScene" uid="uid://dey2upx52ry01" path="res://JUEGO/items/item_objeto.tscn" id="4_2uisl"]
@@ -10,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://xr017t6h0b27" path="res://assets/2D/Orko/Puertas/Puerta_Costado_01.png" id="5_g3b3p"]
 [ext_resource type="Resource" uid="uid://dftd5b305wvxb" path="res://JUEGO/items/cigarrillos.tres" id="5_iyq21"]
 [ext_resource type="Texture2D" uid="uid://clqnhadgwau50" path="res://assets/2D/Orko/Puertas/Puerta_Costado_02.png" id="6_m7xqr"]
-[ext_resource type="Resource" uid="uid://dachwaluqwx03" path="res://JUEGO/items/mate.tres" id="6_x4ort"]
 [ext_resource type="PackedScene" uid="uid://whnttgcwiimk" path="res://JUEGO/bichos/carpincho_seguidor.tscn" id="7_xrgas"]
 [ext_resource type="Texture2D" uid="uid://bfdmg1fbdj52y" path="res://assets/2D/Orko/Puertas/Puerta_Costado_03.png" id="7_y3dsa"]
 [ext_resource type="Texture2D" uid="uid://gmh05uclcq1e" path="res://assets/2D/Orko/curupira/Curupira_01.png" id="8_n50qt"]
@@ -33,6 +34,9 @@
 [ext_resource type="Theme" uid="uid://2p6glpubmhup" path="res://resources/themes/lab.tres" id="31_twp76"]
 [ext_resource type="PackedScene" uid="uid://d326ww52qsjyh" path="res://JUEGO/opciones_ingame.tscn" id="32_twp76"]
 [ext_resource type="PackedScene" uid="uid://bjg10p50pmw2p" path="res://scenes/credits/scrollable_credits.tscn" id="33_tiyg8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43114"]
+size = Vector2(248.5, 294)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3lht7"]
 vertices = PackedVector2Array(4459.711, -1157.0625, 4501.6484, -1204.9766, 4486.117, 13.8828125, 3806, 5.8828125, -2478, 634, -2478, 291.79688, -2387.5469, 306.8828, 3467.1719, -1318, 3459.1406, -1390.2813, 3742.9688, -1397.75, 3750.8125, -1319.3906, -2318, 2874, -2318, 2818.6016, -2182, 2826.6094, 3402, -2, 3807.8281, -1269.8828, 4366.6094, -1175.6797, 3758.1875, 22, 3449.7969, 30, 3402, 30, 853.9531, 1041.3516, 1093.0234, 1057.2891, 1054.9922, 1437.5469, 886.1094, 1429.5234, 2634, -998, 2634, -1189.8516, 3202, -1181.8594, 866.03125, -758.1094, 858.03125, -3389.8906, 1606, -3382.1016, 1606, -3094, 1597.9531, -2697.4766, 2198, -592.8906, 2198, -418.1172, 862.0625, -434.1172, 2039.1016, 2777.461, 2047.1094, 2841.5234, 2048.9297, 3256.2031, 2038.7266, 3390.0313, -2190, 3405.961, -2190, 3294, 1910.2422, 2769.4063, 2498, -950.53906, 2498, -998, 2634, -593.46094, 3402, -1278.7734, 3402, -1318, 3806, 22, -2326, 3294, -2326, 3246, 877.8906, 2178.1563, 1894.2578, 2162.1484, -2430, 3246, -2430, 2874, -2182, 1566, -2478, 1566, -2478, 1062, -2614, 1062, -2614, 1014, -2734, 1014, -2734, 690, -2614, 690, -2614, 634, -2230, 218, -2230, 178, -2174, 178, -1834, 226, -2174, 82, -1890, 82, -1890, 178, -1834, 178, 1878.5078, -3038, 1893.4766, -2753.4219, 1750, -2745.461, 1760.4609, -3038, -1992.1406, -1710.4688, -2232.5469, -1454.0313, -2403.3516, -1609.9766, -2342.1016, -1717.1797, -2326.3594, -2150, -1324.0469, -2150, -1350.0313, -1052.1016, -812.3672, -1654.3125, 1606.0625, -1270.1406, 2190, -1262.1328, 2190, -1007.35156, 2190, 2849.4531, 2190, 3254.1406, 2929.8125, -2, 2921.8203, -417.46875, 3750.1875, 430, 3457.7969, 430, 1750, -2705.4922, 2490, -601.4531, 2490, -641.52344, 3799.539, -1311.2734, 2634, -433.45313, 4358.75, -1277.8594, 2332.1406, -649.21875, 2333.6563, -608.85156, 3202, -1262.7578, -701.53125, -1645.7813, -601.64844, -1707.2266, -450.14063, -1548.1484, -458.14844, -1332.1406, -1341.9375, 226, 1744.4531, -3094, 2337.5313, -941.6328, 2317.5703, -988.78906, 99.78125, -749.9531, -2322.9063, 218)
@@ -84,6 +88,14 @@ fill_from = Vector2(1, 0)
 script = ExtResource("1_k1acd")
 
 [node name="Entorno" type="StaticBody2D" parent="." unique_id=532100026]
+
+[node name="PrepararMate" type="Area2D" parent="Entorno" unique_id=1763107383 node_paths=PackedStringArray("minijuego")]
+script = ExtResource("2_1or0t")
+minijuego = NodePath("../../CanvasLayerMate/MiniJuegoMate")
+
+[node name="PrepararMate" type="CollisionShape2D" parent="Entorno/PrepararMate" unique_id=1912665756]
+position = Vector2(2056, 493)
+shape = SubResource("RectangleShape2D_43114")
 
 [node name="Escenario" type="Sprite2D" parent="Entorno" unique_id=1598264907]
 z_index = -5
@@ -165,6 +177,7 @@ polygon = PackedVector2Array(512, 176, 520, -80, -528, -80, -528, 352, -312, 352
 
 [node name="Player" parent="." unique_id=669359742 instance=ExtResource("3_6jq6r")]
 unique_name_in_owner = true
+z_index = 2
 position = Vector2(-248, 1992)
 motion_mode = 1
 
@@ -185,7 +198,8 @@ autoplay = true
 bus = &"Music"
 
 [node name="Pava" parent="." unique_id=1819632843 instance=ExtResource("10_gs0jh")]
-position = Vector2(2432, 280)
+visible = false
+position = Vector2(2272, 296)
 
 [node name="Objetos" type="Node2D" parent="." unique_id=1063991787]
 unique_name_in_owner = true
@@ -196,14 +210,13 @@ position = Vector2(-776, -280)
 item_data = ExtResource("5_iyq21")
 
 [node name="Azucar" parent="Objetos" unique_id=866595722 instance=ExtResource("4_2uisl")]
-position = Vector2(2561, -552)
+position = Vector2(2568, -288)
 item_data = ExtResource("9_y0tya")
 
-[node name="Mate" parent="Objetos" unique_id=2125049237 instance=ExtResource("4_2uisl")]
-position = Vector2(2552, -104)
-item_data = ExtResource("6_x4ort")
+[node name="ItemObjeto4" parent="Objetos" unique_id=1657895425 instance=ExtResource("4_2uisl")]
+position = Vector2(1432, 1472)
 
-[node name="Regadera" parent="Objetos" unique_id=1657895425 instance=ExtResource("4_2uisl")]
+[node name="Regadera" parent="Objetos" unique_id=2033734681 instance=ExtResource("4_2uisl")]
 position = Vector2(-2504, -2672)
 item_data = ExtResource("15_y3dsa")
 
@@ -286,9 +299,9 @@ position = Vector2(-3264, -1312)
 nombre = 4
 criptido_activo = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=207478201]
+[node name="CanvasLayerMenu" type="CanvasLayer" parent="." unique_id=207478201]
 
-[node name="MenuControl" type="Control" parent="CanvasLayer" unique_id=1726897635]
+[node name="MenuControl" type="Control" parent="CanvasLayerMenu" unique_id=1726897635]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -297,7 +310,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuIngame" type="BoxContainer" parent="CanvasLayer/MenuControl" unique_id=1520249073]
+[node name="MenuIngame" type="BoxContainer" parent="CanvasLayerMenu/MenuControl" unique_id=1520249073]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -317,41 +330,41 @@ theme_override_constants/separation = 16
 alignment = 1
 vertical = true
 
-[node name="Continuar" type="Button" parent="CanvasLayer/MenuControl/MenuIngame" unique_id=1964253881]
+[node name="Continuar" type="Button" parent="CanvasLayerMenu/MenuControl/MenuIngame" unique_id=1964253881]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("31_twp76")
 text = "Continuar"
 
-[node name="Opciones" type="Button" parent="CanvasLayer/MenuControl/MenuIngame" unique_id=809745430]
+[node name="Opciones" type="Button" parent="CanvasLayerMenu/MenuControl/MenuIngame" unique_id=809745430]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("31_twp76")
 text = "Opciones"
 
-[node name="Creditos" type="Button" parent="CanvasLayer/MenuControl/MenuIngame" unique_id=1497003423]
+[node name="Creditos" type="Button" parent="CanvasLayerMenu/MenuControl/MenuIngame" unique_id=1497003423]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("31_twp76")
 text = "Créditos"
 
-[node name="Salir" type="Button" parent="CanvasLayer/MenuControl/MenuIngame" unique_id=124952216]
+[node name="Salir" type="Button" parent="CanvasLayerMenu/MenuControl/MenuIngame" unique_id=124952216]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("31_twp76")
 text = "Salir"
 
-[node name="OpcionesIngame" parent="CanvasLayer/MenuControl" unique_id=1151123548 instance=ExtResource("32_twp76")]
+[node name="OpcionesIngame" parent="CanvasLayerMenu/MenuControl" unique_id=1151123548 instance=ExtResource("32_twp76")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
-[node name="CreditosIngame" parent="CanvasLayer/MenuControl" unique_id=1895678736 instance=ExtResource("33_tiyg8")]
+[node name="CreditosIngame" parent="CanvasLayerMenu/MenuControl" unique_id=1895678736 instance=ExtResource("33_tiyg8")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuControl/CreditosIngame" unique_id=1621220372]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayerMenu/MenuControl/CreditosIngame" unique_id=1621220372]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -361,7 +374,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_nko5n")
 
-[node name="Volver" type="Button" parent="CanvasLayer/MenuControl" unique_id=983370914]
+[node name="Volver" type="Button" parent="CanvasLayerMenu/MenuControl" unique_id=983370914]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -371,5 +384,12 @@ offset_right = 189.0
 offset_bottom = 591.0
 text = "VOLVER"
 
+[node name="CanvasLayerMate" type="CanvasLayer" parent="." unique_id=565674393]
+unique_name_in_owner = true
+
+[node name="MiniJuegoMate" parent="CanvasLayerMate" unique_id=867639483 instance=ExtResource("2_43114")]
+visible = false
+
 [connection signal="objeto_aceptado" from="Objetos/DepositoPomberito" to="Criptidos/Pomberito" method="_on_deposito_pomberito_objeto_aceptado"]
 [connection signal="timeout" from="Criptidos/CriptidoTimer" to="Criptidos" method="_on_criptido_timer_timeout"]
+[connection signal="mate_listo" from="CanvasLayerMate/MiniJuegoMate" to="." method="_on_mini_juego_mate_mate_listo"]
