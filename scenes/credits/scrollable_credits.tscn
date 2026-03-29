@@ -14,6 +14,55 @@ script = ExtResource("1_jnbjt")
 
 [node name="CreditsLabel" parent="." unique_id=899392894 instance=ExtResource("2_35kdw")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
+text = "[font_size=48]Créditos[/font_size]
+
+[font_size=32]Godot Game Template[/font_size]
+[img=50]res:///assets/plugin_logo/logo.png[/img]  
+Author: [url=https://github.com/Maaack/Godot-Game-Template/graphs/contributors]Marek Belski and contributors[/url]  
+Source: [url=https://github.com/Maaack/Godot-Game-Template]github: Godot-Game-Template[/url]  
+License: [url=LICENSE.txt]MIT License[/url]  
+
+[font_size=38](parte de)El equipo de[/font_size]
+[img=70]res:///assets/2D/logo-pixel.png[/img]
+[font_size=30s]Ghost Pixel[/font_size]
+[font_size=20s]Arte: Ariel Gazzano 
+Diseño: Santiago Rodriguez (AFKabi)
+Programación: Francisco Ayrolo [url=https://estroponcio.itch.io/]Estroponcio[/url]
+Música y sonido: Lautaro E. Monjo 
+[/font_size]
+Código fuente: [url=https://github.com/FranAyrolo/LAGS_jam_2026]GITHUB[/url]  
+Arte y código bajo licencia: [url=https://creativecommons.org/licenses/by-nc-sa/4.0/]CC BY NC SA 4.0[/url] 
+
+"
 fit_content = false
-scroll_active = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1147244938]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=48]Créditos[/font_size]
+[font_size=38](parte de)El equipo de[/font_size]
+[img=80]res:///assets/2D/logo-pixel.png[/img]
+[font_size=30s][b][color=purple][wave amp=40.0 freq=3.0 connected=1]Ghost Pixel[/wave][/color][/b][/font_size]
+[font_size=20s]Arte: Ariel Gazzano 
+Diseño: Santiago Rodriguez (AFKabi)
+Programación: Francisco Ayrolo [url=https://estroponcio.itch.io/](Estroponcio)[/url]
+Música y sonido: Lautaro E. Monjo 
+[/font_size]
+Código fuente: [url=https://github.com/FranAyrolo/LAGS_jam_2026]GITHUB[/url]  
+Arte y código bajo licencia: [url=https://creativecommons.org/licenses/by-nc-sa/4.0/]CC BY NC SA 4.0[/url] 
+
+Thanks to:
+[font_size=26s]Godot Game Template[/font_size]
+[img=50]res:///assets/plugin_logo/logo.png[/img]  
+Author: [url=https://github.com/Maaack/Godot-Game-Template/graphs/contributors]Marek Belski and contributors[/url]  
+Source: [url=https://github.com/Maaack/Godot-Game-Template]github: Godot-Game-Template[/url]  
+License: [url=LICENSE.txt]MIT License[/url]  "
+horizontal_alignment = 1
+vertical_alignment = 1

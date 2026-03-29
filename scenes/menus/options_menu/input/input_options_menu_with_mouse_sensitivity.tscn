@@ -36,4 +36,7 @@ tick_count = 8
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer" index="1" unique_id=375706598]
 layout_mode = 2
 
+[node name="InputActionsList" parent="VBoxContainer/InputMappingContainer" parent_id_path=PackedInt32Array(1004992485) index="1" unique_id=2089976301]
+visible = true
+
 [editable path="VBoxContainer/MarginContainer/VBoxContainer/MouseSensitivityControl"]
