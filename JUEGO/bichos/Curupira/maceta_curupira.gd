@@ -19,6 +19,10 @@ func _ready() -> void:
 	$Timer.timeout.connect(resecarse)
 
 
+func _process(_delta: float) -> void:
+	$Label.text = "AGUA = %s\nEstado: %s\ntimer: %s" % [nivel_vital, estado_maceta, $Timer.time_left]
+
+
 func resecarse() -> void:
 	nivel_vital = clamp(nivel_vital - decrecimiento_por_paso * (1 + randf_range(-azarcito, azarcito)), 0., 100.)
 	update_estado()
@@ -26,13 +30,14 @@ func resecarse() -> void:
 
 
 func interactuar() -> void:
-	pass
+	if Global.get_player().esta_sosteniendo_item("regadera"):
+		nivel_vital = clamp(nivel_vital + 1., 0., 100.)
 
 
 func update_estado() -> void:
 	if nivel_vital <= 33.3:
 		if estado_maceta != EstadoMaceta.SECA:
-			estado_maceta = EstadoMaceta
+			estado_maceta = EstadoMaceta.SECA
 			cambio_de_estado.emit(estado_maceta)
 	elif nivel_vital <= 66.6:
 		if estado_maceta != EstadoMaceta.MEDIO_VIVA:

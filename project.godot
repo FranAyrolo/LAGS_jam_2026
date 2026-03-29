@@ -122,6 +122,7 @@ locale/translations=PackedStringArray("res://addons/maaacks_game_template/base/t
 
 [layer_names]
 
+2d_physics/layer_1="Entorno"
 2d_physics/layer_2="items"
 2d_physics/layer_3="interactuables"
 2d_physics/layer_7="Jugador"

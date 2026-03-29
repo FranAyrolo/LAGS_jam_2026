@@ -11,7 +11,7 @@ enum EstadoAlerta {VERDE, AMARILLO, NARANJA, ROJO, NEGRO}
 @export var estado_alerta_inicial: EstadoAlerta = EstadoAlerta.VERDE
 @export var estado_alerta_actual: EstadoAlerta = EstadoAlerta.VERDE
 @export var movement_speed: float = 750
-@export var estado_score_track: int = 0
+@export var estado_score_track: float = 0.
 @export var criptido_activo: bool = false
 
 @onready var navigation_agent: NavigationAgent2D = get_node_or_null("NavigationAgent2D")

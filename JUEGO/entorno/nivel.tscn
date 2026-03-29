@@ -13,6 +13,8 @@
 [ext_resource type="Resource" uid="uid://dachwaluqwx03" path="res://JUEGO/items/mate.tres" id="6_x4ort"]
 [ext_resource type="PackedScene" uid="uid://whnttgcwiimk" path="res://JUEGO/bichos/carpincho_seguidor.tscn" id="7_xrgas"]
 [ext_resource type="Texture2D" uid="uid://bfdmg1fbdj52y" path="res://assets/2D/Orko/Puertas/Puerta_Costado_03.png" id="7_y3dsa"]
+[ext_resource type="Texture2D" uid="uid://gmh05uclcq1e" path="res://assets/2D/Orko/curupira/Curupira_01.png" id="8_n50qt"]
+[ext_resource type="Script" uid="uid://bp0fg5wv4eth8" path="res://JUEGO/entorno/control_central.gd" id="8_tu127"]
 [ext_resource type="PackedScene" uid="uid://cwnujkuarng5m" path="res://JUEGO/entorno/deposito_de_objetos.tscn" id="8_xnulk"]
 [ext_resource type="AudioStream" uid="uid://d0oulstl6n5ef" path="res://assets/audio/Canciones/Foolcloro_Calm.ogg" id="9_g3b3p"]
 [ext_resource type="Resource" uid="uid://cvskodumwhc7r" path="res://JUEGO/items/caña.tres" id="9_y0tya"]
@@ -22,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dl4trs34hkywk" path="res://assets/2D/Orko/pomberito/Pomberito_03.png" id="13_px5cs"]
 [ext_resource type="Script" uid="uid://brepspiovr67m" path="res://JUEGO/bichos/Pomberito/Pomberito.gd" id="13_twvys"]
 [ext_resource type="Texture2D" uid="uid://b3n12hlbhsgdj" path="res://assets/2D/Orko/pomberito/Pomberito_05.png" id="14_7f5ui"]
+[ext_resource type="Resource" uid="uid://blph65m8lb82d" path="res://JUEGO/items/regadera.tres" id="15_y3dsa"]
 [ext_resource type="Texture2D" uid="uid://ogexl3mvolw3" path="res://assets/2D/Orko/pomberito/Pomberito_04.png" id="16_jrq6w"]
 [ext_resource type="Texture2D" uid="uid://bbopv6uh2ceft" path="res://assets/2D/Orko/pomberito/Puchos.png" id="17_7f5ui"]
 [ext_resource type="Texture2D" uid="uid://eqr1154iwmpp" path="res://assets/2D/argentinian-assets-pack-v1.0/bebidas/Mate.png" id="19_y0tya"]
@@ -133,6 +136,24 @@ sprite_cerrado = ExtResource("5_g3b3p")
 sprite_semi_abierto = ExtResource("6_m7xqr")
 sprite_abierto = ExtResource("7_y3dsa")
 
+[node name="ControlCentral" type="Node2D" parent="Entorno" unique_id=1253706232 node_paths=PackedStringArray("curupira")]
+position = Vector2(-592, 1000)
+script = ExtResource("8_tu127")
+curupira = NodePath("../../Criptidos/Curupira")
+
+[node name="SpriteCurupira" type="Sprite2D" parent="Entorno/ControlCentral" unique_id=449847218]
+unique_name_in_owner = true
+position = Vector2(8, -176)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_n50qt")
+region_enabled = true
+region_rect = Rect2(211, 193, 500, 368)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Entorno/ControlCentral" unique_id=912336019]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Entorno/ControlCentral/StaticBody2D" unique_id=1304813653]
+polygon = PackedVector2Array(512, 176, 520, -80, -528, -80, -528, 352, -312, 352, -312, 248, -272, 248, -272, 72, 152, 72, 152, 240, 336, 240, 336, 176)
+
 [node name="Player" parent="." unique_id=669359742 instance=ExtResource("3_6jq6r")]
 unique_name_in_owner = true
 position = Vector2(-248, 1992)
@@ -173,8 +194,9 @@ item_data = ExtResource("9_y0tya")
 position = Vector2(2552, -104)
 item_data = ExtResource("6_x4ort")
 
-[node name="ItemObjeto4" parent="Objetos" unique_id=1657895425 instance=ExtResource("4_2uisl")]
-position = Vector2(1432, 1472)
+[node name="Regadera" parent="Objetos" unique_id=1657895425 instance=ExtResource("4_2uisl")]
+position = Vector2(-2504, -2672)
+item_data = ExtResource("15_y3dsa")
 
 [node name="DepositoPomberito" parent="Objetos" unique_id=576087988 instance=ExtResource("8_xnulk")]
 z_index = -1
@@ -250,7 +272,10 @@ build_mode = 1
 polygon = PackedVector2Array(-4032, 1072, -3928, 1088, -3848, 1120, -3784, 1168, -3696, 1240, -3648, 1296, -3624, 1376, -3704, 1464, -3760, 1512, -3864, 1576, -4016, 1584, -4184, 1584, -4320, 1552, -4440, 1496, -4528, 1424, -4528, 1328, -4472, 1232, -4344, 1120, -4160, 1072)
 
 [node name="Curupira" parent="Criptidos" unique_id=21967619 instance=ExtResource("27_m7xqr")]
+unique_name_in_owner = true
 position = Vector2(-3264, -1312)
+nombre = 4
+criptido_activo = false
 
 [connection signal="objeto_aceptado" from="Objetos/DepositoPomberito" to="Criptidos/Pomberito" method="_on_deposito_pomberito_objeto_aceptado"]
 [connection signal="timeout" from="Criptidos/CriptidoTimer" to="Criptidos" method="_on_criptido_timer_timeout"]
