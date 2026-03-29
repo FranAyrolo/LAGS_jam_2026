@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://d0uac2pv5m8rv"]
+
+[ext_resource type="Script" uid="uid://cmaxike2wrc52" path="res://JUEGO/entorno/Mate/mates.gd" id="1_5qvxm"]
+[ext_resource type="Texture2D" uid="uid://dfl6bosfncwky" path="res://assets/2D/Orko/ZonaMate/Popup_mate_01.png" id="2_psc75"]
+[ext_resource type="Texture2D" uid="uid://ycfaoob0f0kg" path="res://assets/2D/Orko/ZonaMate/Popup_mate_02.png" id="3_t7im5"]
+[ext_resource type="Texture2D" uid="uid://dum5va0tipfi6" path="res://assets/2D/Orko/ZonaMate/Popup_mate_03.png" id="4_oo2or"]
+[ext_resource type="Texture2D" uid="uid://cn203k3btttxj" path="res://assets/2D/Orko/ZonaMate/Popup_mate_04.png" id="5_2e0n6"]
+[ext_resource type="Texture2D" uid="uid://djjayl3vroje" path="res://assets/2D/Orko/ZonaMate/Popup_mate_05.png" id="6_7l57b"]
+[ext_resource type="Texture2D" uid="uid://k5vni0atngvd" path="res://assets/2D/Orko/ZonaMate/Popup_mate_06.png" id="7_i0gva"]
+[ext_resource type="Script" uid="uid://e0h76ck1bln3" path="res://JUEGO/entorno/Mate/pava.gd" id="8_t7im5"]
+
+[sub_resource type="DPITexture" id="DPITexture_t7im5"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+base_scale = 2.0
+
+[sub_resource type="DPITexture" id="DPITexture_oo2or"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 2.0
+
+[sub_resource type="DPITexture" id="DPITexture_2e0n6"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".37\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\" fill-opacity=\".5\"/></svg>
+"
+base_scale = 2.0
+
+[sub_resource type="DPITexture" id="DPITexture_7l57b"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".25\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 2.0
+
+[sub_resource type="DPITexture" id="DPITexture_i0gva"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+base_scale = 2.0
+
+[sub_resource type="DPITexture" id="DPITexture_s5cjf"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 2.0
+
+[sub_resource type="DPITexture" id="DPITexture_a7lav"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".37\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\" fill-opacity=\".5\"/></svg>
+"
+base_scale = 2.0
+
+[sub_resource type="DPITexture" id="DPITexture_0ixxr"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".25\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 2.0
+
+[node name="MiniJuegoMate" type="Control" unique_id=867639483]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5qvxm")
+
+[node name="Cargar Agua" type="Panel" parent="." unique_id=221906128]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="PopupMate01" type="Sprite2D" parent="Cargar Agua" unique_id=142696414]
+position = Vector2(800, 128)
+texture = ExtResource("2_psc75")
+
+[node name="PopupMate02" type="Sprite2D" parent="Cargar Agua" unique_id=1462881858]
+position = Vector2(1152, 488)
+texture = ExtResource("3_t7im5")
+
+[node name="ProgressBar" type="ProgressBar" parent="Cargar Agua/PopupMate02" unique_id=1488257142]
+visible = false
+offset_left = -360.0
+offset_top = -352.0
+offset_right = -356.0
+offset_bottom = -325.0
+
+[node name="PopupMate03" type="Sprite2D" parent="Cargar Agua" unique_id=1672664774]
+position = Vector2(1920, 504)
+texture = ExtResource("4_oo2or")
+
+[node name="PopupMate04" type="Sprite2D" parent="Cargar Agua" unique_id=690291463]
+position = Vector2(1152, 232)
+texture = ExtResource("5_2e0n6")
+
+[node name="ProgressBar" type="ProgressBar" parent="Cargar Agua/PopupMate04" unique_id=1930179339]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="PopupMate05" type="Sprite2D" parent="Cargar Agua" unique_id=84632544]
+position = Vector2(2344, 408)
+texture = ExtResource("6_7l57b")
+
+[node name="Pava" type="TextureRect" parent="Cargar Agua" unique_id=805651207]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 104.0
+offset_right = 380.0
+offset_bottom = 560.0
+texture = ExtResource("7_i0gva")
+script = ExtResource("8_t7im5")
+
+[node name="CheckButton" type="CheckButton" parent="Cargar Agua/Pava" unique_id=487597367]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 280.0
+offset_right = 212.0
+offset_bottom = 320.0
+theme_override_constants/icon_max_width = 80
+theme_override_icons/checked = SubResource("DPITexture_t7im5")
+theme_override_icons/unchecked = SubResource("DPITexture_oo2or")
+theme_override_icons/checked_disabled = SubResource("DPITexture_2e0n6")
+theme_override_icons/unchecked_disabled = SubResource("DPITexture_7l57b")
+theme_override_icons/checked_mirrored = SubResource("DPITexture_i0gva")
+theme_override_icons/unchecked_mirrored = SubResource("DPITexture_s5cjf")
+theme_override_icons/checked_disabled_mirrored = SubResource("DPITexture_a7lav")
+theme_override_icons/unchecked_disabled_mirrored = SubResource("DPITexture_0ixxr")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Timer" type="Timer" parent="Cargar Agua/Pava" unique_id=1651619847]
+wait_time = 0.5
+autostart = true
+
+[node name="Label" type="Label" parent="Cargar Agua/Pava" unique_id=597824230]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 344.0
+offset_right = 208.0
+offset_bottom = 389.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "20"
+horizontal_alignment = 1
+
+[connection signal="toggled" from="Cargar Agua/Pava/CheckButton" to="Cargar Agua/Pava" method="_on_check_button_toggled"]
+[connection signal="timeout" from="Cargar Agua/Pava/Timer" to="Cargar Agua/Pava" method="_on_timer_timeout"]

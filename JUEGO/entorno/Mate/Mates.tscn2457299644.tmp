@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://d0uac2pv5m8rv"]
+
+[ext_resource type="Script" uid="uid://cmaxike2wrc52" path="res://JUEGO/entorno/Mate/mates.gd" id="1_5qvxm"]
+[ext_resource type="Texture2D" uid="uid://dfl6bosfncwky" path="res://assets/2D/Orko/ZonaMate/Popup_mate_01.png" id="2_psc75"]
+[ext_resource type="Texture2D" uid="uid://ycfaoob0f0kg" path="res://assets/2D/Orko/ZonaMate/Popup_mate_02.png" id="3_t7im5"]
+[ext_resource type="Texture2D" uid="uid://dum5va0tipfi6" path="res://assets/2D/Orko/ZonaMate/Popup_mate_03.png" id="4_oo2or"]
+[ext_resource type="Texture2D" uid="uid://cn203k3btttxj" path="res://assets/2D/Orko/ZonaMate/Popup_mate_04.png" id="5_2e0n6"]
+[ext_resource type="Texture2D" uid="uid://djjayl3vroje" path="res://assets/2D/Orko/ZonaMate/Popup_mate_05.png" id="6_7l57b"]
+[ext_resource type="Texture2D" uid="uid://k5vni0atngvd" path="res://assets/2D/Orko/ZonaMate/Popup_mate_06.png" id="7_i0gva"]
+[ext_resource type="Script" uid="uid://e0h76ck1bln3" path="res://JUEGO/entorno/Mate/popup_mate_06.gd" id="8_t7im5"]
+
+[node name="MiniJuegoMate" type="Control" unique_id=867639483]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5qvxm")
+
+[node name="Cargar Agua" type="Panel" parent="." unique_id=221906128]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="PopupMate01" type="Sprite2D" parent="Cargar Agua" unique_id=142696414]
+position = Vector2(800, 128)
+texture = ExtResource("2_psc75")
+
+[node name="PopupMate02" type="Sprite2D" parent="Cargar Agua" unique_id=1462881858]
+position = Vector2(360, 352)
+texture = ExtResource("3_t7im5")
+
+[node name="ProgressBar" type="ProgressBar" parent="Cargar Agua/PopupMate02" unique_id=1488257142]
+offset_left = -360.0
+offset_top = -352.0
+offset_right = -356.0
+offset_bottom = -325.0
+
+[node name="PopupMate03" type="Sprite2D" parent="Cargar Agua" unique_id=1672664774]
+position = Vector2(1920, 504)
+texture = ExtResource("4_oo2or")
+
+[node name="PopupMate04" type="Sprite2D" parent="Cargar Agua" unique_id=690291463]
+position = Vector2(120, 320)
+texture = ExtResource("5_2e0n6")
+
+[node name="ProgressBar" type="ProgressBar" parent="Cargar Agua/PopupMate04" unique_id=1930179339]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="PopupMate05" type="Sprite2D" parent="Cargar Agua" unique_id=84632544]
+position = Vector2(2344, 408)
+texture = ExtResource("6_7l57b")
+
+[node name="PopupMate06" type="Sprite2D" parent="Cargar Agua" unique_id=160694062]
+position = Vector2(1432, 301)
+texture = ExtResource("7_i0gva")
+script = ExtResource("8_t7im5")
+
+[node name="Timer" type="Timer" parent="Cargar Agua/PopupMate06" unique_id=1651619847]
+wait_time = 0.5
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Cargar Agua/PopupMate06" unique_id=1336822695]
+offset_left = -16.0
+offset_top = 59.0
+offset_right = 24.0
+offset_bottom = 222.0
+
+[connection signal="timeout" from="Cargar Agua/PopupMate06/Timer" to="Cargar Agua/PopupMate06" method="_on_timer_timeout"]

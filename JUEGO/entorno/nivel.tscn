@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://gy04eiwy6swm" path="res://JUEGO/entorno/nivel.gd" id="1_k1acd"]
 [ext_resource type="Texture2D" uid="uid://coyxk7fr57n1s" path="res://assets/2D/Orko/Escenario.png" id="2_1wjxu"]
+[ext_resource type="PackedScene" uid="uid://d0uac2pv5m8rv" path="res://JUEGO/entorno/Mate/Mates.tscn" id="2_43114"]
 [ext_resource type="Texture2D" uid="uid://b3qnlhlhu0hw8" path="res://assets/2D/Orko/Escenario_pared.png" id="2_hlhfb"]
 [ext_resource type="PackedScene" uid="uid://cghkqyfp3gddx" path="res://JUEGO/player.tscn" id="3_6jq6r"]
 [ext_resource type="PackedScene" uid="uid://dey2upx52ry01" path="res://JUEGO/items/item_objeto.tscn" id="4_2uisl"]
@@ -108,6 +109,7 @@ position = Vector2(-248, 1992)
 motion_mode = 1
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2117067103]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_3lht7")
 metadata/_edit_lock_ = true
 
@@ -216,6 +218,10 @@ texture = ExtResource("4_qwutd")
 position = Vector2(560, 48)
 build_mode = 1
 polygon = PackedVector2Array(-4032, 1072, -3928, 1088, -3848, 1120, -3784, 1168, -3696, 1240, -3648, 1296, -3624, 1376, -3704, 1464, -3760, 1512, -3864, 1576, -4016, 1584, -4184, 1584, -4320, 1552, -4440, 1496, -4528, 1424, -4528, 1328, -4472, 1232, -4344, 1120, -4160, 1072)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=565674393]
+
+[node name="MiniJuegoMate" parent="CanvasLayer" unique_id=867639483 instance=ExtResource("2_43114")]
 
 [connection signal="objeto_aceptado" from="Objetos/DepositoPomberito" to="Criptidos/Pomberito" method="_on_deposito_pomberito_objeto_aceptado"]
 [connection signal="timeout" from="Criptidos/CriptidoTimer" to="Criptidos" method="_on_criptido_timer_timeout"]
