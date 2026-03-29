@@ -35,6 +35,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43114"]
 size = Vector2(248.5, 294)
 
+[sub_resource type="Gradient" id="Gradient_k0n5y"]
+offsets = PackedFloat32Array(0.33333334, 0.6703297)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_twp76"]
+gradient = SubResource("Gradient_k0n5y")
+width = 100
+height = 100
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3lht7"]
 vertices = PackedVector2Array(4459.711, -1157.0625, 4501.6484, -1204.9766, 4486.117, 13.8828125, 3806, 5.8828125, -2478, 634, -2478, 291.79688, -2387.5469, 306.8828, 3467.1719, -1318, 3459.1406, -1390.2813, 3742.9688, -1397.75, 3750.8125, -1319.3906, -2318, 2874, -2318, 2818.6016, -2182, 2826.6094, 3402, -2, 3807.8281, -1269.8828, 4366.6094, -1175.6797, 3758.1875, 22, 3449.7969, 30, 3402, 30, 853.9531, 1041.3516, 1093.0234, 1057.2891, 1054.9922, 1437.5469, 886.1094, 1429.5234, 2634, -998, 2634, -1189.8516, 3202, -1181.8594, 866.03125, -758.1094, 858.03125, -3389.8906, 1606, -3382.1016, 1606, -3094, 1597.9531, -2697.4766, 2198, -592.8906, 2198, -418.1172, 862.0625, -434.1172, 2039.1016, 2777.461, 2047.1094, 2841.5234, 2048.9297, 3256.2031, 2038.7266, 3390.0313, -2190, 3405.961, -2190, 3294, 1910.2422, 2769.4063, 2498, -950.53906, 2498, -998, 2634, -593.46094, 3402, -1278.7734, 3402, -1318, 3806, 22, -2326, 3294, -2326, 3246, 877.8906, 2178.1563, 1894.2578, 2162.1484, -2430, 3246, -2430, 2874, -2182, 1566, -2478, 1566, -2478, 1062, -2614, 1062, -2614, 1014, -2734, 1014, -2734, 690, -2614, 690, -2614, 634, -2230, 218, -2230, 178, -2174, 178, -1834, 226, -2174, 82, -1890, 82, -1890, 178, -1834, 178, 1878.5078, -3038, 1893.4766, -2753.4219, 1750, -2745.461, 1760.4609, -3038, -1992.1406, -1710.4688, -2232.5469, -1454.0313, -2403.3516, -1609.9766, -2342.1016, -1717.1797, -2326.3594, -2150, -1324.0469, -2150, -1350.0313, -1052.1016, -812.3672, -1654.3125, 1606.0625, -1270.1406, 2190, -1262.1328, 2190, -1007.35156, 2190, 2849.4531, 2190, 3254.1406, 2929.8125, -2, 2921.8203, -417.46875, 3750.1875, 430, 3457.7969, 430, 1750, -2705.4922, 2490, -601.4531, 2490, -641.52344, 3799.539, -1311.2734, 2634, -433.45313, 4358.75, -1277.8594, 2332.1406, -649.21875, 2333.6563, -608.85156, 3202, -1262.7578, -701.53125, -1645.7813, -601.64844, -1707.2266, -450.14063, -1548.1484, -458.14844, -1332.1406, -1341.9375, 226, 1744.4531, -3094, 2337.5313, -941.6328, 2317.5703, -988.78906, 99.78125, -749.9531, -2322.9063, 218)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13), PackedInt32Array(14, 15, 16, 0, 3, 17, 18, 19), PackedInt32Array(20, 21, 22, 23), PackedInt32Array(24, 25, 26), PackedInt32Array(27, 28, 29, 30, 31), PackedInt32Array(32, 33, 34), PackedInt32Array(35, 36, 37, 38, 39, 40, 41), PackedInt32Array(42, 43, 24, 44), PackedInt32Array(45, 46, 7), PackedInt32Array(3, 47, 17), PackedInt32Array(41, 40, 48, 49, 11, 13, 50, 51), PackedInt32Array(49, 52, 53, 11), PackedInt32Array(54, 55, 56, 34, 20), PackedInt32Array(56, 57, 58), PackedInt32Array(58, 59, 60, 61), PackedInt32Array(61, 62, 4), PackedInt32Array(63, 64, 65, 66), PackedInt32Array(65, 67, 68, 69), PackedInt32Array(69, 70, 66), PackedInt32Array(71, 72, 73, 74), PackedInt32Array(75, 76, 77, 78), PackedInt32Array(75, 78, 79, 80), PackedInt32Array(81, 75, 80, 82), PackedInt32Array(83, 84, 85, 34, 27), PackedInt32Array(86, 87, 37, 36), PackedInt32Array(14, 88, 89, 15), PackedInt32Array(17, 90, 91, 18), PackedInt32Array(73, 92, 31, 30), PackedInt32Array(44, 93, 94, 42), PackedInt32Array(7, 10, 95, 15, 89, 96, 44, 45), PackedInt32Array(15, 97, 16), PackedInt32Array(98, 99, 32), PackedInt32Array(26, 100, 45), PackedInt32Array(81, 101, 102, 103, 104, 105), PackedInt32Array(30, 106, 74, 73), PackedInt32Array(27, 31, 83), PackedInt32Array(23, 50, 13, 54, 20), PackedInt32Array(26, 45, 44), PackedInt32Array(24, 26, 44), PackedInt32Array(107, 42, 94, 98), PackedInt32Array(34, 56, 58, 61, 4, 105), PackedInt32Array(108, 107, 98, 32, 34, 85), PackedInt32Array(109, 27, 34, 105), PackedInt32Array(6, 110, 63, 66, 4), PackedInt32Array(81, 82, 101), PackedInt32Array(105, 104, 109), PackedInt32Array(66, 105, 4), PackedInt32Array(66, 65, 69)])
@@ -172,6 +183,11 @@ z_index = 2
 position = Vector2(-248, 1992)
 motion_mode = 1
 
+[node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=1656381159]
+color = Color(1, 1, 0.42352942, 0.29803923)
+texture = SubResource("GradientTexture2D_twp76")
+texture_scale = 22.5
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2117067103]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_3lht7")
@@ -294,6 +310,9 @@ criptido_activo = false
 
 [node name="MiniJuegoMate" parent="CanvasLayer" unique_id=867639483 instance=ExtResource("2_43114")]
 visible = false
+
+[node name="(Oscuridad)CanvasModulate" type="CanvasModulate" parent="." unique_id=351704490]
+color = Color(0.13759509, 0.19142917, 0.23059139, 1)
 
 [connection signal="objeto_aceptado" from="Objetos/DepositoPomberito" to="Criptidos/Pomberito" method="_on_deposito_pomberito_objeto_aceptado"]
 [connection signal="timeout" from="Criptidos/CriptidoTimer" to="Criptidos" method="_on_criptido_timer_timeout"]
