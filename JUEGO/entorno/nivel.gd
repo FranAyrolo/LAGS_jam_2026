@@ -4,6 +4,7 @@ extends Node2D
 func _ready() -> void:
 	%MenuIngame.visible = false
 	Global.request_navmap_rid.connect(_on_navmap_rid_request)
+	%Player.reloj_terminado.connect()
 	%Continuar.pressed.connect(_mostrar_menu)
 	%Opciones.pressed.connect(_on_opciones_pressed)
 	%Creditos.pressed.connect(_on_creditos_pressed)

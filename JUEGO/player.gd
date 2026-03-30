@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+signal reloj_terminado
+
 @onready var reloj: TextureProgressBar = %Reloj
 
 @export var SPEED = 1000.0

@@ -21,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://cvskodumwhc7r" path="res://JUEGO/items/caña.tres" id="9_y0tya"]
 [ext_resource type="PackedScene" uid="uid://caku6fdkifl51" path="res://JUEGO/entorno/pava.tscn" id="10_gs0jh"]
 [ext_resource type="Script" uid="uid://o6hjdwxj0xbl" path="res://scripts/criptidos.gd" id="11_jmi4e"]
+[ext_resource type="Texture2D" uid="uid://bjtsssilfs8hc" path="res://assets/2D/Orko/sombreron/Sombreron_01.png" id="12_w41yk"]
 [ext_resource type="Texture2D" uid="uid://dkfogpefev63i" path="res://assets/2D/Orko/pomberito/Pomberito_02.png" id="13_7kew1"]
 [ext_resource type="Texture2D" uid="uid://dl4trs34hkywk" path="res://assets/2D/Orko/pomberito/Pomberito_03.png" id="13_px5cs"]
 [ext_resource type="Script" uid="uid://brepspiovr67m" path="res://JUEGO/bichos/Pomberito/Pomberito.gd" id="13_twvys"]
@@ -170,7 +171,24 @@ texture = ExtResource("8_n50qt")
 region_enabled = true
 region_rect = Rect2(211, 193, 500, 368)
 
+[node name="SpritePomberito" type="Sprite2D" parent="Entorno/ControlCentral" unique_id=1985315086]
+unique_name_in_owner = true
+position = Vector2(-288, -128)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("13_7kew1")
+region_enabled = true
+region_rect = Rect2(283, 300, 366, 378)
+
+[node name="SpriteSombreron" type="Sprite2D" parent="Entorno/ControlCentral" unique_id=1653302728]
+unique_name_in_owner = true
+position = Vector2(280, -128)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("12_w41yk")
+region_enabled = true
+region_rect = Rect2(180, 247, 534, 392)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Entorno/ControlCentral" unique_id=912336019]
+metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Entorno/ControlCentral/StaticBody2D" unique_id=1304813653]
 polygon = PackedVector2Array(512, 176, 520, -80, -528, -80, -528, 352, -312, 352, -312, 248, -272, 248, -272, 72, 152, 72, 152, 240, 336, 240, 336, 176)
@@ -239,6 +257,7 @@ script = ExtResource("11_jmi4e")
 autostart = true
 
 [node name="Pomberito" type="RigidBody2D" parent="Criptidos" unique_id=1659033964]
+unique_name_in_owner = true
 z_index = -1
 gravity_scale = 0.0
 script = ExtResource("13_twvys")
