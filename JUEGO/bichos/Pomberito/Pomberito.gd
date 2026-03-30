@@ -31,12 +31,14 @@ func estado_cambiado(nuevo_estado: EstadoAlerta) -> void:
 				pedir_ofrenda()
 			emit_signal("pombero_enfurecido")
 
+
 func pedir_ofrenda() -> void:
 	ofrenda_esperada = TipoOfrenda.values()[randi() % TipoOfrenda.size()]
 	esperando_ofrenda = true
 	print("Pombero quiere: ", TipoOfrenda.keys()[ofrenda_esperada])
 	actualizar_sprite(ofrenda_esperada)
-	
+
+
 func recibir_ofrenda(ofrenda: TipoOfrenda) -> void:
 	if not esperando_ofrenda:
 		return
@@ -48,7 +50,8 @@ func recibir_ofrenda(ofrenda: TipoOfrenda) -> void:
 	else:
 		incrementar_contador(10)
 		revisar_puntaje()
-	
+
+
 func actualizar_sprite(ofrenda: TipoOfrenda) -> void:
 	$Mate.visible = ofrenda == TipoOfrenda.MATE
 	$Puchos.visible = ofrenda == TipoOfrenda.FUMAR

@@ -4,7 +4,6 @@ extends Node
 signal item_seleccionado(item: ItemResource, objeto_item: ObjetoItem)
 signal request_navmap_rid(caller_node: Node, type: BaseCryptid.CryptidType)
 signal cargar_termo(cantidad: float)
-signal reloj_jugador_termino()
 signal cryptido_en_negro(cryptid: BaseCryptid)
 signal cryptido_alerta_reiniciada(cryptid: BaseCryptid)
 

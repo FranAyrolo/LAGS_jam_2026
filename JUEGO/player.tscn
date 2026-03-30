@@ -204,7 +204,6 @@ texture_progress = ExtResource("8_dbjbh")
 
 [node name="Reloj" type="TextureProgressBar" parent="Camera2D/CanvasLayer" unique_id=524162158]
 unique_name_in_owner = true
-visible = false
 anchors_preset = -1
 anchor_left = 0.75
 anchor_top = 0.08911112
@@ -212,7 +211,7 @@ anchor_right = 0.9
 anchor_bottom = 0.35533336
 offset_top = -0.15999985
 offset_bottom = 0.1599884
-step = 0.25
+step = 0.75
 fill_mode = 4
 nine_patch_stretch = true
 texture_under = ExtResource("10_2ey7g")

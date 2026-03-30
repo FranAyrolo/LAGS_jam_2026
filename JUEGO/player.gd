@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+signal reloj_terminado
+
 @onready var reloj: TextureProgressBar = %Reloj
 
 # --- NODOS DE AUDIO Y CONTROL DE PASOS ---
@@ -132,9 +134,10 @@ func _on_cargar_termo(cant: float) -> void:
 	%BarraTermo.value += cant
 
 func _on_timer_reloj_timeout() -> void:
-	%Reloj.value += %Reloj.step
-	if %Reloj.value >= %Reloj.max_value:
-		Global.reloj_jugador_termino.emit()
+	if habilitar_input:
+		%Reloj.value += %Reloj.step
+		if %Reloj.value >= %Reloj.max_value:
+			reloj_terminado.emit()
 
 # --- ESTÉTICA Y ANIMACIÓN ---
 
