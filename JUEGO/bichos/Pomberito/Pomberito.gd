@@ -4,6 +4,8 @@ enum TipoOfrenda {MATE, FUMAR, AZUCAR}
 
 func _ready() -> void:
 	activar_criptido()
+	estado_score_track = 10
+
 	
 signal jugador_afectado()
 signal pombero_enfurecido()
@@ -43,6 +45,10 @@ func recibir_ofrenda(ofrenda: TipoOfrenda) -> void:
 	if not esperando_ofrenda:
 		return
 	if ofrenda == ofrenda_esperada:
+		if ofrenda == TipoOfrenda.FUMAR:
+			$"../.."._reponer_cigarrillos()
+		if ofrenda == TipoOfrenda.AZUCAR:
+			$"../.."._reponer_azucar()
 		$"../../Objetos/DepositoPomberito".consumir_objeto()
 		reducir_contador(20)
 		revisar_puntaje()

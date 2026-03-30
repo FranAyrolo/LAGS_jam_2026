@@ -2,6 +2,7 @@ extends BaseCryptid
 
 func _ready() -> void:
 	activar_criptido()
+	estado_score_track = 15
 
 #signal jugador_afectado()
 #signal sombreron_enfurecido()

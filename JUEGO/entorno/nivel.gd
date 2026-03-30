@@ -61,6 +61,24 @@ func _on_mini_juego_mate_mate_listo() -> void:
 	mate.item_data = preload("res://JUEGO/items/mate.tres")
 	mate.global_position = Vector2(2000, -1048)
 	$Objetos.add_child(mate)
+	
+func _reponer_cigarrillos() -> void:
+	if has_node("Objetos/Cigarrillos"):
+		return  # ya hay uno, no crea otro
+	var cigarrillos = preload("res://JUEGO/items/item_objeto.tscn").instantiate()
+	cigarrillos.name = "Cigarrillos"
+	cigarrillos.item_data = preload("res://JUEGO/items/cigarrillos.tres")
+	cigarrillos.global_position = Vector2(-776, -280)
+	$Objetos.add_child(cigarrillos)
+	
+func _reponer_azucar() -> void:
+	if has_node("Objetos/Azucar"):
+		return  # ya hay uno, no crea otro
+	var azucar = preload("res://JUEGO/items/item_objeto.tscn").instantiate()
+	azucar.name = "Azucar"
+	azucar.item_data = preload("res://JUEGO/items/caña.tres")
+	azucar.global_position = Vector2(2568, -258)
+	$Objetos.add_child(azucar)
 
 
 func pasar_pantalla_final(victoria: bool) -> void:
@@ -76,7 +94,6 @@ func pasar_pantalla_final(victoria: bool) -> void:
 	_mostrar_menu()
 	%TextoFinDeJuego.text = mensaje
 	%TextoFinDeJuego.visible = true
-	
 
 
 func _on_control_central_fin_de_juego_derrota() -> void:
