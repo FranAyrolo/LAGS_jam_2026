@@ -56,10 +56,14 @@ const MIN_SCORE = 0
 
 func reiniciar_alerta() -> void:
 	estado_alerta_actual = estado_alerta_inicial
+	estado_score_track = 0
 	Global.cryptido_alerta_reiniciada.emit(self)
+	print("ME CORTE EL PELO", estado_alerta_actual,estado_score_track)
+
 	
 func incrementar_contador(amount: int) -> void:
 	estado_score_track = clamp(estado_score_track + amount, MIN_SCORE, MAX_SCORE)
+	print("soy ", name, " y mi score es ",estado_score_track)
 
 func reducir_contador(amount: int) -> void:
 	estado_score_track = clamp(estado_score_track - amount, MIN_SCORE, MAX_SCORE)
@@ -73,7 +77,11 @@ func revisar_puntaje() -> void:
 		estado_alerta_actual = nuevo_estado
 		cambio_de_estado.emit(estado_alerta_actual)
 		estado_cambiado(estado_alerta_actual)
+<<<<<<< HEAD
 		#print("Cambio el estado a ",estado_alerta_actual)
+=======
+		print(self, "Cambio el estado a ",estado_alerta_actual)
+>>>>>>> main
 
 func calcular_estado() -> EstadoAlerta:
 	if estado_score_track < 25:   
