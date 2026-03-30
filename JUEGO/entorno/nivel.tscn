@@ -36,6 +36,9 @@
 [ext_resource type="PackedScene" uid="uid://cnpmpe5lj0wdy" path="res://JUEGO/bichos/Curupira/curupira.tscn" id="27_m7xqr"]
 [ext_resource type="Texture2D" uid="uid://bjtsssilfs8hc" path="res://assets/2D/Orko/sombreron/Sombreron_01.png" id="31_tiyg8"]
 [ext_resource type="Script" uid="uid://pckqjexaych6" path="res://JUEGO/entorno/sombreron.gd" id="32_nko5n"]
+[ext_resource type="Theme" uid="uid://2p6glpubmhup" path="res://resources/themes/lab.tres" id="31_twp76"]
+[ext_resource type="PackedScene" uid="uid://d326ww52qsjyh" path="res://JUEGO/opciones_ingame.tscn" id="32_twp76"]
+[ext_resource type="PackedScene" uid="uid://bjg10p50pmw2p" path="res://scenes/credits/scrollable_credits.tscn" id="33_tiyg8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43114"]
 size = Vector2(248.5, 294)
@@ -83,6 +86,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_tiyg8"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nko5n"]
+gradient = SubResource("Gradient_tiyg8")
+fill_from = Vector2(1, 0)
+
 [node name="Nivel" type="Node2D" unique_id=373451608 groups=["nivel"]]
 script = ExtResource("1_k1acd")
 
@@ -90,7 +99,7 @@ script = ExtResource("1_k1acd")
 
 [node name="PrepararMate" type="Area2D" parent="Entorno" unique_id=1763107383 node_paths=PackedStringArray("minijuego")]
 script = ExtResource("2_1or0t")
-minijuego = NodePath("../../CanvasLayer/MiniJuegoMate")
+minijuego = NodePath("../../CanvasLayerMate/MiniJuegoMate")
 
 [node name="PrepararMate" type="CollisionShape2D" parent="Entorno/PrepararMate" unique_id=1912665756]
 position = Vector2(2056, 493)
@@ -322,11 +331,98 @@ position = Vector2(3656, -3976)
 texture = ExtResource("31_tiyg8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=565674393]
+[node name="CanvasLayerMenu" type="CanvasLayer" parent="." unique_id=207478201]
 
-[node name="MiniJuegoMate" parent="CanvasLayer" unique_id=867639483 instance=ExtResource("2_43114")]
+[node name="MenuControl" type="Control" parent="CanvasLayerMenu" unique_id=1726897635]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuIngame" type="BoxContainer" parent="CanvasLayerMenu/MenuControl" unique_id=1520249073]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -118.0
+offset_right = 75.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("31_twp76")
+theme_override_constants/separation = 16
+alignment = 1
+vertical = true
+
+[node name="Continuar" type="Button" parent="CanvasLayerMenu/MenuControl/MenuIngame" unique_id=1964253881]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("31_twp76")
+text = "Continuar"
+
+[node name="Opciones" type="Button" parent="CanvasLayerMenu/MenuControl/MenuIngame" unique_id=809745430]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("31_twp76")
+text = "Opciones"
+
+[node name="Creditos" type="Button" parent="CanvasLayerMenu/MenuControl/MenuIngame" unique_id=1497003423]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("31_twp76")
+text = "Créditos"
+
+[node name="Salir" type="Button" parent="CanvasLayerMenu/MenuControl/MenuIngame" unique_id=124952216]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("31_twp76")
+text = "Salir"
+
+[node name="OpcionesIngame" parent="CanvasLayerMenu/MenuControl" unique_id=1151123548 instance=ExtResource("32_twp76")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="CreditosIngame" parent="CanvasLayerMenu/MenuControl" unique_id=1895678736 instance=ExtResource("33_tiyg8")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayerMenu/MenuControl/CreditosIngame" unique_id=1621220372]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_nko5n")
+
+[node name="Volver" type="Button" parent="CanvasLayerMenu/MenuControl" unique_id=983370914]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 120.0
+offset_top = 560.0
+offset_right = 189.0
+offset_bottom = 591.0
+text = "VOLVER"
+
+[node name="CanvasLayerMate" type="CanvasLayer" parent="." unique_id=565674393]
+unique_name_in_owner = true
+
+[node name="MiniJuegoMate" parent="CanvasLayerMate" unique_id=867639483 instance=ExtResource("2_43114")]
 visible = false
 
 [connection signal="objeto_aceptado" from="Objetos/DepositoPomberito" to="Criptidos/Pomberito" method="_on_deposito_pomberito_objeto_aceptado"]
 [connection signal="objeto_aceptado" from="Objetos/DepositoSombreron" to="Criptidos/Sombreron" method="_on_deposito_sombreron_objeto_aceptado"]
 [connection signal="timeout" from="Criptidos/CriptidoTimer" to="Criptidos" method="_on_criptido_timer_timeout"]
-[connection signal="mate_listo" from="CanvasLayer/MiniJuegoMate" to="." method="_on_mini_juego_mate_mate_listo"]
+[connection signal="mate_listo" from="CanvasLayerMate/MiniJuegoMate" to="." method="_on_mini_juego_mate_mate_listo"]

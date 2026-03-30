@@ -10,6 +10,7 @@ var offset_detectores: Vector2
 var mate_listo: bool = false
 enum EstadoPelo {VERDE, AMARILLO, NARANJA, ROJO, NEGRO}
 @export var estado_actual: EstadoPelo = EstadoPelo.VERDE
+var habilitar_input: bool = true
 
 func _ready() -> void:
 	#Global.item_seleccionado.connect(_on_item_seleccionado)
@@ -19,14 +20,18 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	var direction := Vector2(Input.get_axis("INPUT_LEFT", "INPUT_RIGHT"), Input.get_axis("INPUT_UP", "INPUT_DOWN")).normalized()
-	velocity = direction * SPEED
-	_actualizar_animacion(velocity)
-	_crecer_pelo()
-	move_and_slide()
-	#Alinear el sprite y el objeto en la mano
-	if direction.x != 0:
-		%Sprite.flip_h = direction.x < 0
+	if habilitar_input:
+	
+		var direction := Vector2(Input.get_axis("INPUT_LEFT", "INPUT_RIGHT"), Input.get_axis("INPUT_UP", "INPUT_DOWN")).normalized()
+		velocity = direction * SPEED
+		_actualizar_animacion(velocity)
+		_crecer_pelo()
+		move_and_slide()
+		
+		#Alinear el sprite y el objeto en la mano
+		if direction.x != 0:
+			%Sprite.flip_h = direction.x < 0
+
 
 func _process(_delta: float) -> void:
 	#gestion de sprites e items
@@ -41,17 +46,18 @@ func _process(_delta: float) -> void:
 	else:
 		%Detectores.position = offset_detectores
 	
-	if Input.is_action_just_pressed("INPUT_ITEM"):
-		soltar_juntar_item()
-	if Input.is_action_pressed("INPUT_INTERACT") && %DetectorDeInteractuables.has_overlapping_bodies():
-		for interactuable in %DetectorDeInteractuables.get_overlapping_bodies():
-			interactuable.interactuar()
-	
-	#Carga del mate
-	if %Mate.button_pressed && !mate_listo && %BarraTermo.value > 0.:
-		%BarraMate.value += %BarraMate.step
-		%BarraTermo.value -= %BarraMate.step
-	mate_listo = %BarraMate.value >= %BarraMate.max_value
+	if habilitar_input:
+		if Input.is_action_just_pressed("INPUT_ITEM"):
+			soltar_juntar_item()
+		if Input.is_action_pressed("INPUT_INTERACT") && %DetectorDeInteractuables.has_overlapping_bodies():
+			for interactuable in %DetectorDeInteractuables.get_overlapping_bodies():
+				interactuable.interactuar()
+		
+		#Carga del mate
+		if %Mate.button_pressed && !mate_listo && %BarraTermo.value > 0.:
+			%BarraMate.value += %BarraMate.step
+			%BarraTermo.value -= %BarraMate.step
+		mate_listo = %BarraMate.value >= %BarraMate.max_value
 
 func soltar_juntar_item() -> void:
 	if item_en_mano:

@@ -10,10 +10,15 @@ config_version=5
 
 [application]
 
-config/name="Juego LAGS Jam 2026"
-run/main_scene="uid://k8uv76kc5mop"
+config/name="¿Cuántos mitos tenés?"
+config/version="0.3.0"
+run/main_scene="uid://bk80fxrac0p3i"
 config/features=PackedStringArray("4.6")
 config/icon="uid://dl17r2qlgmv70"
+
+[audio]
+
+buses/default_bus_layout="uid://dlo5inop6ahho"
 
 [autoload]
 

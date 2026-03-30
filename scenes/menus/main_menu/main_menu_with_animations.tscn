@@ -338,8 +338,8 @@ theme = ExtResource("2_2k5l7")
 [node name="TitleContainer" parent="MenuContainer/TitleMargin" parent_id_path=PackedInt32Array(2112060331) index="0" unique_id=556427956]
 modulate = Color(1, 1, 1, 0)
 
-[node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" parent_id_path=PackedInt32Array(1510335937) index="0" unique_id=930520368]
-modulate = Color(1, 1, 1, 0)
+[node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0" unique_id=359406872]
+text = "Juego LAGS Jam 2026"
 
 [node name="MenuButtonsContainer" parent="MenuContainer/MenuButtonsMargin" parent_id_path=PackedInt32Array(210553886) index="0" unique_id=116448484]
 modulate = Color(1, 1, 1, 0)
@@ -361,9 +361,6 @@ text = "Level Select"
 
 [node name="VersionContainer" parent="VersionMargin" parent_id_path=PackedInt32Array(1732528471) index="0" unique_id=1603969262]
 modulate = Color(1, 1, 1, 0)
-
-[node name="VersionLabel" parent="VersionMargin/VersionContainer" index="0" unique_id=793266470]
-text = "v0.1.0"
 
 [node name="NewGameConfirmation" parent="." index="7" unique_id=291913255 instance=ExtResource("5_6xh1d")]
 unique_name_in_owner = true

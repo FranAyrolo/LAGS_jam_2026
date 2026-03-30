@@ -5,10 +5,19 @@
 
 [node name="Controls" unique_id=1211114974 instance=ExtResource("1_i27v5")]
 
+[node name="VBoxContainer" parent="." index="0" unique_id=539297323]
+visible = false
+
 [node name="InputActionsList" parent="VBoxContainer/InputMappingContainer" parent_id_path=PackedInt32Array(1004992485) index="1" unique_id=2089976301 node_paths=PackedStringArray("input_icon_mapper")]
 input_icon_mapper = NodePath("../../../InputIconMapper")
 
 [node name="InputActionsTree" parent="VBoxContainer/InputMappingContainer" parent_id_path=PackedInt32Array(1004992485) index="2" unique_id=780755880 node_paths=PackedStringArray("input_icon_mapper")]
 input_icon_mapper = NodePath("../../../InputIconMapper")
+
+[node name="HBoxContainer" parent="VBoxContainer/InputMappingContainer" parent_id_path=PackedInt32Array(1004992485) index="3" unique_id=668442458]
+visible = false
+
+[node name="ResetButton" parent="VBoxContainer/InputMappingContainer/HBoxContainer" index="0" unique_id=14998312]
+visible = false
 
 [node name="InputIconMapper" parent="." index="6" unique_id=463780402 instance=ExtResource("2_hyv0n")]
