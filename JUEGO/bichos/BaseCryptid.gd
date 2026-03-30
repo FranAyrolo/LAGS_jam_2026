@@ -77,11 +77,7 @@ func revisar_puntaje() -> void:
 		estado_alerta_actual = nuevo_estado
 		cambio_de_estado.emit(estado_alerta_actual)
 		estado_cambiado(estado_alerta_actual)
-<<<<<<< HEAD
 		#print("Cambio el estado a ",estado_alerta_actual)
-=======
-		print(self, "Cambio el estado a ",estado_alerta_actual)
->>>>>>> main
 
 func calcular_estado() -> EstadoAlerta:
 	if estado_score_track < 25:   

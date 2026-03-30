@@ -23,7 +23,6 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if habilitar_input:
-	
 		var direction := Vector2(Input.get_axis("INPUT_LEFT", "INPUT_RIGHT"), Input.get_axis("INPUT_UP", "INPUT_DOWN")).normalized()
 		velocity = direction * SPEED
 		_actualizar_animacion(velocity)
@@ -122,11 +121,12 @@ func _on_cargar_termo(cant: float) -> void:
 	%BarraTermo.value += cant
 
 func _on_timer_reloj_timeout() -> void:
-	%Reloj.value += %Reloj.step
-	if %Reloj.value >= %Reloj.max_value:
-		Global.reloj_jugador_termino.emit()
+	if habilitar_input:
+		%Reloj.value += %Reloj.step
+		if %Reloj.value >= %Reloj.max_value:
+			reloj_terminado.emit()
 
-func _actualizar_animacion(velocity) -> void:
+func _actualizar_animacion(_velocity) -> void:
 	var anim = "Verde"
 	match estado_actual:
 		EstadoPelo.VERDE: anim = "Verde"
