@@ -8,7 +8,7 @@ var mate_rect = get_global_rect()
 var mate_completado = false 
 signal mate_listo
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var pava_rect = $"../Pava/Pico".get_global_rect()
 	var yerba_rect = $"../Yerba/Apertura".get_global_rect()
 	cargando_agua = mate_rect.intersects(pava_rect)

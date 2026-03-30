@@ -43,6 +43,7 @@ func recibir_ofrenda(ofrenda: TipoOfrenda) -> void:
 	if not esperando_ofrenda:
 		return
 	if ofrenda == ofrenda_esperada:
+		$"../../Objetos/DepositoPomberito".consumir_objeto()
 		reducir_contador(20)
 		revisar_puntaje()
 		if estado_alerta_actual != EstadoAlerta.VERDE:
@@ -70,3 +71,4 @@ func _on_deposito_pomberito_objeto_aceptado(tipo: String) -> void:
 		"mate":   recibir_ofrenda(TipoOfrenda.MATE)
 		"cigarrillos":  recibir_ofrenda(TipoOfrenda.FUMAR)
 		"azucar": recibir_ofrenda(TipoOfrenda.AZUCAR)
+		

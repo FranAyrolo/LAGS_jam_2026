@@ -8,7 +8,7 @@ class_name Puerta
 @export var sprite_abierto: Texture2D = preload("uid://cwyyqyryoernq")
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if %ColisionAbierta.has_overlapping_bodies():
 		%Sprite2D.texture = sprite_abierto
 	elif %ColisionSemiAbierta.has_overlapping_bodies():

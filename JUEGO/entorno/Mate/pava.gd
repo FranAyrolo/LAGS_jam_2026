@@ -56,7 +56,7 @@ func _on_timer_timeout() -> void:
 		agua_lista = false
 		$Temp.add_theme_color_override("font_color", Color.RED)
 			
-func _on_check_button_toggled(toggled_on: bool) -> void:
+func _on_check_button_toggled(_toggled_on: bool) -> void:
 	pass # Replace with function body.
 	if $CheckButton.button_pressed == true:
 		prendida = true

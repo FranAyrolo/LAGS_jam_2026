@@ -2,6 +2,7 @@ extends RigidBody2D
 class_name BaseCryptid
 
 signal cambio_de_estado(nuevo_estado: EstadoAlerta)
+signal se_escapo_uno(nombre)
 
 enum CryptidType {DEFAULT, CARPINCHO, POMBERO, SOMBRERON, CURUPIRA, 
 					SILBON, CHUPACABRAS, CADEJO, LLORONA, LUZ_MALA, MANDINGA}
@@ -20,40 +21,6 @@ const MAX_SCORE = 100
 const MIN_SCORE = 0
 @onready var Criptidos = %Criptidos
 
-#fue, la hago cabeza porque hacerlo bonito esta complicado
-#func aumentar_alerta() -> void:
-	#if estado_alerta_actual != EstadoAlerta.NEGRO:
-		#match estado_alerta_actual:
-			#EstadoAlerta.VERDE:
-				#estado_alerta_actual = EstadoAlerta.AMARILLO
-			#EstadoAlerta.AMARILLO:
-				#estado_alerta_actual = EstadoAlerta.NARANJA
-			#EstadoAlerta.NARANJA:
-				#estado_alerta_actual = EstadoAlerta.ROJO
-			#EstadoAlerta.ROJO:
-				#estado_alerta_actual = EstadoAlerta.NEGRO
-				#Global.cryptido_en_negro.emit(self)
-			#_:
-				#push_error("MMMMMM, en que estado estamo?")
-	#estado_cambiado(estado_alerta_actual)
-
-#fue, la hago cabeza porque hacerlo bonito esta complicado
-#func reducir_alerta() -> void:
-	#if estado_alerta_actual != EstadoAlerta.VERDE:
-		#match estado_alerta_actual:
-			#EstadoAlerta.VERDE:
-				#pass
-			#EstadoAlerta.AMARILLO:
-				#estado_alerta_actual = EstadoAlerta.VERDE
-			#EstadoAlerta.NARANJA:
-				#estado_alerta_actual = EstadoAlerta.AMARILLO
-			#EstadoAlerta.ROJO:
-				#estado_alerta_actual = EstadoAlerta.NARANJA
-			##EstadoAlerta.NEGRO:
-				##estado_alerta_actual = EstadoAlerta.NARANJA
-			#_:
-				#push_error("MMMMMM, en que estado estamo?")
-
 func reiniciar_alerta() -> void:
 	estado_alerta_actual = estado_alerta_inicial
 	estado_score_track = 0
@@ -63,7 +30,6 @@ func reiniciar_alerta() -> void:
 	
 func incrementar_contador(amount: int) -> void:
 	estado_score_track = clamp(estado_score_track + amount, MIN_SCORE, MAX_SCORE)
-	print("soy ", name, " y mi score es ",estado_score_track)
 
 func reducir_contador(amount: int) -> void:
 	estado_score_track = clamp(estado_score_track - amount, MIN_SCORE, MAX_SCORE)
@@ -86,11 +52,14 @@ func calcular_estado() -> EstadoAlerta:
 		return EstadoAlerta.AMARILLO
 	elif estado_score_track < 75: 
 		return EstadoAlerta.NARANJA
-	elif estado_score_track < 100: 
+	elif estado_score_track < 95: 
 		return EstadoAlerta.ROJO
-	else:                          
+	elif estado_score_track < 100: 
 		return EstadoAlerta.NEGRO
+	else:
+		se_escapo_uno.emit(estado_alerta_actual)
+		return EstadoAlerta.NEGRO
+				
 
-
-func estado_cambiado(nuevo_estado: EstadoAlerta) -> void:
+func estado_cambiado(_nuevo_estado: EstadoAlerta) -> void:
 	pass

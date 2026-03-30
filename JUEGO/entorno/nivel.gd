@@ -1,11 +1,12 @@
 extends Node2D
 
+var juego_terminado: bool = false
 
 func _ready() -> void:
 	%MenuIngame.visible = false
 	Global.request_navmap_rid.connect(_on_navmap_rid_request)
 	%Player.reloj_terminado.connect(pasar_pantalla_final.bind(true))
-	%ControlCentral.fin_de_juego_derrota.connect(pasar_pantalla_final.bind(false))
+	#%ControlCentral.fin_de_juego_derrota.connect(pasar_pantalla_final.bind(false))
 	%Continuar.pressed.connect(_mostrar_menu)
 	%Opciones.pressed.connect(_on_opciones_pressed)
 	%Creditos.pressed.connect(_on_creditos_pressed)
@@ -65,7 +66,7 @@ func _on_mini_juego_mate_mate_listo() -> void:
 func pasar_pantalla_final(victoria: bool) -> void:
 	var mensaje: String
 	if victoria:
-		mensaje = "[font_size=60]G A N A S T E[/font_size][/shake][/tornado]
+		mensaje = "[tornado radius=5.0 freq=3.0 connected=1][shake rate=50.0 level=15 connected=1][font_size=60]G A N A S T E[/font_size][/shake][/tornado]
 [font_size=30]Llegaste al final del día sin que se alteren los seres.[/font_size]
 	"
 	else:
@@ -76,3 +77,9 @@ func pasar_pantalla_final(victoria: bool) -> void:
 	%TextoFinDeJuego.text = mensaje
 	%TextoFinDeJuego.visible = true
 	
+
+
+func _on_control_central_fin_de_juego_derrota() -> void:
+	if juego_terminado == false:
+		juego_terminado = true
+		pasar_pantalla_final(false)

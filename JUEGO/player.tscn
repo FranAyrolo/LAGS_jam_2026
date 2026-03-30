@@ -211,6 +211,7 @@ anchor_right = 0.9
 anchor_bottom = 0.35533336
 offset_top = -0.15999985
 offset_bottom = 0.1599884
+max_value = 300.0
 step = 0.75
 fill_mode = 4
 nine_patch_stretch = true

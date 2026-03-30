@@ -66,11 +66,6 @@ func _process(_delta: float) -> void:
 		if Input.is_action_pressed("INPUT_INTERACT") && %DetectorDeInteractuables.has_overlapping_bodies():
 			for interactuable in %DetectorDeInteractuables.get_overlapping_bodies():
 				interactuable.interactuar()
-		
-		if %Mate.button_pressed && !mate_listo && %BarraTermo.value > 0.:
-			%BarraMate.value += %BarraMate.step
-			%BarraTermo.value -= %BarraMate.step
-		mate_listo = %BarraMate.value >= %BarraMate.max_value
 
 # --- FUNCIONES DE ITEMS ---
 
@@ -161,7 +156,7 @@ func _crecer_pelo() -> void:
 		EstadoPelo.VERDE: target_y = -700
 		EstadoPelo.AMARILLO: target_y = -100
 		EstadoPelo.NARANJA: target_y = 100
-		EstadoPelo.ROJO: target_y = 300
+		EstadoPelo.ROJO: target_y = 250
 		EstadoPelo.NEGRO: target_y = 600
 	
 	$Camera2D/CanvasLayer/Pelo.position.y = lerpf(

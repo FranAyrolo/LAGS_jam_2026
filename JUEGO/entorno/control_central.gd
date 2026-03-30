@@ -21,7 +21,6 @@ func checkear_alerta_negra() -> void:
 		if criptido.estado_alerta_actual == BaseCryptid.EstadoAlerta.NEGRO:
 			fin_de_juego_derrota.emit()
 
-
 func actualizar_curupira(estado: BaseCryptid.EstadoAlerta) -> void:
 	match estado:
 		BaseCryptid.EstadoAlerta.VERDE:
@@ -56,3 +55,11 @@ func actualizar_sombreron(estado: BaseCryptid.EstadoAlerta) -> void:
 			$SpriteSombreron.modulate = Color.CORAL
 		BaseCryptid.EstadoAlerta.ROJO:
 			$SpriteSombreron.modulate = Color.RED
+
+
+func _on_pomberito_se_escapo_uno(nombre: Variant) -> void:
+	checkear_alerta_negra()
+
+
+func _on_sombreron_se_escapo_uno(nombre: Variant) -> void:
+	checkear_alerta_negra()

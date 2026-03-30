@@ -17,7 +17,6 @@ func _spawnear_pelo(pos: Vector2) -> void:
 	var pelo = preload("res://JUEGO/items/item_objeto.tscn").instantiate()
 	pelo.name = "PilaPelo"
 	pelo.item_data = preload("res://JUEGO/items/Pelo.tres")
-	print (%Player.position)
 	get_tree().get_root().get_node("Nivel/Objetos").add_child(pelo)
 	pelo.global_position = %Player.position
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqy154x6bhhuj" path="res://JUEGO/bichos/carpincho_seguidor.gd" id="1_n5sc6"]
 [ext_resource type="Texture2D" uid="uid://ddsvnw0t0vngi" path="res://assets/2D/Orko/Carpincho.png" id="2_5rf61"]
+[ext_resource type="PackedScene" uid="uid://cwnujkuarng5m" path="res://JUEGO/entorno/deposito_de_objetos.tscn" id="2_7pljk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n5sc6"]
 radius = 88.0
@@ -10,6 +11,11 @@ height = 176.0
 [node name="Carpincho" type="RigidBody2D" unique_id=1637751614]
 gravity_scale = 0.0
 script = ExtResource("1_n5sc6")
+
+[node name="DepositoDeObjetos" parent="." unique_id=700588652 instance=ExtResource("2_7pljk")]
+texto_deposito_vacio = "Quiero Mate"
+objetos_aceptables = ["Mate"]
+criptido = NodePath("..")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1481683042]
 texture = ExtResource("2_5rf61")
@@ -29,3 +35,5 @@ autostart = true
 
 [node name="TimerJugadorEncerrado" type="Timer" parent="." unique_id=1622904137]
 unique_name_in_owner = true
+
+[connection signal="objeto_aceptado" from="DepositoDeObjetos" to="." method="_on_deposito_de_objetos_objeto_aceptado"]
