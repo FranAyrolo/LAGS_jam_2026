@@ -141,7 +141,6 @@ radius = 80.0
 collision_layer = 65
 platform_on_leave = 2
 script = ExtResource("1_s7l7o")
-estado_actual = 3
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1740873799]
 unique_name_in_owner = true

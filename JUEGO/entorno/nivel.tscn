@@ -28,15 +28,14 @@
 [ext_resource type="Resource" uid="uid://blph65m8lb82d" path="res://JUEGO/items/regadera.tres" id="15_y3dsa"]
 [ext_resource type="Texture2D" uid="uid://ogexl3mvolw3" path="res://assets/2D/Orko/pomberito/Pomberito_04.png" id="16_jrq6w"]
 [ext_resource type="Texture2D" uid="uid://bbopv6uh2ceft" path="res://assets/2D/Orko/pomberito/Puchos.png" id="17_7f5ui"]
-[ext_resource type="Resource" uid="uid://g4abuwrfb83k" path="res://JUEGO/items/Pelo.tres" id="17_23n0v"]
 [ext_resource type="Texture2D" uid="uid://dkikwibyehws5" path="res://assets/2D/Orko/sombreron/N3180S_900x565_519d6475-e946-4dc5-9675-2c0c62ec9330_535x.webp" id="19_nko5n"]
 [ext_resource type="Script" uid="uid://dpocwdbw756tb" path="res://JUEGO/entorno/tijeras.gd" id="19_w41yk"]
 [ext_resource type="Texture2D" uid="uid://eqr1154iwmpp" path="res://assets/2D/argentinian-assets-pack-v1.0/bebidas/Mate.png" id="19_y0tya"]
 [ext_resource type="Texture2D" uid="uid://cjiqfkc2if36a" path="res://assets/2D/Orko/pomberito/Caña.png" id="20_y0tya"]
 [ext_resource type="PackedScene" uid="uid://cnpmpe5lj0wdy" path="res://JUEGO/bichos/Curupira/curupira.tscn" id="27_m7xqr"]
 [ext_resource type="Texture2D" uid="uid://bjtsssilfs8hc" path="res://assets/2D/Orko/sombreron/Sombreron_01.png" id="31_tiyg8"]
-[ext_resource type="Script" uid="uid://pckqjexaych6" path="res://JUEGO/entorno/sombreron.gd" id="32_nko5n"]
 [ext_resource type="Theme" uid="uid://2p6glpubmhup" path="res://resources/themes/lab.tres" id="31_twp76"]
+[ext_resource type="Script" uid="uid://pckqjexaych6" path="res://JUEGO/entorno/sombreron.gd" id="32_nko5n"]
 [ext_resource type="PackedScene" uid="uid://d326ww52qsjyh" path="res://JUEGO/opciones_ingame.tscn" id="32_twp76"]
 [ext_resource type="PackedScene" uid="uid://bjg10p50pmw2p" path="res://scenes/credits/scrollable_credits.tscn" id="33_tiyg8"]
 
@@ -188,7 +187,6 @@ unique_name_in_owner = true
 z_index = 2
 position = Vector2(3328, -2776)
 motion_mode = 1
-estado_actual = 2
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2117067103]
 visible = false
@@ -221,10 +219,6 @@ item_data = ExtResource("5_iyq21")
 [node name="Azucar" parent="Objetos" unique_id=866595722 instance=ExtResource("4_2uisl")]
 position = Vector2(2568, -288)
 item_data = ExtResource("9_y0tya")
-
-[node name="PilaPelo" parent="Objetos" unique_id=1657895425 instance=ExtResource("4_2uisl")]
-position = Vector2(4600, -4200)
-item_data = ExtResource("17_23n0v")
 
 [node name="Regadera" parent="Objetos" unique_id=2033734681 instance=ExtResource("4_2uisl")]
 position = Vector2(-2504, -2672)
@@ -331,6 +325,7 @@ position = Vector2(3656, -3976)
 texture = ExtResource("31_tiyg8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=565674393]
+
 [node name="CanvasLayerMenu" type="CanvasLayer" parent="." unique_id=207478201]
 
 [node name="MenuControl" type="Control" parent="CanvasLayerMenu" unique_id=1726897635]
@@ -416,7 +411,7 @@ offset_right = 189.0
 offset_bottom = 591.0
 text = "VOLVER"
 
-[node name="CanvasLayerMate" type="CanvasLayer" parent="." unique_id=565674393]
+[node name="CanvasLayerMate" type="CanvasLayer" parent="." unique_id=1280652886]
 unique_name_in_owner = true
 
 [node name="MiniJuegoMate" parent="CanvasLayerMate" unique_id=867639483 instance=ExtResource("2_43114")]
