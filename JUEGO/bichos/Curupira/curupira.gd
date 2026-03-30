@@ -11,3 +11,7 @@ func _ready() -> void:
 func _on_timer_timeout() -> void:
 	estado_score_track = macetas.estado_general
 	revisar_puntaje()
+
+func reiniciar() -> void:
+	macetas.reiniciar()
+	revisar_puntaje()

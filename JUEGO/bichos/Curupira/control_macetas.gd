@@ -28,3 +28,8 @@ func calcular_estado_general(_estado) -> void:
 	
 	#lo paso a porcentaje porque los criptidos miden de 0 a 100
 	estado_general = sequedad_actual / sequedad_maxima * 100.
+
+
+func reiniciar() -> void:
+	for maceta: Maceta in macetas:
+		maceta.reiniciar()

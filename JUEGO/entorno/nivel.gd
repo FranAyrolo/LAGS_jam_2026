@@ -5,13 +5,15 @@ var juego_terminado: bool = false
 func _ready() -> void:
 	%MenuIngame.visible = false
 	Global.request_navmap_rid.connect(_on_navmap_rid_request)
+	%Player.ubicacion_inicial = %PosicionInicialPlayer.global_position
 	%Player.reloj_terminado.connect(pasar_pantalla_final.bind(true))
-	#%ControlCentral.fin_de_juego_derrota.connect(pasar_pantalla_final.bind(false))
+	%ControlCentral.fin_de_juego_derrota.connect(pasar_pantalla_final.bind(false))
 	%Continuar.pressed.connect(_mostrar_menu)
 	%Opciones.pressed.connect(_on_opciones_pressed)
 	%Creditos.pressed.connect(_on_creditos_pressed)
 	%Salir.pressed.connect(get_tree().quit)
 	%Volver.pressed.connect(_on_volver_pressed)
+	%Reiniciar.pressed.connect(_on_reiniciar_pressed)
 
 
 func _process(_delta: float) -> void:
@@ -94,9 +96,24 @@ func pasar_pantalla_final(victoria: bool) -> void:
 	_mostrar_menu()
 	%TextoFinDeJuego.text = mensaje
 	%TextoFinDeJuego.visible = true
+	%Continuar.visible = false
+	%Player.habilitar_input = false
 
 
 func _on_control_central_fin_de_juego_derrota() -> void:
 	if juego_terminado == false:
 		juego_terminado = true
 		pasar_pantalla_final(false)
+
+
+func _on_reiniciar_pressed() -> void:
+	%TextoFinDeJuego.visible = false
+	%Reiniciar.visible = false
+	%Continuar.visible = true
+	%MenuIngame.visible = false
+	%Player.reiniciar()
+	%ControlCentral.reiniciar()
+	for nodo in %Criptidos.get_children():
+		if nodo is BaseCryptid:
+			print("reinicio el " + str(nodo.nombre))
+			nodo.reiniciar()

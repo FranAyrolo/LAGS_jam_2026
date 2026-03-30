@@ -125,3 +125,10 @@ func _on_deposito_de_objetos_objeto_aceptado(tipo: String) -> void:
 	estado_score_track -= 50
 	$DepositoDeObjetos.consumir_objeto()
 	revisar_puntaje()
+
+
+func reiniciar() -> void:
+	estado_score_track = 10
+	calcular_estado()
+	global_position = posicion_centro
+	$DepositoDeObjetos/Sprite2D.visible = false

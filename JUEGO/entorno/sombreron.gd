@@ -15,15 +15,20 @@ func estado_cambiado(nuevo_estado: EstadoAlerta) -> void:
 			esperando_pelo = false
 		EstadoAlerta.AMARILLO:
 			esperando_pelo = true
-			%Player.estado_actual = %Player.EstadoPelo.AMARILLO
+			%Player.estado_pelo = %Player.EstadoPelo.AMARILLO
 		EstadoAlerta.NARANJA:
-			%Player.estado_actual = %Player.EstadoPelo.NARANJA
+			%Player.estado_pelo = %Player.EstadoPelo.NARANJA
 		EstadoAlerta.ROJO:
-			%Player.estado_actual = %Player.EstadoPelo.ROJO
+			%Player.estado_pelo = %Player.EstadoPelo.ROJO
 		EstadoAlerta.NEGRO:
-			%Player.estado_actual = %Player.EstadoPelo.NEGRO
+			%Player.estado_pelo = %Player.EstadoPelo.NEGRO
 
 func _on_deposito_sombreron_objeto_aceptado(_tipo: String) -> void:
 		reiniciar_alerta()
 		revisar_puntaje()
 		$"../../Objetos/DepositoSombreron".consumir_objeto()
+
+
+func reiniciar() -> void:
+	estado_score_track = 15
+	calcular_estado()

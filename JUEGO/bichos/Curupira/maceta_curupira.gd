@@ -59,3 +59,9 @@ func update_sprite() -> void:
 			$Sprite2D.texture = tex_reseca
 		_:
 			push_error("WTF de maceta")
+
+
+func reiniciar() -> void:
+	nivel_vital = 100.
+	update_estado()
+	update_sprite()

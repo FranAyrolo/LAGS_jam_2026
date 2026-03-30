@@ -59,6 +59,7 @@ shape = SubResource("RectangleShape2D_tu127")
 autostart = true
 
 [node name="Label" type="Label" parent="Macetas/MacetaCayena" unique_id=93660519]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 label_settings = ExtResource("8_t1jbc")
@@ -136,11 +137,13 @@ shape = SubResource("RectangleShape2D_tu127")
 autostart = true
 
 [node name="Label" type="Label" parent="Macetas/MacetaRafflesia" unique_id=1017896540]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 label_settings = ExtResource("8_t1jbc")
 
 [node name="Label" type="Label" parent="Macetas" unique_id=2080090566]
+visible = false
 offset_left = -304.0
 offset_top = 112.0
 offset_right = -111.0

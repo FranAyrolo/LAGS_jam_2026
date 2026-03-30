@@ -31,6 +31,7 @@ func actualizar_curupira(estado: BaseCryptid.EstadoAlerta) -> void:
 			$SpriteCurupira.modulate = Color.CORAL
 		BaseCryptid.EstadoAlerta.ROJO:
 			$SpriteCurupira.modulate = Color.RED
+	checkear_alerta_negra()
 
 
 func actualizar_pomberito(estado: BaseCryptid.EstadoAlerta) -> void:
@@ -63,3 +64,8 @@ func _on_pomberito_se_escapo_uno(nombre: Variant) -> void:
 
 func _on_sombreron_se_escapo_uno(nombre: Variant) -> void:
 	checkear_alerta_negra()
+
+func reiniciar() -> void:
+	$SpriteCurupira.modulate = Color.GREEN
+	$SpritePomberito.modulate = Color.GREEN
+	$SpriteSombreron.modulate = Color.GREEN

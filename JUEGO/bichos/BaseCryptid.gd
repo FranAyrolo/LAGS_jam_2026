@@ -63,3 +63,7 @@ func calcular_estado() -> EstadoAlerta:
 
 func estado_cambiado(_nuevo_estado: EstadoAlerta) -> void:
 	pass
+
+
+func reiniciar() -> void:
+	pass

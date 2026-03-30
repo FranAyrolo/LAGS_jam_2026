@@ -2,28 +2,27 @@ extends CharacterBody2D
 class_name Player
 
 signal reloj_terminado
+enum EstadoPelo {VERDE, AMARILLO, NARANJA, ROJO, NEGRO}
 
 @onready var reloj: TextureProgressBar = %Reloj
+@onready var timer_pasos: Timer = $TimerPasos 
+@onready var sonido_pasos: AudioStreamPlayer2D = $AudioPasos
 
-# --- NODOS DE AUDIO Y CONTROL DE PASOS ---
-# Asegúrate de que el Timer en el árbol se llame "TimerPasos" (o usa el nombre único %)
-@onready var step_timer: Timer = $TimerPasos 
-@onready var step_sound: AudioStreamPlayer2D = $AudioPasos
-# ------------------------------------------
-
+@export var estado_pelo: EstadoPelo = EstadoPelo.VERDE
 @export var SPEED = 1000.0
+
 var item_en_mano: ObjetoItem
 var offset_objeto_mano := Vector2(100, 50)
 var offset_detectores: Vector2
 var mate_listo: bool = false
-enum EstadoPelo {VERDE, AMARILLO, NARANJA, ROJO, NEGRO}
-@export var estado_actual: EstadoPelo = EstadoPelo.VERDE
 var habilitar_input: bool = true
+var ubicacion_inicial: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	Global.cargar_termo.connect(_on_cargar_termo)
 	%TimerReloj.timeout.connect(_on_timer_reloj_timeout)
 	offset_detectores = %Detectores.position
+
 
 func _physics_process(_delta: float) -> void:
 	if habilitar_input:
@@ -33,20 +32,13 @@ func _physics_process(_delta: float) -> void:
 		_actualizar_animacion(velocity)
 		_crecer_pelo()
 		move_and_slide()
-		
-		# --- LÓGICA DE PASOS ---
-		if velocity.length() > 5.0 and step_timer.is_stopped():
-			_reproducir_paso()
-			step_timer.start()
-		# -----------------------
-		
+	
+		if velocity.length() > 5.0 and timer_pasos.is_stopped():
+			sonido_pasos.play()
+			timer_pasos.start()
 		if direction.x != 0:
 			%Sprite.flip_h = direction.x < 0
 
-func _reproducir_paso() -> void:
-	# Como ya configuraste el Randomizer en el Inspector, 
-	# solo hace falta darle a play() y Godot elige el sonido solo.
-	step_sound.play()
 
 func _process(_delta: float) -> void:
 	if item_en_mano:
@@ -67,7 +59,6 @@ func _process(_delta: float) -> void:
 			for interactuable in %DetectorDeInteractuables.get_overlapping_bodies():
 				interactuable.interactuar()
 
-# --- FUNCIONES DE ITEMS ---
 
 func soltar_juntar_item() -> void:
 	if item_en_mano:
@@ -90,11 +81,13 @@ func soltar_juntar_item() -> void:
 		else:
 			levantar_item()
 
+
 func soltar_item() -> void:
 	item_en_mano.reparent(get_parent())
 	item_en_mano.global_position = %DetectorDeItems.global_position
 	item_en_mano.ser_puesto_en_el_piso()
 	item_en_mano = null
+
 
 func levantar_item() -> void:
 	var bodies: Array[Node2D] = %DetectorDeItems.get_overlapping_bodies()
@@ -106,12 +99,12 @@ func levantar_item() -> void:
 		item_en_mano = objeto
 		item_en_mano.ser_juntado()
 
+
 func esta_sosteniendo_item(objeto: String) -> bool:
 	if item_en_mano:
 		return item_en_mano.item_data.nombre.to_lower() == objeto.to_lower()
 	return false
 
-# --- SISTEMA DE MATE Y RELOJ ---
 
 func piden_mate() -> bool:
 	if mate_listo:
@@ -121,12 +114,15 @@ func piden_mate() -> bool:
 		return true
 	return false
 
+
 func recibir_mate() -> void:
 	%Mate.visible = true
 	%BarraMate.value = 0.
 
+
 func _on_cargar_termo(cant: float) -> void:
 	%BarraTermo.value += cant
+
 
 func _on_timer_reloj_timeout() -> void:
 	if habilitar_input:
@@ -134,11 +130,10 @@ func _on_timer_reloj_timeout() -> void:
 		if %Reloj.value >= %Reloj.max_value:
 			reloj_terminado.emit()
 
-# --- ESTÉTICA Y ANIMACIÓN ---
 
 func _actualizar_animacion(velocity_param) -> void:
 	var anim = "Verde"
-	match estado_actual:
+	match estado_pelo:
 		EstadoPelo.VERDE: anim = "Verde"
 		EstadoPelo.AMARILLO: anim = "Amarillo"
 		EstadoPelo.NARANJA: anim = "Naranja"
@@ -150,9 +145,10 @@ func _actualizar_animacion(velocity_param) -> void:
 		anim = "Move" + anim
 	$Sprite.play(anim)
 
+
 func _crecer_pelo() -> void:
 	var target_y = 0
-	match estado_actual:
+	match estado_pelo:
 		EstadoPelo.VERDE: target_y = -700
 		EstadoPelo.AMARILLO: target_y = -100
 		EstadoPelo.NARANJA: target_y = 100
@@ -164,3 +160,10 @@ func _crecer_pelo() -> void:
 		target_y,
 		0.05
 	)
+
+
+func reiniciar() -> void:
+	%Reloj.value = 0.
+	habilitar_input = true
+	global_position = ubicacion_inicial
+	estado_pelo = EstadoPelo.VERDE

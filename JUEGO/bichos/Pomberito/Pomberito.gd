@@ -2,16 +2,17 @@ extends BaseCryptid
 
 enum TipoOfrenda {MATE, FUMAR, AZUCAR}
 
-func _ready() -> void:
-	activar_criptido()
-	estado_score_track = 10
-
-	
 signal jugador_afectado()
 signal pombero_enfurecido()
 
 var ofrenda_esperada: TipoOfrenda = TipoOfrenda.MATE
 var esperando_ofrenda: bool = false
+
+
+func _ready() -> void:
+	activar_criptido()
+	estado_score_track = 10
+
 
 func estado_cambiado(nuevo_estado: EstadoAlerta) -> void:
 	match nuevo_estado:
@@ -78,3 +79,8 @@ func _on_deposito_pomberito_objeto_aceptado(tipo: String) -> void:
 		"cigarrillos":  recibir_ofrenda(TipoOfrenda.FUMAR)
 		"azucar": recibir_ofrenda(TipoOfrenda.AZUCAR)
 		
+
+
+func reiniciar() -> void:
+	estado_score_track = 10
+	calcular_estado()
