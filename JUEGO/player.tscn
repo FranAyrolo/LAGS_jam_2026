@@ -2,23 +2,114 @@
 
 [ext_resource type="Script" uid="uid://cg6qmd6jnmkus" path="res://JUEGO/player.gd" id="1_s7l7o"]
 [ext_resource type="Texture2D" uid="uid://bca2yncxbby0" path="res://assets/2D/Orko/PJ/PJ_01.png" id="2_fuerx"]
+[ext_resource type="Texture2D" uid="uid://d3onybnapbh4h" path="res://assets/2D/Orko/PJ/PJ_Amarillo_01.png" id="2_r1511"]
 [ext_resource type="Texture2D" uid="uid://bqms62x0rcu0a" path="res://assets/2D/Orko/PJ/PJ_02.png" id="2_s7l7o"]
+[ext_resource type="Texture2D" uid="uid://cacc8urubkraa" path="res://assets/2D/Orko/PJ/PJ_Naranja_01.png" id="3_0boql"]
 [ext_resource type="Texture2D" uid="uid://d300k3x4xffab" path="res://assets/2D/Orko/PJ/PJ_03.png" id="4_dbjbh"]
+[ext_resource type="Texture2D" uid="uid://bcqmie322iwg5" path="res://assets/2D/Orko/PJ/PJ_Rojo_01.png" id="4_vnjdk"]
 [ext_resource type="Texture2D" uid="uid://bxfmatj8001fu" path="res://assets/2D/Orko/PJ/PJ_04.png" id="5_2ey7g"]
 [ext_resource type="Texture2D" uid="uid://o7mfap6bv5st" path="res://assets/2D/Orko/PJ/PJ_05.png" id="6_33vmg"]
+[ext_resource type="Texture2D" uid="uid://pnp3n7nmr0cl" path="res://assets/2D/Orko/PJ/PJ_Amarillo_02.png" id="6_oykyv"]
 [ext_resource type="Texture2D" uid="uid://c1q83q3ghvhy8" path="res://assets/2D/argentinian-assets-pack-v1.0/bebidas/mate-02.png" id="7_8vnvl"]
 [ext_resource type="Texture2D" uid="uid://dqnmcrployfso" path="res://assets/termo.jpg" id="7_dbjbh"]
+[ext_resource type="Texture2D" uid="uid://d3vrjx04l4a4h" path="res://assets/2D/Orko/PJ/PJ_Amarillo_03.png" id="7_i6l2b"]
+[ext_resource type="Texture2D" uid="uid://cbg4rfloiuqf1" path="res://assets/2D/Orko/PJ/PJ_Amarillo_04.png" id="8_a3dyt"]
 [ext_resource type="Texture2D" uid="uid://bhfv01eox42vw" path="res://assets/toon_water_tex.png" id="8_dbjbh"]
+[ext_resource type="Texture2D" uid="uid://14nh7e1vr145" path="res://assets/2D/Orko/PJ/PJ_Amarillo_05.png" id="9_yb0pa"]
 [ext_resource type="Texture2D" uid="uid://0anmms6p2a3" path="res://assets/clock.png" id="10_2ey7g"]
+[ext_resource type="Texture2D" uid="uid://2baeha2blg85" path="res://assets/2D/Orko/PJ/PJ_Naranja_02.png" id="10_mdy00"]
+[ext_resource type="Texture2D" uid="uid://bpxsdhmc1xsck" path="res://assets/2D/Orko/PJ/PJ_Naranja_03.png" id="11_g00if"]
+[ext_resource type="Texture2D" uid="uid://datopwkupvp5q" path="res://assets/2D/Orko/PJ/PJ_Naranja_04.png" id="12_n86bd"]
+[ext_resource type="Texture2D" uid="uid://dmllursqlegyq" path="res://assets/2D/Orko/PJ/PJ_Naranja_05.png" id="13_4j88h"]
+[ext_resource type="Texture2D" uid="uid://c6pnn47nr1ofo" path="res://assets/2D/Orko/PJ/PJ_Rojo_02.png" id="14_c76up"]
+[ext_resource type="Texture2D" uid="uid://cqjqigo6v0bn" path="res://assets/2D/Orko/PJ/PJ_Rojo_03.png" id="15_0ng5p"]
+[ext_resource type="Texture2D" uid="uid://ctk5yjivgrvde" path="res://assets/2D/Orko/PJ/PJ_Rojo_04.png" id="16_eba2p"]
+[ext_resource type="Texture2D" uid="uid://fk2yc7ecw3ob" path="res://assets/2D/Orko/PJ/PJ_Rojo_05.png" id="17_tmk7g"]
+[ext_resource type="Texture2D" uid="uid://dh0xonfua4syj" path="res://assets/2D/Orko/PJ/Pelo.png" id="26_0boql"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hmhfc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_r1511")
+}],
+"loop": true,
+"name": &"IdleAmarillo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0boql")
+}],
+"loop": true,
+"name": &"IdleNaranja",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vnjdk")
+}],
+"loop": true,
+"name": &"IdleRojo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_fuerx")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"IdleVerde",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_oykyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i6l2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a3dyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yb0pa")
+}],
+"loop": true,
+"name": &"MoveAmarillo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_mdy00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_g00if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_n86bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4j88h")
+}],
+"loop": true,
+"name": &"MoveNaranja",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_c76up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0ng5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_eba2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tmk7g")
+}],
+"loop": true,
+"name": &"MoveRojo",
 "speed": 5.0
 }, {
 "frames": [{
@@ -35,7 +126,7 @@ animations = [{
 "texture": ExtResource("6_33vmg")
 }],
 "loop": true,
-"name": &"Movimiento",
+"name": &"MoveVerde",
 "speed": 8.0
 }]
 
@@ -54,7 +145,7 @@ script = ExtResource("1_s7l7o")
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1740873799]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_hmhfc")
-animation = &"Movimiento"
+animation = &"IdleVerde"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1120897322]
 position = Vector2(0, 55)
@@ -78,7 +169,13 @@ editor_draw_drag_margin = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=337572671]
 
+[node name="Pelo" type="Sprite2D" parent="Camera2D/CanvasLayer" unique_id=1313690032]
+position = Vector2(660.99994, -865.25)
+scale = Vector2(5.2265625, 5.133041)
+texture = ExtResource("26_0boql")
+
 [node name="TermoYMate" type="Node2D" parent="Camera2D/CanvasLayer" unique_id=1805822755]
+visible = false
 
 [node name="Termo" type="Sprite2D" parent="Camera2D/CanvasLayer/TermoYMate" unique_id=823356916]
 unique_name_in_owner = true
@@ -136,7 +233,6 @@ offset_bottom = 0.6399536
 
 [node name="Mate" type="Button" parent="Camera2D/CanvasLayer/Panel" unique_id=1824478613]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -151,7 +247,6 @@ expand_icon = true
 
 [node name="BarraMate" type="TextureProgressBar" parent="Camera2D/CanvasLayer/Panel/Mate" unique_id=725090179]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.15044683

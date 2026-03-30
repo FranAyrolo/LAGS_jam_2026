@@ -56,7 +56,7 @@ func _process(_delta: float) -> void:
 	#var punto_mas_cercano: Vector2 = NavigationServer2D.map_get_closest_point(navigation_map_rid, posicion_jugador)
 	if !jugador_en_navmesh && punto_mas_cercano.distance_to(pos_jugador) < 5:
 		jugador_en_navmesh = true
-		print("Carpincho te va a buscar")
+		#print("Carpincho te va a buscar")
 
 
 func _on_navigation_finished() -> void:
@@ -66,24 +66,24 @@ func _on_navigation_finished() -> void:
 		if tiene_mate && !mate_lleno:
 			Global.get_player().recibir_mate()
 			tiene_mate = false
-			print("carpincho entrega mate vacio")
+			#print("carpincho entrega mate vacio")
 		elif !tiene_mate:
 			tiene_mate = Global.get_player().piden_mate()
 			if tiene_mate:
 				mate_lleno = true
 				seguir_jugador = false
 				$TimerMate.start()
-				print("carpincho ta tomando mate :3")
+				#print("carpincho ta tomando mate :3")
 	
 	else:
 		jugador_en_navmesh = false
-		print("Carpincho se dio contra la puerta")
+		#print("Carpincho se dio contra la puerta")
 
 
 func _on_timer_mate_timeout() -> void:
 	seguir_jugador = true
 	mate_lleno = false
-	print("Carpincho quiere mate!")
+	#print("Carpincho quiere mate!")
 
 
 func set_movement_target(movement_target: Vector2):

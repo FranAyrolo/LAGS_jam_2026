@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 
 func _on_cargar_timeout() -> void:
 	if cargando_agua == true:
-		if $"../Pava".agua_lista and $"../Pava".agua_lista and $"../Pava".arrastrando  and cantidad_agua < 100 and cantidad_yerba >= 100 :
+		if $"../Pava".agua_lista and $"../Pava".cantidad_agua > 2 and $"../Pava".arrastrando  and cantidad_agua < 100 and cantidad_yerba >= 100 :
 			cantidad_agua += 5
 			$ProgressAgua.value = cantidad_agua
 			$"../Pava".cantidad_agua -=2
