@@ -46,6 +46,9 @@ script = ExtResource("4_xwa4h")
 tex_viva = ExtResource("3_d7wnw")
 tex_medio_viva = ExtResource("6_xwa4h")
 tex_reseca = ExtResource("7_o4vni")
+temporizador = 1.0
+decrecimiento_por_paso = 1.5
+azarcito = 0.3
 
 [node name="Sprite2D" type="Sprite2D" parent="Macetas/MacetaCayena" unique_id=536708010]
 z_index = -1
@@ -72,6 +75,9 @@ script = ExtResource("4_xwa4h")
 tex_viva = ExtResource("4_pprej")
 tex_medio_viva = ExtResource("10_brigi")
 tex_reseca = ExtResource("11_s7jo6")
+temporizador = 1.0
+decrecimiento_por_paso = 1.5
+azarcito = 0.3
 
 [node name="Sprite2D" type="Sprite2D" parent="Macetas/MacetaCommelina" unique_id=611660373]
 z_index = -1
@@ -98,6 +104,9 @@ script = ExtResource("4_xwa4h")
 tex_viva = ExtResource("5_xwa4h")
 tex_medio_viva = ExtResource("13_inu2g")
 tex_reseca = ExtResource("14_vpwio")
+temporizador = 1.0
+decrecimiento_por_paso = 1.5
+azarcito = 0.3
 
 [node name="Sprite2D" type="Sprite2D" parent="Macetas/MacetaIzote" unique_id=1205724977]
 z_index = -1
@@ -124,6 +133,9 @@ script = ExtResource("4_xwa4h")
 tex_viva = ExtResource("6_o4vni")
 tex_medio_viva = ExtResource("16_xhcxo")
 tex_reseca = ExtResource("17_cokd6")
+temporizador = 1.0
+decrecimiento_por_paso = 1.5
+azarcito = 0.3
 
 [node name="Sprite2D" type="Sprite2D" parent="Macetas/MacetaRafflesia" unique_id=1034513605]
 z_index = -1

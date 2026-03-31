@@ -14,6 +14,9 @@ func _ready() -> void:
 	curupira.cambio_de_estado.connect(actualizar_curupira)
 	pomberito.cambio_de_estado.connect(actualizar_pomberito)
 	sombreron.cambio_de_estado.connect(actualizar_sombreron)
+	$SpriteCurupira.modulate = Color.GREEN
+	$SpritePomberito.modulate = Color.GREEN
+	$SpriteSombreron.modulate = Color.GREEN
 
 
 func checkear_alerta_negra() -> void:

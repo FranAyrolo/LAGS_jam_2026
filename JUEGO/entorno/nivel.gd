@@ -97,6 +97,7 @@ func pasar_pantalla_final(victoria: bool) -> void:
 	%TextoFinDeJuego.text = mensaje
 	%TextoFinDeJuego.visible = true
 	%Continuar.visible = false
+	%Reiniciar.visible = true
 	%Player.habilitar_input = false
 
 
